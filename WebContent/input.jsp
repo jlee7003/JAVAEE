@@ -18,7 +18,9 @@ String sql="insert into guest(name,title,content) "; //id는 특수한 목적이 있을때
 sql=sql+"values('"+a+"','"+b+"','"+c+"')"; //문자열이므로 공백을 더해주어야 함
 //''작은 따옴표는 sql에게 문자라는 것을 알리는 것이고 "" 큰따옴표는 jsp 때문에
 
-stmt.executeUpdate(sql);//쿼리문 실행(database 에서 실행이 됨)
+stmt.executeUpdate(sql);//쿼리문 실행(database 에서 실행이 됨) ->저장
+//list.jsp로 이동하기
+response.sendRedirect("listafter.jsp");
 %>
     
     
