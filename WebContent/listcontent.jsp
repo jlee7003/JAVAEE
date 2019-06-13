@@ -27,6 +27,32 @@ rs.next();//가져오는 레코드는 값이 하나이기 때문에 rs.next()를 하나만 넣어준것
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
+<style>
+table td {
+  background: skyblue;
+  border: 3px solid pink;
+  font-size:15px;
+  letter-spacing: 2px;
+  padding:5px;
+  border-spacing:10px;
+  border-radius: 5px;
+}
+table {
+padding-top:360px;
+border: 0px solid black;
+margin: auto;
+
+}
+body{
+background-color: black;
+}
+h6{
+color: white;
+font-size: 100px;
+text-align: center;
+}
+
+</style>
 <body>
      <table width=500 border=1>
      <tr>
@@ -43,7 +69,9 @@ rs.next();//가져오는 레코드는 값이 하나이기 때문에 rs.next()를 하나만 넣어준것
      </tr>
      <tr>
      <td colspan=2>
-     <a href="delete.jsp?id=<%=rs.getString("id") %>">삭제</a> 
+     <a href="delete.jsp?id=<%=rs.getString("id") %>">삭제</a>
+     <a href="update.jsp?id=<%=rs.getString("id") %>">수정</a>
+     <a href="listafter.jsp">계시판</a>
      </td>
      </tr>
    </table>

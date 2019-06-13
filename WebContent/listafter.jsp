@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
-    <%@page import="java.sql.*" %>
+    <%@page import="java.sql.*" %><!-- 이건 뭘까? -->
 <%
 String aa="jdbc:mysql://localhost:3306/pension?useSSL=false";
 String bb="root";
@@ -16,7 +16,11 @@ rs=stmt.executeQuery(sql);//select 명령을 실행한 결과값을 rs에 저장 ,항목으로 불
 
 
 
-	
+/*
+''은 sql에서의 명령어를 넣어주기 위해 넣는 것이고 자바 EE에서의 변수는 문자열로 취급하기에 일일히
+문자열에 ""따옴표를 추가하는 것이다.
+*/
+
 	
 	
 	
@@ -25,7 +29,7 @@ rs=stmt.executeQuery(sql);//select 명령을 실행한 결과값을 rs에 저장 ,항목으로 불
 out.println(rs.getString("title"));
 out.println("<p>");*/
 
-%>
+%> <!-- 꺽쇠%는 jsp 명령어일 경우에 사용 실행할 경우 화면에 출력 되지 않는다. -->
 <style>
 table td {
   background: skyblue;
@@ -71,7 +75,8 @@ while(rs.next()) //조건에 따라 실행 참이면 반복문으로 실행 거짓이면 실행 ㄴㄴ
 <tr>
 <td> <%=rs.getString("id") %> </td> 
   <td> <%=rs.getString("name") %> </td> 
-  <td> <a href="listcontent.jsp?id=<%=rs.getString("id") %>"><%=rs.getString("title") %> </td> <!--equal(=) =out.println()-->
+  <td> <a href="listcontent.jsp?id=<%=rs.getString("id") %>"><%=rs.getString("title") %> </td> 
+  <!--equal(=) =out.println()-->
 </tr>
 <%
 }
