@@ -21,6 +21,9 @@ sql=sql+"values('"+a+"','"+b+"','"+c+"')"; //문자열이므로 공백을 더해
 stmt.executeUpdate(sql);//쿼리문 실행(database 에서 실행이 됨) ->저장
 //list.jsp로 이동하기
 response.sendRedirect("list.jsp");
+
+stmt.close();
+conn.close();
 %>
     
     

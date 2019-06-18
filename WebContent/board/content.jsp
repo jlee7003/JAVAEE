@@ -19,6 +19,9 @@ String sql="select * from board where id="+id;
 //ResultSet에 무조건 가져오기
 ResultSet rs=stmt.executeQuery(sql); //테이블 내용 -> rs로 복사
 rs.next();//첫번째 레코드로 이동
+
+stmt.close();
+conn.close();
 %>
 
 <!DOCTYPE html>

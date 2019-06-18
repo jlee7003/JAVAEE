@@ -20,6 +20,8 @@ stmt.executeUpdate(sql);
 //쿼리문 실행후 list.jsp로 이동
 response.sendRedirect("list.jsp");
 
+stmt.close();
+conn.close();
 
 %>
 <!DOCTYPE html>

@@ -20,6 +20,8 @@ ResultSet rs; // 테이블내용을 읽어와서 저장할 공간
               //-> out.println(rs.getString("name"));
 rs=stmt.executeQuery(sql);//select 명령을 실행한 결과값을 rs에 저장 ,항목으로 불러야함
 
+stmt.close();
+conn.close();
 
 /*rs.next();-> 메소드는 리턴값을 가진다
   out.println(rs.getString("name"));
