@@ -1,4 +1,4 @@
-<h5>DATABASE</h5>
+<h2>DATABASE</h2>
 
 
 주소록 만들기(테이블 만들기)<p>
