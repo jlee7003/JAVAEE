@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
     <%@page import="java.sql.*" %><!-- 이건 뭘까? -->
@@ -20,8 +20,6 @@ String sql="select * from board where id="+id;
 ResultSet rs=stmt.executeQuery(sql); //테이블 내용 -> rs로 복사
 rs.next();//첫번째 레코드로 이동
 
-stmt.close();
-conn.close();
 %>
 
 <!DOCTYPE html>
@@ -46,7 +44,7 @@ conn.close();
  </tr>
  <tr>
  <td colspan=2 align=center>
- <a href="update.jsp">수정 </a>
+ <a href="update.jsp?id=<%=id%>">수정 </a>
  <!-- 수정하고자 하는 레코드의 id값이 전달되어야함 -->
  <a href="delete.jsp?id=<%=id%>">삭제</a>
  <!--  삭제하고자 하는 레코드의 id값이 전달 -->
@@ -59,3 +57,8 @@ conn.close();
 
 </body>
 </html>
+<%
+stmt.close();
+conn.close();
+
+%>

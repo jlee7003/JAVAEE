@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
     <%@page import="java.sql.*" %><!-- 이건 뭘까? -->
@@ -20,8 +20,7 @@ ResultSet rs; // 테이블내용을 읽어와서 저장할 공간
               //-> out.println(rs.getString("name"));
 rs=stmt.executeQuery(sql);//select 명령을 실행한 결과값을 rs에 저장 ,항목으로 불러야함
 
-stmt.close();
-conn.close();
+
 
 /*rs.next();-> 메소드는 리턴값을 가진다
   out.println(rs.getString("name"));
@@ -32,11 +31,22 @@ conn.close();
 
 //javascript
 %>
+<style>
+table{
+margin: auto;
+
+}
+
+h6{
+text-align: center;
+margin: auto;
+}
+</style>
 <script><!--html-->
 
 </script>
 <body>
-<h6>EUIHO <br> BOARD</h6>
+<h6>EUIHO BOARD</h6>
 <table width=500 border=1>
 <tr>
  <td> ID</td>
@@ -51,7 +61,7 @@ while(rs.next()) //조건에 따라 실행 참이면 반복문으로 실행 거�
 <tr>
 <td> <%=rs.getString("id") %> </td> 
   <td> <%=rs.getString("name") %> </td> 
-  <td> <a href="content.jsp?id=<%=rs.getString("id") %>"><%=rs.getString("title") %> </td> 
+  <td> <a href="content.jsp?id=<%=rs.getString("id") %>"><%=rs.getString("title") %></a> </td> 
   <!--equal(=) =out.println()-->
 </tr>
 <%
@@ -62,3 +72,8 @@ while(rs.next()) //조건에 따라 실행 참이면 반복문으로 실행 거�
 </tr>
 </table>
 </body>
+<%
+stmt.close();
+conn.close();
+%>
+

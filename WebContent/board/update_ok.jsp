@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
-    <%@page import="java.sql.*" %><!-- 이건 뭘까? -->
+    <%@page import="java.sql.*" %> 
 <%
 String aa="jdbc:mysql://localhost:3307/pension?useSSL=false";
 String bb="root";
@@ -9,21 +9,24 @@ String cc="1234";
 Connection conn=DriverManager.getConnection(aa,bb,cc);// dv와의 접속이 만들어짐
 Statement stmt=conn.createStatement(); //DB 연결
 
-//삭제할 레코드의 id값 가져오기
+request.setCharacterEncoding("utf-8");
 String id=request.getParameter("id");
+String b=request.getParameter("title");
+String c=request.getParameter("content");
 
-//삭제 쿼리문 작성(where문이 포함)
-String sql="delete from board where id="+id;
+String sql="update board set title='"+b+"',content='"+c+"' where id="+id;
 
-//쿼리문 실행
-stmt.executeUpdate(sql);
-//쿼리문 실행후 list.jsp로 이동
-response.sendRedirect("list.jsp");
+
+stmt.executeUpdate(sql);//쿼리문 실행(database 에서 실행이 됨) 변화가 있으므로 업데이트 ->저장
+//list.jsp로 이동하기
+response.sendRedirect("content.jsp?id="+id);
+
 
 stmt.close();
 conn.close();
-
 %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
