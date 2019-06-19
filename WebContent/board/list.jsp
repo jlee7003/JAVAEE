@@ -11,7 +11,7 @@ Statement stmt=conn.createStatement(); //DB 연결
 
 
 
-String sql="select * from board"; //전체 다 보여줌
+String sql="select * from board order by id desc"; //전체 다 보여줌
 ResultSet rs; // 테이블내용을 읽어와서 저장할 공간  
               // 테이블의 내용을 jsp에서 접급하기 위한 공간으로 이동(ResultSet)
               //rs 가져오면 레코드포인터는 항상 첫번째 레코드 위에 존재
