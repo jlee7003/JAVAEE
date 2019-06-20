@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
  <%@ include file="top.jsp" %>
  <div id=move_img> <!--3------------------------------------------------->
-  <img src=img/move1.PNG>
+  <img src=../img/move1.PNG>
   
  </div>
   
@@ -19,7 +19,7 @@
    </div>
 
    <div id=box3>
-    <img src=img/welcome.PNG> <p>
+    <img src=../img/welcome.PNG> <p>
 					 		
 	저희 펜션은 유럽 테마여행을 중심으로 하는 메타 프로방스 안에 위치한 유럽형 펜션입니다.<br>
 	대숲 맑은 담양군의 주요 여행지와 함께 감성을 느낄 수 있는 프로방스 펜션에서 삶의 산소와 같은 휴식과 낭만을 즐기시길 바랍니다.<br>
@@ -32,7 +32,7 @@
  </div>
  <div id=link><!--5------------------------------------------------->
     <div id=Lbox>
-    <img src=img/back1.PNG>
+    <img src=../img/back1.PNG>
     <div></div> 
     <div></div> 
     <div></div> 
