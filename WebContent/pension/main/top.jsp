@@ -37,6 +37,11 @@ color: black;
 padding:10px;
 font-size:12px;
 }
+#member > div{
+color:red;
+font-size: 12px;
+}
+
   
 
 
@@ -203,25 +208,42 @@ height:320px;
 {
 margin:auto;
 width:100%;
-height:200px;
-background:purple;
+height:100px;
+
 }
+
 #footer img/*6****************************************************************/
 {
 width:100%;
 height:320px;
-
 }
 
 
 </style>
 </head>
 
-<body>
+<body> 
  <div id=member> <!--1----------------------------------------------->
+ <%
+ if(session.getAttribute("userid")==null)//세션변수가 없다면
+ {
+ %>
  <a href="../member/member.jsp">회원가입</a>
- <a href=""><b>로그인</b></a>
+ <a href="../login/login.jsp"><b>로그인</b></a>
   <a href="">찾아오시는 길</a>
+<%}
+ else
+ {
+ %>
+ 
+	  <a href="../member/member.jsp">정보수정</a>
+	  <a href="../login/logout.jsp"><b>로그아웃</b></a>
+	   <a href="">찾아오시는 길</a>
+ <%
+ }
+ %>
+
+  
   </div>
  
  <div id=header> <!--2------------------------------------------------->

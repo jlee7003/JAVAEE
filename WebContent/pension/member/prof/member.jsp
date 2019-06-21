@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%@ include file="../top.jsp" %>
+<%@ include file="../../top.jsp" %>
 <style>
  #section {
    width:1200px;
@@ -106,4 +106,4 @@
  </form>
 </div>
 
-<%@ include file="../bottom.jsp" %> 
+<%@ include file="../../bottom.jsp" %> 

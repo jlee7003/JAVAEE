@@ -23,8 +23,33 @@
   // 쿼리 실행
   stmt.executeUpdate(sql);
 %>  
-
-
+<%@ include file="../top.jsp" %>
+<style>
+  #image {
+    width:1200px;
+    height:305px;
+    margin:auto;
+  }
+  #section {
+    width:1200px;
+    height:200px;
+    margin:auto;
+    text-align:center;
+  }
+</style>
+<script>
+ function move()
+ {
+	 location="../main/index.jsp";
+ }
+</script>
+<div id=image> <img src=../img/mem1.png> </div>
+<div id=section> 
+  <%=name %>님 회원가입 해주셔서 감사합니다.. <p>
+  자주 놀러와 주세요!!! <p>
+  <input type=button onclick=move() value=메인으로>
+</div>
+<%@ include file="../bottom.jsp" %>
 
 
 

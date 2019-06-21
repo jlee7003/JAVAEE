@@ -37,6 +37,11 @@ color: black;
 padding:10px;
 font-size:12px;
 }
+#member > div{
+color:red;
+font-size: 12px;
+}
+
   
 
 
@@ -203,8 +208,22 @@ height:320px;
 {
 margin:auto;
 width:100%;
-height:100px;
+height:200px;
 background:purple;
+}
+#footer img/*6****************************************************************/
+{
+width:100%;
+height:320px;
+
+}
+#pic{
+width:100%;
+height:200px;
+}
+#pic img{
+width:100%;
+height:200px;
 }
 
 
@@ -213,11 +232,27 @@ background:purple;
 
 <body>
  <div id=member> <!--1----------------------------------------------->
- <a href="member.jsp">회원가입</a>
- <a href=""><b>로그인</b></a>
+
+ <%
+ if(session.getAttribute("userid")==null)//세션변수가 없다면
+ {
+ %>
+ <a href="../member/member.jsp">회원가입</a>
+ <a href="../login/login.jsp"><b>로그인</b></a>
   <a href="">찾아오시는 길</a>
-  </div>
+<%}
+ else
+ {
+ %>
  
+<a href="../member/member.jsp">정보수정</a>
+ <a href="../login/logout.jsp"><b>로그아웃</b></a>
+ <a href="">찾아오시는 길</a>
+ <%
+ }
+ %>
+
+ </div>
  <div id=header> <!--2------------------------------------------------->
   
   <div id=logo> <img src=../img/logo.PNG> </div>
@@ -232,4 +267,7 @@ background:purple;
     </div>
  
  
+ </div>
+ <div id=pic>
+ <img src=../img/topb.PNG>
  </div>

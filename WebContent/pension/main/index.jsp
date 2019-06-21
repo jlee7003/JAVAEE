@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
  <%@ include file="top.jsp" %>
- <div id=move_img> <!--3------------------------------------------------->
+ <div id=../move_img> <!--3------------------------------------------------->
   <img src=../img/move1.PNG>
   
  </div>
-  
+ 
  <div id=insa><!--4------------------------------------------------->
    <div id=box1>
    
@@ -42,4 +42,4 @@
     
  </div>
      
-  <%@ include file="bottom.jsp" %>
+  <%@ include file="bottom2.jsp" %>
