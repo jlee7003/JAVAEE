@@ -14,6 +14,8 @@
   request.setCharacterEncoding("utf-8");
       
   String userid=request.getParameter("userid");
+  //=> form의 action과 jsp파일이 연결되어 연결한 파일인 login.jsp의 userid 값을 login_ok.jsp 파일에 저장 
+  
   String pwd=request.getParameter("pwd");
 //아이디와 비밀번호가 같아야 조건에 성립하는 쿼리문 작성
    String sql="select * from member where userid='"+userid+"' and pwd='"+pwd+"'";
