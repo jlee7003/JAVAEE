@@ -41,7 +41,9 @@ font-size:12px;
 color:red;
 font-size: 12px;
 }
-
+#member span{
+font-size: 12px;
+}
   
 
 
@@ -245,7 +247,7 @@ height:200px;
  {
  %>
  
-<a href="../member/member.jsp">정보수정</a>
+ <span><%= session.getAttribute("name") %>님 환영합니다!</span> <a href="../member/member.jsp">정보수정</a>
  <a href="../login/logout.jsp"><b>로그아웃</b></a>
  <a href="">찾아오시는 길</a>
  <%

@@ -20,8 +20,11 @@ Statement stmt=conn.createStatement(); //stmt 라는 변수에는 서버의 정�
  sql=sql+" values('"+userid+"','"+name+"','"+pwd+"','"+email+"')";
  stmt.executeUpdate(sql);
  //쿼리 실행
+ 
+  stmt.close();
+  conn.close();
 %>
-<%@ include file="../top2.jsp" %>
+<%@ include file="../main/top2.jsp" %>
 <style>
   #image {
     width:1200px;
@@ -47,4 +50,4 @@ Statement stmt=conn.createStatement(); //stmt 라는 변수에는 서버의 정�
   자주 놀러와 주세요!!! <p>
   <input type=button onclick=move() value=메인으로>
 </div>
-<%@ include file="../bottom.jsp" %>
+<%@ include file="../main/bottom.jsp" %>

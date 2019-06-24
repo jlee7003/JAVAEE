@@ -235,8 +235,8 @@ height:320px;
  else
  {
  %>
- 
-	  <a href="../member/member.jsp">정보수정</a>
+       
+	<%= session.getAttribute("name") %> <a href="../login/pwd_check.jsp">정보수정</a>
 	  <a href="../login/logout.jsp"><b>로그아웃</b></a>
 	   <a href="">찾아오시는 길</a>
  <%

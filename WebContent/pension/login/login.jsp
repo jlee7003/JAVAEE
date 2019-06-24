@@ -157,7 +157,7 @@ font-size:13px;
 </div>
 </div>
 <div id=logbox3>
-<a href="../index.jsp">메인으로 가기</a>
+<a href="../main/index.jsp">메인으로 가기</a>
 </div>
 
 
