@@ -218,7 +218,9 @@ width:100%;
 height:320px;
 }
 
-
+#member span{
+font-size: 12px;
+}
 </style>
 </head>
 
@@ -236,7 +238,7 @@ height:320px;
  {
  %>
        
-	<%= session.getAttribute("name") %> <a href="../login/pwd_check.jsp">정보수정</a>
+	<span><%= session.getAttribute("name") %>님 환영합니다!</span> <a href="../login/pwd_check.jsp">정보수정</a>
 	  <a href="../login/logout.jsp"><b>로그아웃</b></a>
 	   <a href="">찾아오시는 길</a>
  <%

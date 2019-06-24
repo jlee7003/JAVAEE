@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 
     <%@page import="java.sql.*" %><!-- 이건 뭘까? -->
+<!--     스크립트 영역 -->
 <%
 String aa="jdbc:mysql://localhost:3306/pension?useSSL=false";
 String bb="root";
