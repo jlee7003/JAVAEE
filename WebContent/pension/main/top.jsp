@@ -42,7 +42,10 @@ color:red;
 font-size: 12px;
 }
 
-  
+a{
+text-decoration: none;
+color: black;
+}
 
 
 #header/*2****************************************************************/
@@ -256,7 +259,7 @@ font-size: 12px;
         <li> 프로방스펜션 </li>
         <li> 객실안내 </li>
         <li> 부대시설 </li>
-        <li> 커뮤니티 </li>
+        <li> <a href="../notice/noticelist.jsp">커뮤니티</a> </li>
         <li> 예약하기 </li>
       </ul>
     </div>

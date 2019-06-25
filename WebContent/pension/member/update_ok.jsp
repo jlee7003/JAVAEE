@@ -11,6 +11,7 @@
   Statement stmt=conn.createStatement();
   
   // 수정할 입력값을 가져오기
+   request.setCharacterEncoding("utf-8");
   String pwd=request.getParameter("pwd");
   String email=request.getParameter("email");
   // 테이블에 있는 비밀번호 가져오기
