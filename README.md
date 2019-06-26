@@ -1,5 +1,13 @@
 # JAVAEE
 
+■ JSP Tag
+
+ - 스크립트태그(script) → Java code를 넣는 tag → <% %>
+
+ - 액션 태그(action)  → JSP에서 Java 코드를 대신하기 위한 tag
+
+
+
 ※ 지시자 태그
 
 - Web container가 JSP를 Servlet 으로 변환 할 때 특정 지시를 내리기 위해서 사용하는 태그
