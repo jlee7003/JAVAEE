@@ -128,6 +128,3 @@ out.println("10보다 큽니다.");
 
 - exception : Throwable - <%@page isErrorPage = "true" %>로 설정 된 경우만 생성 (default는 false)
 
-
-
-출처: https://gap85.tistory.com/entry/액션태그 [Joo studio]
