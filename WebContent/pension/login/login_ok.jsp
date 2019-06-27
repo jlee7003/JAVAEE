@@ -33,8 +33,7 @@ if(rs.next()) //레코드가 있으면 true 없으면 false
 }
 
 else
-response.sendRedirect("login.jsp"); //위치 이동
-
+response.sendRedirect("login.jsp?err=1"); //위치 이동
 
 rs.close();
 stmt.close();

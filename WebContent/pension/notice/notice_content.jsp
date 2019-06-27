@@ -11,17 +11,19 @@ Statement stmt=conn.createStatement(); //stmt 라는 변수에는 서버의 정�
 
 
 
+
  //입력 양식의 값 가져오기
  request.setCharacterEncoding("utf-8");
 String id=request.getParameter("id");
 
-String sql="select * from gongji where id="+id; //값을 데이터베이스와 연결 시켜야함
 ResultSet rs;// 데이터 수령 객체
+String sql="select * from gongji where id="+id; //값을 데이터베이스와 연결 시켜야함
 
 rs=stmt.executeQuery(sql);  //데이터베이스를 rs객체에 넣어준것
 
 rs.next();//가져오는 레코드는 값이 하나이기 때문에 rs.next()를 하나만 넣어준것
 
+ 
 
 %>
 

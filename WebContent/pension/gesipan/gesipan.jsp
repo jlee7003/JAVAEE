@@ -13,7 +13,7 @@
 	Connection conn = DriverManager.getConnection(aa, bb, cc);
 	Statement stmt = conn.createStatement();
 
-	String sql = "select * from gongji";
+	String sql = "select * from gesipan";
 	ResultSet rs = stmt.executeQuery(sql);
 
 	// 입력양식의 값을 가져오기
@@ -88,8 +88,8 @@ h6 {
 	border-bottom: 1px solid #dddddd;
 	list-style-type: none;
 	height: 60px
-}
 
+}
 #right
 {
 padding-left:150px;
@@ -166,8 +166,11 @@ background:darkgray;
 			</ul>
 		</div>
 		<div id=right>
-		<div id=head>공지사항</div>
+		<div id=head>계시판</div>
 			<table cellspacing=0 width=800 align=center>
+			<caption style="text-align:right">
+			     <a href="write.jsp">글쓰기</a>
+			</caption>
 
 				<tr id=first>
 					<td>번호</td>
@@ -181,9 +184,9 @@ background:darkgray;
 				%>
 				<tr id=second>
 					<td><%=rs.getString("id")%></td>
-					<td align=left><a href="rnum.jsp?id=<%=rs.getInt("id")%>"><%=rs.getString("title")%></a>
+					<td align=left><a href="rnumadd.jsp?id=<%=rs.getInt("id")%>"><%=rs.getString("title")%></a>
 					</td>
-					<td>master</td>
+					<td><%=rs.getString("name")%></td>
 					<td><%=rs.getString("writeday")%></td>
 					<td><%=rs.getString("rnum")%></td>
 					<%

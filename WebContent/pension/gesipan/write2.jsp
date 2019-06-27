@@ -13,7 +13,7 @@
 	Connection conn = DriverManager.getConnection(aa, bb, cc);
 	Statement stmt = conn.createStatement();
 
-	String sql = "select * from gongji";
+	String sql = "select * from gesipan";
 	ResultSet rs = stmt.executeQuery(sql);
 
 	// 입력양식의 값을 가져오기
@@ -57,9 +57,8 @@ h6 {
 
 #section {
 	width: 1200px;
-	height: 800px;
+	height: 600px;
 	display: flex;
-	margin-left:200px;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
@@ -76,7 +75,6 @@ h6 {
 	height: 600px;
 	margin: auto;
     margin-top:30px;
-    margin-left:50px;
 }
 
 
@@ -88,40 +86,6 @@ h6 {
 	border-bottom: 1px solid #dddddd;
 	list-style-type: none;
 	height: 60px
-}
-
-#right
-{
-padding-left:150px;
-margin-left:100px;
-}
-table {
-margin-left:40px;
-width:800px;
-padding-top:20px;
-border: 0px solid black;
-margin: auto;
-
-}
-tr td:nth-child(2){
-width:600px;
-
-}
-body{
-background-color: white;
-}
-h6{
-color: white;
-font-size: 100px;
-text-align: center;
-}
-#content{
-
-height:300px;
-}
-#idid{
-text-align:center;
-background:darkgray;
 }
 
 #section #left li:hover {
@@ -166,53 +130,7 @@ background:darkgray;
 			</ul>
 		</div>
 		<div id=right>
-		<div id=head>공지사항</div>
-			<table cellspacing=0 width=800 align=center>
-
-				<tr id=first>
-					<td>번호</td>
-					<td>제목</td>
-					<td>글쓴이</td>
-					<td>작성일</td>
-					<td>조회수</td>
-				</tr>
-				<%
-					while (rs.next()) {
-				%>
-				<tr id=second>
-					<td><%=rs.getString("id")%></td>
-					<td align=left><a href="rnum.jsp?id=<%=rs.getInt("id")%>"><%=rs.getString("title")%></a>
-					</td>
-					<td>master</td>
-					<td><%=rs.getString("writeday")%></td>
-					<td><%=rs.getString("rnum")%></td>
-					<%
-							if (session.getAttribute("userid") != null) //로그인이 안되있을 경우 진입이 불가한 오류 해결 비교를 아예 못하기에 오류가 발생하기에 비교해줌 
-								if (session.getAttribute("userid").equals("admin")) {
-						%> <td><a href="delete.jsp?id=<%=rs.getString("id")%>">삭제</a></td>
-						<%
-							}
-						%>
-					
-					
-				</tr>
-				<%
-					}
-				%>
-				<tr>
-					<td colspan=5>
-						<%
-							if (session.getAttribute("userid") != null) //로그인이 안되있을 경우 진입이 불가한 오류 해결 비교를 아예 못하기에 오류가 발생하기에 비교해줌 
-								if (session.getAttribute("userid").equals("admin")) {
-						%> <a href="../notice/notice_write.jsp" style="text-align: right">글쓰기</a>
-						<%
-							}
-						%>
-
-					</td>
-				</tr>
-			</table>
-
+		
 		</div>
 
 	</div>
