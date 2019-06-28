@@ -23,7 +23,7 @@
   // 쿼리 실행
   stmt.executeUpdate(sql);
 %>  
-<%@ include file="../main/top.jsp" %>
+<%@ include file="../top.jsp" %>
 <style>
   #image {
     width:1200px;

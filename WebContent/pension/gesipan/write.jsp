@@ -27,14 +27,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-
-
 tr:nth-child(1)>td {
 	height: 10px;
 	background: darkgray;
 }
-
-
 
 body {
 	background-color: white;
@@ -68,21 +64,22 @@ h6 {
 	width: 400px;
 	height: 600px;
 	margin: auto;
-	margin-top:30px;
+	margin-top: 30px;
 }
+
 #section #right {
 	width: 800px;
 	height: 600px;
 	margin: auto;
-    margin-top:30px;
+	margin-top: 30px;
 }
-
 
 #section #left li {
 	width: 280px;
 	display: flex;
 	align-items: center;
-	justify-content: center; height : 60px;
+	justify-content: center;
+	height: 60px;
 	border-bottom: 1px solid #dddddd;
 	list-style-type: none;
 	height: 60px
@@ -91,7 +88,8 @@ h6 {
 #section #left li:hover {
 	width: 280px;
 	color: brown;
-	font-weight: 900; display : flex;
+	font-weight: 900;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 60px;
@@ -100,27 +98,27 @@ h6 {
 	display: flex
 }
 
-#head{
+#head {
 	font-size: 60px;
-	display:flex;
-	justify-content:flex;
-	}
-
-#section #right #first td{
-	height:40px;
-	border-top:2px solid black;
-	border-botton:1px solid black;
-}
-#section #right #second td{
-	height:30px;
-	border-bottom:1px solid #dddddd;
+	display: flex;
+	justify-content: flex;
 }
 
-tr td:nth-child(2){
-margin-left:30px;
-text-align:left;
+#section #right #first td {
+	height: 40px;
+	border-top: 2px solid black;
+	border-botton: 1px solid black;
 }
 
+#section #right #second td {
+	height: 30px;
+	border-bottom: 1px solid #dddddd;
+}
+
+tr td:nth-child(2) {
+	margin-left: 30px;
+	text-align: left;
+}
 </style>
 </head>
 <body>
@@ -136,67 +134,62 @@ text-align:left;
 			</ul>
 		</div>
 		<div id=right>
-		<form method=post action=write_ok.jsp>
-		<table width=800 >
-		<caption> <h3>글쓰기</h3></caption>
-		<tr>
-		<td>제목</td>
-		<td><input type=text name=title></td>
-		</tr>
-		<tr>
-		<td>작성자</td>
-		<td><input type=text name=name></td>
-		</tr>
-		<tr>
-		<td>비밀번호</td>
-		<td><input type=text name=pwd></td>
-		</tr>
-		<tr>
-		<td>내용</td>
-		<td><textarea cols=40 rows=7 name=content></textarea></td>
-		</tr>
-		<tr>
-		<td>혈액형</td>
-		<td>
-		<input type=radio name=blood value=1> A
-		<input type=radio name=blood value=2> B
-		<input type=radio name=blood value=3> AB
-		<input type=radio name=blood value=4> O
-		</td>
-		</tr>
-		<tr>
-		<td>취미</td>
-		<td>
-		<input type=checkbox name=hobby value=1> 낚시
-		<input type=checkbox name=hobby value=2> 독서
-		<input type=checkbox name=hobby value=3> 게임
-		<input type=checkbox name=hobby value=4> 자전거
-		<input type=checkbox name=hobby value=5> 영화
-		<input type=checkbox name=hobby value=6> 운동
-		
-		</td>
-		</tr>
-		<tr>
-		<td>태어난해</td>
-		<td>
-		<select name=birth>
-		<option>선택</option>
-		<%
-		for(int i=2019;i>=1900;i--)
-		{
-		%>
-		<option value=<%=i%>> <%=i%></option>
-			<%
-		}
-		%>
-		</select>
-		</td>
-		<td colspan=2 align=center><input type=submit value=저장하기></td>
-		</tr>
-		
-		
-		</table>
-		</form>
+			<form method=post action=write_ok.jsp>
+				<table width=800>
+					<caption>
+						<h3>글쓰기</h3>
+					</caption>
+					<tr>
+						<td>제목</td>
+						<td><input type=text name=title></td>
+					</tr>
+					<tr>
+						<td>작성자</td>
+						<td><input type=text name=name></td>
+					</tr>
+					<tr>
+						<td>비밀번호</td>
+						<td><input type=text name=pwd></td>
+					</tr>
+					<tr>
+						<td>내용</td>
+						<td><textarea cols=40 rows=7 name=content></textarea></td>
+					</tr>
+					<tr>
+						<td>혈액형</td>
+						<td><input type=radio name=blood value=1> A <input
+							type=radio name=blood value=2> B <input type=radio
+							name=blood value=3> AB <input type=radio name=blood
+							value=4> O</td>
+					</tr>
+					<tr>
+						<td>취미</td>
+						<td><input type=checkbox name=hobby value=1> 낚시 <input
+							type=checkbox name=hobby value=2> 독서 <input type=checkbox
+							name=hobby value=3> 게임 <input type=checkbox name=hobby
+							value=4> 자전거 <input type=checkbox name=hobby value=5>
+							영화 <input type=checkbox name=hobby value=6> 운동</td>
+					</tr>
+					<tr>
+						<td>태어난해</td>
+						<td><select name=birth>
+								<option>선택</option>
+								<%
+									for (int i = 2019; i >= 1900; i--) //1900년 부터 2019년 까지 출력
+									{
+								%>
+								<option value=<%=i%>>
+									<%=i%></option>
+								<%
+									}
+								%>
+						</select></td>
+						<td colspan=2 align=center><input type=submit value=저장하기></td>
+					</tr>
+
+
+				</table>
+			</form>
 		</div>
 
 	</div>

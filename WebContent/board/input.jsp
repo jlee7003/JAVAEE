@@ -8,6 +8,7 @@ String bb="root";
 String cc="1234";    
 Connection conn=DriverManager.getConnection(aa,bb,cc);// dv와의 접속이 만들어짐
 Statement stmt=conn.createStatement();
+request.setCharacterEncoding("utf-8");
 String name=request.getParameter("name");
 String title=request.getParameter("title");
 String content=request.getParameter("content");

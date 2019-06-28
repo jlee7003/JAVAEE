@@ -5,57 +5,54 @@
     <%@page import="java.sql.*" %><!-- 이건 뭘까? -->
 <!--     스크립트 영역 -->
 <%
-String aa="jdbc:mysql://localhost:3307/ee5?useSSL=false";
+String aa="jdbc:mysql://localhost:3307/pension?useSSL=false";
 String bb="root";
 String cc="1234";    
 Connection conn=DriverManager.getConnection(aa,bb,cc);// dv와의 접속이 만들어짐
 Statement stmt=conn.createStatement();
 ResultSet rs;//화면에 데이터베이스 표현 할 것이면 사용
-String sql="select * from guest";
+String sql="select * from vote";
 rs=stmt.executeQuery(sql);
 
-
 %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-table{
-border:1px solid black;
-}
-td{
-border:1px solid black;
-}
-</style>
 </head>
 <body>
 <table>
 <tr>
-<td>name</td>
-<td>title</td>
-<td>content</td>
-<td>email</td>
+<td>안주투표</td>
+</tr>
+<tr>
+<td>생선회</td>
+<td>곱창</td>
+<td>두부김치</td>
+<td>양꼬치</td>
+<td>초밥</td>
+<td>감자탕</td>
+<td>족발</td>
 </tr>
 <%
 while(rs.next())
 {
 %>
 <tr>
-<td><%=rs.getString("id") %></td>
-<td><%=rs.getString("name") %></td>
-<td> <a href="content.jsp?id=<%=rs.getString("id")%>"><%=rs.getString("title") %></a></td>
-<!-- content 링크로 갈경우 id의 값을 가져가야 하므로 ?id뒤에 sql콘솔창에서 나타난 id값(get.String("id")값을 가지고 온다. -->
-<td><%=rs.getString("email") %></td>
+<td><%=rs.getString("a1") %></td>
+<td><%=rs.getString("a2") %></td>
+<td><%=rs.getString("a3") %></td>
+<td><%=rs.getString("a4") %></td>
+<td><%=rs.getString("a5") %></td>
+<td><%=rs.getString("a6") %></td>
+<td><%=rs.getString("a7") %></td>
 </tr>
 <%
 } 
 %>
-<tr>
-<td colspan=5><a href="input.html">글쓰기</a></td>
-<td><a href="delete.jsp">삭제</a></td>
-</tr>
 </table>
 </body>
 </html>

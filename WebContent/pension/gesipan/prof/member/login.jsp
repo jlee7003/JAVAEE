@@ -3,19 +3,50 @@
 
 <%@ include file="../top.jsp" %>
 <style>
+ 
    #section {
     width:1200px;
-    height:400px;
+    height:450px;
+    margin:auto;
    }
-   #section div:nth-child(1) { 
+   #section div {
+    text-align:center;
+   }
+   #section div:nth-child(1) {  /* 로그인 글자 */
    /* id가 section 태그내의 div태그내의 첫번째 div태그*/
      font-size:30px;
+     margin-top:20px;
    }
-   #section div:nth-child(3) {
+   #section div:nth-child(2) { 
+     width:270px;
+     height:30px;
+     border-top:1px solid black;
+     margin:auto;
+   }
+   #section div:nth-child(3) { 
      font-size:12px;
+     text-align:left;
+     margin-left:47px;
    }
    #section div:nth-child(5) {
      font-size:12px;
+     text-align:left;
+     margin-left:47px;
+   }
+   #section div:nth-child(6) span {
+     font-size:12px;
+     color:red;
+   }
+   #section div:nth-child(8) {  /* 회원로그인 안내 */
+     font-size:12px;
+     text-align:left;
+     margin-left:15px;
+     width:350px;
+     height:80px;
+   }
+   #section div:nth-child(10) {
+     font-size:12px;
+     margin-top:30px;
    }
    #section input[type=text] { /* input태그중에 type=text인거 */
      width:270px;
@@ -36,19 +67,46 @@
      width:150px;
      height:31px;
    }
+   #section #b1 {
+     background:black;
+     border:1px solid black;
+     color:white;
+   }
+   #section #b2 {
+     background:white;
+     border:1px solid black;
+     color:black;
+   }
+   #section #form {
+     width:370px;
+     height:420px;
+     border:1px solid #cccccc;
+     margin:auto;
+   }
 </style>
-<div id=image> <img src=../img/mem1.png> </div>
+ 
 <div id=section> <!--  아이디와 비밀번호를 입력 폼 -->
+ <div id=form> <!-- 사각형을 만들 div태그 시작 -->  
   <form method=post action=login_ok.jsp>
     <div> 로그인 </div>
     <div> </div>
     <div> 회원아이디 </div>
-    <div> <input type=text> </div>
+    <div> <input type=text name=userid> </div>
     <div> 비밀번호 </div>
-    <div> <input type=password> </div>
+    <div> 
+        <input type=password name=pwd> <br>
+        <%
+          if(request.getParameter("err") != null)
+          {
+        %>
+          <span id=error>아이디 혹은 비밀번호가 틀립니다.</span>
+        <%
+          }
+        %>
+    </div>
     <div> <input type=submit value=로그인> </div>
-    <div>
-      회원로그인 안내
+    <div> <p>
+      회원로그인 안내 <p>
 
       회원아이디 및 비밀번호가 기억 안나실 때는 아이디/비밀번호 찾기를 이용하십시오.
     아직 회원이 아니시라면 회원으로 가입 후 이용해 주십시오. 
@@ -61,6 +119,7 @@
      메인으로 돌아가기
     </div>
   </form>
+ </div> <!-- 사각형을 만들 div태그 종료 -->  
 </div>
 <%@ include file="../bottom.jsp" %>    
 

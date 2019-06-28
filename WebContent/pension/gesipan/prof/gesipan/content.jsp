@@ -94,7 +94,7 @@
        </tr>
        <tr height=300>
         <td width=70> 내용 </td>
-        <td colspan=5> <%=rs.getString("content") %> </td>
+        <td colspan=5> <%=rs.getString("content").replace("\r\n","<br>") %> </td>
        </tr>
        <tr height=30>
         <td width=70> 혈액형 </td>
@@ -110,9 +110,27 @@
         %>
         <td> <%=blo%></td>
         <td width=70> 취미 </td>
-        <td> <%=rs.getString("hobby") %> </td>
+        <%
+          String[] hob=rs.getString("hobby").split(",");
+          String hobby="";
+          for(int i=0;i<hob.length;i++) // 반복횟수
+        	 switch(hob[i])
+        	 {
+        	   case "1": hobby=hobby+"낚시 "; break;
+        	   case "2": hobby=hobby+"독서 "; break;
+        	   case "3": hobby=hobby+"게임 "; break;
+        	   case "4": hobby=hobby+"노래 "; break;
+        	   case "5": hobby=hobby+"영화 "; break;
+        	   case "6": hobby=hobby+"운동 "; break;
+        	 }
+        %>
+        <td> <%=hobby %> </td>
         <td width=70> 나이 </td>
-        <td> <%=rs.getString("birth") %> </td>
+        <%
+            int age=Integer.parseInt(rs.getString("birth"));
+            age=2019-age+1;
+        %>
+        <td> <%=age %>세 </td>
        </tr>
        <tr height=30>
         <td colspan=6 align=center>

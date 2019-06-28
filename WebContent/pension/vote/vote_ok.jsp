@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="java.text.SimpleDateFormat"%>
+<%@page import="java.sql.*" %>
+<%
+String aa="jdbc:mysql://localhost:3307/pension?useSSL=false";
+String bb="root";
+String cc="1234";    
+Connection conn=DriverManager.getConnection(aa,bb,cc);// db와의 접속이 만들어짐
+Statement stmt=conn.createStatement();  
+String anju=request.getParameter("anju");
+String sql="";
+switch(anju)
+{
+case "1": sql="update vote set a1=a1+1 where id=1"; break;
+case "2": sql="update vote set a2=a2+1 where id=1"; break;
+case "3": sql="update vote set a3=a3+1 where id=1"; break;
+case "4": sql="update vote set a4=a4+1 where id=1"; break;
+case "5": sql="update vote set a5=a5+1 where id=1"; break;
+case "6": sql="update vote set a6=a6+1 where id=1"; break;
+case "7": sql="update vote set a7=a7+1 where id=1"; break;
+}
+stmt.executeUpdate(sql);
+response.sendRedirect("vote_view.jsp");
+%>

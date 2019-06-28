@@ -70,6 +70,9 @@ align-items:center;
     display:flex;
     align-items:center;
   }
+   #link img:hover {
+    opacity:0.6;
+  }
  
   #header #menu li {
     list-style-type:none;
