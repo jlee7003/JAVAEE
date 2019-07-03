@@ -15,7 +15,7 @@ Statement stmt=conn.createStatement(); //stmt 라는 변수에는 서버의 정보 모두가 �
 //쿼리문 실행
 
 String id=request.getParameter("id");
-String b=request.getParameter("title");
+String b=request.getParameter("titl");
 String c=request.getParameter("content");
 
 String sql="update guest set title='"+b+"',content='"+c+"' where id="+id;

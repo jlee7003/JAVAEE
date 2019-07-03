@@ -1,0 +1,43 @@
+투표의 주제
+
+내가 좋아하는 안주는 ?
+1. 생선회
+2. 소곱창
+3. 제육두부김치
+4. 양꼬치
+5. 생선초밥
+6. 감자탕
+7. 족발
+
+테이블생성
+vote
+
+테이블 구조
+id int auto_increment primary key
+cla char(20) 
+a1 int default 0
+a2 int default 0
+a3 int default 0
+a4 int default 0
+a5 int default 0
+a6 int default 0
+a7 int default 0
+
+문서이름
+
+vote.jsp  선택클릭 => vote_ok.jsp 투표결과반영후 => vote_view.jsp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

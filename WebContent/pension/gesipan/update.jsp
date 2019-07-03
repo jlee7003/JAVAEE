@@ -10,15 +10,20 @@
   Connection conn = DriverManager.getConnection(aa,bb,cc);
   Statement stmt=conn.createStatement();
   
-  String sql="select * from gesipan";
+  // 수정하고자 하는 레코드의 id값 가져오기
+  String id=request.getParameter("id");
+  // 쿼리 작성
+  String sql="select * from gesipan where id="+id;
+  // ResultSet에 가져오기
   ResultSet rs=stmt.executeQuery(sql);
+  rs.next(); // 무조건!!!!!
 %>  
  
-<%@ include file="../top.jsp" %>  
+<%@ include file="../main/top.jsp" %>  
  <style>
   #section {
     width:1200px;
-    heigth:600px;
+    height:600px;
     margin:auto;
   }
   #section #left { /* 왼쪽 메뉴 나오는 부분 */
@@ -63,6 +68,32 @@
     color:black;
   }
  </style>
+ <script>
+   // 혈액형 4개의 radio중에 하나만 체크를 한다(DB에 있는 내용)
+   function blood_check()
+   {
+	   // DB에 있는 값 : 1=>A  , 2=>B , 3=>O , 4=>AB
+	   // DB에 있는 값 -1 을 해야 된다..
+	   // blood[n] => n: 0은 A , 1은 B , 2는 O , 3은 AB
+	   n=<%=rs.getInt("blood")%>;
+	   document.pkc.blood[n].checked=true;
+	   
+	   // DB에 있는 태어난해 => 2005 => option태그의 순서로 바꾸어야됨
+	   // 2020-태어난해 => index값하고 일치
+	   /*
+	   ch=2020-<%=rs.getString("birth")%>;
+	   document.pkc.birth.selectedIndex=ch;
+	   */
+	   document.pkc.birth.value=<%=rs.getString("birth")%>;
+	   
+	   // checkbox
+	   var hh="<%=rs.getString("hobby")%>"; 
+		  var hob=hh.split(",");  // hh문자열을 ,기호로 나누어서 배열로 준다..
+		  for(i=0;i<hob.length-1;i++)
+			 document.pkc.hobby[hob[i]].checked=true;
+   }
+ </script>
+ <body onload=blood_check()>
   <div id=section>
     <div id=left> <!-- 왼쪽 메뉴(공지사항,게시판,갤러리,QnA)  -->
       <ul>
@@ -74,17 +105,18 @@
       </ul>
     </div> 
     <div id=right>
-      <div id=gong> 게시판 </div>
-      <form method=post action=write_ok.jsp>
+      <div id=gong>게시판 </div>
+      <form name=pkc method=post action=update_ok.jsp> 
+        <input type=hidden name=id value=<%=id%>>
         <table width=800>
-         <caption> <h3> 글쓰기 </h3></caption>
+         <caption> <h3> 수정하기 </h3></caption>
          <tr>
           <td> 제 목 </td>
-          <td> <input type=text name=title> </td>
+          <td> <input type=text name=title value="<%=rs.getString("title")%>"> </td>
          </tr>
          <tr>
           <td> 작성자 </td>
-          <td> <input type=text name=name> </td>
+          <td> <%=rs.getString("name")%> </td>
          </tr>
          <tr>
           <td> 비밀번호 </td>
@@ -92,26 +124,28 @@
          </tr>
          <tr>
           <td> 내용 </td>
-          <td> <textarea cols=40 rows=6 name=content></textarea> </td>
+          <td>
+           <textarea cols=40 rows=6 name=content> <%=rs.getString("content")%></textarea> 
+          </td>
          </tr>
          <tr>
           <td> 혈액형 </td>
           <td> 
-            <input type=radio name=blood value=1> A형
-            <input type=radio name=blood value=2> B형
-            <input type=radio name=blood value=3> O형
-            <input type=radio name=blood value=4> AB형
+            <input type=radio name=blood value=0> A형
+            <input type=radio name=blood value=1> B형
+            <input type=radio name=blood value=2> O형
+            <input type=radio name=blood value=3> AB형
           </td>
          </tr>
          <tr>
           <td> 취미 </td>
           <td> 
-            <input type=checkbox name=hobby value=1> 낚시
-            <input type=checkbox name=hobby value=2> 독서
-            <input type=checkbox name=hobby value=3> 게임
-            <input type=checkbox name=hobby value=4> 노래
-            <input type=checkbox name=hobby value=5> 영화
-            <input type=checkbox name=hobby value=6> 운동
+            <input type=checkbox name=hobby value=0> 낚시
+            <input type=checkbox name=hobby value=1> 독서
+            <input type=checkbox name=hobby value=2> 게임
+            <input type=checkbox name=hobby value=3> 노래
+            <input type=checkbox name=hobby value=4> 영화
+            <input type=checkbox name=hobby value=5> 운동
           </td>
          </tr>
          <tr>
@@ -131,14 +165,17 @@
           </td>
          </tr>
          <tr>
-          <td colspan=2 align=center> <input type=submit value=저장하기> </td>
+          <td colspan=2 align=center> <input type=submit value=수정하기> </td>
          </tr>
         </table>
       </form>
     </div>
-
-<%@ include file="../bottom.jsp" %>
-
+</div>
+<%@ include file="../main/bottom.jsp" %>
+<%
+stmt.close();
+conn.close();
+%>
 
 
 

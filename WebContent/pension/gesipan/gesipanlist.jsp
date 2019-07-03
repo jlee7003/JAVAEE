@@ -168,7 +168,52 @@ background:darkgray;
 	height:30px;
 	border-bottom:1px solid #dddddd;
 }
+ #del_form {
+     position:absolute; 
+/*      절대좌표 */
+     left:930px;
+     top:870px;
+/*      레이어의 왼쪽, 상단으로부터의 길이 */
+     width:250px;
+     height:90px;
+     background:#eeeeee;
+     border-radius:5px;
+     border:1px solid darkgray;
+     visibility:hidden;
+     text-align:center;
+     display:flex;
+     justify-content:center;
+     align-items:center;
+/*      보이기속성 숨기기 */
+   }
+   
+  #del_form input[type=submit]{
+  margin-top:10px;
+  width:60px;
+  height:25px;  
+  border-radius:5px;
+  background-color:darkgray;
+  
+  }
+   #del_form input[type=button]{
+  margin-top:10px;
+  width:60px;
+  height:25px;  
+  border-radius:5px;
+  background-color:darkgray;
+  
+  }
 </style>
+<script>
+function del()
+{
+  document.all.del_form.style.visibility="visible"; //보이기 	
+}
+function imsi()
+{
+  document.all.del_form.style.visibility="hidden"; //보이기 	
+}
+</script>
 </head>
 <body>
 	<div id=section>
@@ -255,16 +300,23 @@ background:darkgray;
      </tr>
      <tr>
      <td colspan=2>
-     삭제
-    수정
+     <a href="javascript:del()">삭제</a>
+<!--      함수호출 <a href="javascript:함수명()">글자 </a>->이벤트를 발생시키지 못함-->
+<!--            <a href="#" onclick=함수명()">글자 </a> -->
+    <a href="update.jsp?id=<%=id%>">수정</a>
    <a href="gesipan.jsp">목록</a>
      </td>
      </tr>
    </table>
-		
-		</div>
+	</div>
 
 	</div>
+	 <div id=del_form>
+    <form method=post action="delete.jsp">
+    <input type=hidden name=id value=<%=id%>>
+      비밀번호 <input type=password name=pwd> <input  type=submit value=삭제> <input  type=button value=닫기 onclick=imsi()>
+    </form>
+  </div>
 </body>
 </html>
 

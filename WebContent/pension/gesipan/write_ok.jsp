@@ -30,7 +30,7 @@
     //hobby는 문자열배열이고 그 값을 hob에 줬으므로 hob을 이용
     
     for(int i=0;i<hobby.length;i++)
-    	hob=hob+hobby[i]+","; //
+    	hob=hob+hobby[i]+","; //배열값[]+, 나중에 split 할때 사용
  
    String sql="insert into gesipan(name,title,pwd,content,blood,hobby,birth,writeday) values('"+name+"','"+title+"','"+pwd+"','"+content+"',"+blood+",'"+hob+"','"+birth+"','"+writeday+"')";
 

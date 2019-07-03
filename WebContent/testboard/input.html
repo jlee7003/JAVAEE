@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form method=post action="input.jsp">
+이름<input type=text name=name><p>
+제목<input type=text name=title size=40><p>
+주소 <select name=juso>
+  <option value=0>선택</option>
+  <option value=1>경기도</option>
+  <option value=2>서울</option>
+  <option value=3>강원도</option>
+  <option value=4>전라도</option>
+  <option value=5>경상도</option>
+  <option value=6>충청도</option>
+  <option value=7>제주도</option>
+  <option value=8>해외</option>
+  </select>
+성별<input type=radio name=sex value=1>남자
+<input type=radio name=sex value=2>여자<p>
+이메일 <input type=text name=email>
+음식 <input type=checkbox name=food value=1>곱창
+<input type=checkbox name=food value=2>초밥
+<input type=checkbox name=food value=3>김치볶음밥
+<input type=checkbox name=food value=4>쌀국수
+<input type=checkbox name=food value=5>돼지국밥
+<input type=checkbox name=food value=6>선지해장국
+<input type=checkbox name=food value=7>추어탕
+<input type=checkbox name=food value=8>홍어회<p>
+
+내용<textarea cols=40 rows=5 name=content></textarea><p>
+  <input type=submit value=전송>
+</form>
+</body>
+</html>

@@ -1,14 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <%@page import="java.sql.*" %><!-- ì´ê±´ ë­˜ê¹Œ? -->
-<!--     ìŠ¤í¬ë¦½íŠ¸ ì˜ì—­ -->
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+
+<%@page import="java.sql.*" %>
 <%
-String aa="jdbc:mysql://localhost:3307/ee5?useSSL=false";
+String aa="jdbc:mysql://localhost:3306/pension?useSSL=false";
 String bb="root";
-String cc="1234";    
-Connection conn=DriverManager.getConnection(aa,bb,cc);// dvì™€ì˜ ì ‘ì†ì´ ë§Œë“¤ì–´ì§
-Statement stmt=conn.createStatement();
-request.setCharacterEncoding("utf-8");
+String cc="apmsetup";    
+Connection conn=DriverManager.getConnection(aa,bb,cc);// db¿ÍÀÇ Á¢¼ÓÀÌ ¸¸µé¾îÁü
+Statement stmt=conn.createStatement(); //stmt ¶ó´Â º¯¼ö¿¡´Â ¼­¹öÀÇ Á¤º¸ ¸ðµÎ°¡ ´ã°ÜÀÖ´Ù.
 
 String id=request.getParameter("id");
 
@@ -16,7 +15,7 @@ String sql="select * from guest where id="+id;
 
 ResultSet rs;
 rs=stmt.executeQuery(sql);
-//rsê°ì²´ì— ì €ìž¥í•˜ê³  ë‚˜ì„œ rs.next í•´ì£¼ëŠ” ê²ƒì„ ê¹Œë¨¹ì§€ ë§ê²ƒ!
+//rs°´Ã¼¿¡ ÀúÀåÇÏ°í ³ª¼­ rs.next ÇØÁÖ´Â °ÍÀ» ±î¸ÔÁö ¸»°Í!
 
 rs.next();
 
@@ -29,7 +28,32 @@ rs.next();
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+td{
+border: 1px solid black;
+}
+</style>
 <body>
+<form method=post action="update_ok.jsp">
+<table>
+<tr>
+<td>ÀÌ¸§</td>
+<td> <%=rs.getString("name")%></td>
+</tr>
+<tr>
+<td>Á¦¸ñ</td>
+<td><input type=text name=title size=40 value="<%=rs.getString("title")%>"></td>
+</tr>
+<tr>
+<td>³»¿ë</td>
+<td><textarea cols=40 rows=5 name=content> <%=rs.getString("content")%> </textarea></td>
+</tr>
+<tr>
+<td><input type=submit value=Àü¼Û></td>
+<td></td>
+</tr>
+</table>
+</form>
 
 </body>
 </html>

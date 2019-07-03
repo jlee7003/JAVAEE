@@ -21,7 +21,7 @@
  <style>
   #section {
     width:1200px;
-    heigth:600px;
+    height:600px;
     margin:auto;
   }
   #section #left { /* 왼쪽 메뉴 나오는 부분 */
@@ -102,10 +102,10 @@
             String blo="";
             switch(rs.getInt("blood")) // 1~4까지의 값
             {
-               case 1: blo="A형"; break;
-               case 2: blo="B형"; break;
-               case 3: blo="O형"; break;
-               case 4: blo="AB형"; break;
+               case 0: blo="A형"; break;
+               case 1: blo="B형"; break;
+               case 2: blo="O형"; break;
+               case 3: blo="AB형"; break;
             }
         %>
         <td> <%=blo%></td>
@@ -116,12 +116,12 @@
           for(int i=0;i<hob.length;i++) // 반복횟수
         	 switch(hob[i])
         	 {
-        	   case "1": hobby=hobby+"낚시 "; break;
-        	   case "2": hobby=hobby+"독서 "; break;
-        	   case "3": hobby=hobby+"게임 "; break;
-        	   case "4": hobby=hobby+"노래 "; break;
-        	   case "5": hobby=hobby+"영화 "; break;
-        	   case "6": hobby=hobby+"운동 "; break;
+        	   case "0": hobby=hobby+"낚시 "; break;
+        	   case "1": hobby=hobby+"독서 "; break;
+        	   case "2": hobby=hobby+"게임 "; break;
+        	   case "3": hobby=hobby+"노래 "; break;
+        	   case "4": hobby=hobby+"영화 "; break;
+        	   case "5": hobby=hobby+"운동 "; break;
         	 }
         %>
         <td> <%=hobby %> </td>
@@ -134,16 +134,41 @@
        </tr>
        <tr height=30>
         <td colspan=6 align=center>
-         수정
-         삭제
+         <a href="update.jsp?id=<%=id%>"> 수정 </a>
+         <a href="javascript:del()"> 삭제 </a>
          목록
         </td>
        </tr>
       </table>
     </div>
-
+  <div id=del_form> <!-- 삭제할때 사용자가 비밀번호를 입력하는 폼 -->
+    <form method=post action=delete.jsp>
+    <input type=hidden name=id value=<%=id%>>
+      비밀번호 <input type=password name=pwd> <input type=submit value=삭제>
+    </form>
+  </div>
+ <script>
+  function del()
+  {
+	  document.all.del_form.style.visibility="visible"; //보이기
+  }
+ </script>
+ <style>
+   #del_form {
+     position:absolute; /* 절대좌표 */
+     left:600px;
+     top:600px;   /* 레이어의 왼쪽,상단으로부터의 거리 */
+     width:200px;
+     height:50px;  /* 레이어의 가로,세로 길이 */
+     background:#eeeeee;
+     visibility:hidden;  /* 보이기속성 : 숨겨라 */
+   }
+ </style>
 <%@ include file="../bottom.jsp" %>
-
+<%
+stmt.close();
+conn.close();
+%>
 
 
 

@@ -18,7 +18,7 @@
  <style>
   #section {
     width:1200px;
-    heigth:600px;
+    height:600px;
     margin:auto;
   }
   #section #left { /* 왼쪽 메뉴 나오는 부분 */

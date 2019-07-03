@@ -23,10 +23,17 @@ rs=stmt.executeQuery(sql);
 <title>Insert title here</title>
 <style>
 table{
+background-image: url('img_lights.jpg');
 border:1px solid black;
 }
 td{
 border:1px solid black;
+}
+div{
+background-size: cover;
+background-image: url('img_lights.jpg');
+width:300px;
+height:300px;
 }
 </style>
 </head>
@@ -57,6 +64,7 @@ while(rs.next())
 <td><a href="delete.jsp">삭제</a></td>
 </tr>
 </table>
+<div> 라라</div>	
 </body>
 </html>
 <%

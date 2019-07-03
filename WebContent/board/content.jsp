@@ -51,7 +51,7 @@
        <tr>
        <td colspan=2>
        <a href="delete.jsp?id=<%=rs.getString("id")%>">삭제</a>
-       
+       <a href="update.jsp?id=<%=rs.getString("id")%>">수정</a>       
        </td>
        </tr>
      </table>
