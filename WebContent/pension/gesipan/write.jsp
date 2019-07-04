@@ -195,5 +195,9 @@ tr td:nth-child(2) {
 	</div>
 </body>
 </html>
+<%
+stmt.close();
+conn.close();
+%>
 
 <%@ include file="../main/bottom.jsp"%>

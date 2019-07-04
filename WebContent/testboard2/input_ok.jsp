@@ -8,16 +8,22 @@ String bb="root";
 String cc="1234";    
 Connection conn=DriverManager.getConnection(aa,bb,cc);
 Statement stmt=conn.createStatement();
-
 request.setCharacterEncoding("utf-8");
+
 String id=request.getParameter("id");
-String sql="delete from test_board where id="+id;
+
+String sql="insert into test_board(name,pwd,title,content,email,sex,food,juso,writeday) values('','','','','','','','','')";
+ResultSet rs=stmt.executeQuery(sql);
+%>
 
 
-stmt.executeUpdate(sql);
-response.sendRedirect("index.jsp");
-%>
-<%
-stmt.close();
-conn.close();
-%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

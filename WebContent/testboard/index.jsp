@@ -54,7 +54,7 @@ border:1px solid black;
 				
 				<tr>
 				<td><%=rs.getString("id") %></td>
-				<td><a href="content.jsp?id=<%=rs.getInt("id")%>"><%=rs.getString("title") %></a></td>
+				<td><a href="rnumadd.jsp?id=<%=rs.getInt("id")%>"><%=rs.getString("title") %></a></td>
 				<td><%=rs.getString("name") %></td>
 				<td><%=rs.getString("writeday") %></td>
 				<td><%=rs.getString("rnum") %></td>
@@ -66,3 +66,7 @@ border:1px solid black;
 			</table>
 </body>
 </html>
+<%
+stmt.close();
+conn.close();
+%>

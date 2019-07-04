@@ -80,10 +80,8 @@
 	   
 	   // DB에 있는 태어난해 => 2005 => option태그의 순서로 바꾸어야됨
 	   // 2020-태어난해 => index값하고 일치
-	   /*
 	   ch=2020-<%=rs.getString("birth")%>;
 	   document.pkc.birth.selectedIndex=ch;
-	   */
 	   document.pkc.birth.value=<%=rs.getString("birth")%>;
 	   
 	   // checkbox

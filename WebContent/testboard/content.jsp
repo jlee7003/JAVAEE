@@ -80,20 +80,24 @@ String juso="";
 <tr>
 <td>음식</td>
 <%
-            String foods="";
-            switch(rs.getInt("food")) // 1~4까지의 값
+String[] foodd=rs.getString("food").split(",");       
+String fod="";
+for(int i=0; i<foodd.length; i++)
+{
+            switch(foodd[i]) // 1~4까지의 값
             {
-               case 1: foods="곱창"; break;
-               case 2: foods="초밥"; break;
-               case 3: foods="김치볶음밥"; break;
-               case 4: foods="쌀국수"; break;
-               case 5: foods="돼지국밥"; break;
-               case 6: foods="선지해장국"; break;
-               case 7: foods="추어탕"; break;
-               case 8: foods="홍어회"; break;
+               case "1": fod=fod+"곱창"; break;
+               case "2": fod=fod+"초밥"; break;
+               case "3": fod=fod+"김치볶음밥"; break;
+               case "4": fod=fod+"쌀국수"; break;
+               case "5": fod=fod+"돼지국밥"; break;
+               case "6": fod=fod+"선지해장국"; break;
+               case "7": fod=fod+"추어탕"; break;
+               case "8": fod=fod+"홍어회"; break;
             }
+}
                %>
-<td><%=foods%></td>
+<td><%=fod%></td>
 </tr>
 <tr>
 <td>작성일</td>
@@ -119,3 +123,7 @@ String juso="";
 </table>
 </body>
 </html>
+<%
+stmt.close();
+conn.close();
+%>

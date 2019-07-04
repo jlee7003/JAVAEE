@@ -27,12 +27,32 @@ rs.next();
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-<form method=post action="update_ok.jsp">
+<script>
+function check()
+{
+n=<%=rs.getInt("sex")%>-1;
+
+document.leh.sex[n].checked=true;
+
+
+
+js=<%=rs.getString("juso")%>+1;
+document.leh.juso.selectdIndex=js;
+document.leh.juso.value=<%=rs.getString("juso")%>
+
+var jj="<%=rs.getString("food")%>";
+ var ju=jj.split(",");
+ for(i=0;i<ju.length-1;i++)
+ document.leh.food[ju[i]].checked=true;
+ 
+}
+</script>
+<body onload=check()>
+<form method=post action="update_ok.jsp" name=leh>
 <table>
 <tr>
 
-<td>이름: <input type=text disabled name=name value="<%=rs.getString("name")%>"> <td>
+<td>이름: <%=rs.getString("food")%><input type=text disabled name=name value="<%=rs.getString("name")%>"> <td>
 </tr>
 <tr>
 <td>제목: <input type=text  name=title value="<%=rs.getString("title")%>"><td>
@@ -55,7 +75,8 @@ rs.next();
 <input type=radio name=sex  value=2>여자 <td>
 </tr>
 <tr>
-<td>음식:<input type=checkbox name=food value=1>곱창
+<td>음식:
+<input type=checkbox name=food value=1>곱창
 <input type=checkbox name=food value=2>초밥
 <input type=checkbox name=food value=3>김치볶음밥
 <input type=checkbox name=food value=4>쌀국수
@@ -79,3 +100,7 @@ rs.next();
 </form>
 </body>
 </html>
+<%
+stmt.close();
+conn.close();
+%>
