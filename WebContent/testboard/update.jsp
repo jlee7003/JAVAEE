@@ -93,7 +93,9 @@ var jj="<%=rs.getString("food")%>";
 <td>내용: <textarea name=content cols=40 rows=5> <%=rs.getString("content")%> </textarea><td>
 </tr>
 <tr>
-<td><input type=submit value=전송><input type=hidden name=id value="<%=id%>">
+<td><input type=submit value=전송>
+<input type=hidden name=id value="<%=id%>">
+<!-- 아이디 값을 전송해주기 위해 숨겨놓음 -->
 </td>
 </tr>
 </table>

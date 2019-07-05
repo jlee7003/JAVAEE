@@ -48,10 +48,10 @@ border:1px solid black;
 String juso="";
             switch(rs.getInt("juso")) // 1~4까지의 값
             {
-               case 1: juso="경기도"; break;
-               case 2: juso="서울"; break;
+               case 1: juso="서울"; break;
+               case 2: juso="경기도"; break;
                case 3: juso="강원도"; break;
-               case 4: juso="전라도"; break;
+               case 4: juso="충청도"; break;
                case 5: juso="경상도"; break;
                case 6: juso="충청도"; break;
                case 7: juso="제주도"; break;
@@ -86,11 +86,11 @@ for(int i=0; i<foodd.length; i++)
 {
             switch(foodd[i]) // 1~4까지의 값
             {
-               case "1": fod=fod+"곱창"; break;
-               case "2": fod=fod+"초밥"; break;
-               case "3": fod=fod+"김치볶음밥"; break;
-               case "4": fod=fod+"쌀국수"; break;
-               case "5": fod=fod+"돼지국밥"; break;
+               case "1": fod=fod+"곱창 "; break;
+               case "2": fod=fod+"초밥 "; break;
+               case "3": fod=fod+"김치볶음밥 "; break;
+               case "4": fod=fod+"쌀국수 "; break;
+               case "5": fod=fod+"돼지국밥 "; break;
                case "6": fod=fod+"선지해장국"; break;
                case "7": fod=fod+"추어탕"; break;
                case "8": fod=fod+"홍어회"; break;

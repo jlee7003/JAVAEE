@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ include file="login.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,7 @@ td{
 border: 1px solid black;
 }
 table{
+margin-top:50px;
 border: 1px solid black;
 }
 tr td:nth-child(1){
@@ -21,7 +23,7 @@ width:80px;
 </style>
 <body>
 <form method=post action="input_ok.jsp">
-<table width=600>
+<table width=600 align=center>
 
 <tr>
 <td>이름</td>
@@ -33,15 +35,15 @@ width:80px;
 </tr>
 <tr>
 <td>제목</td>
-<td><input type=text name=name></td>
+<td><input type=text name=title></td>
 </tr>
 <tr>
 <td>내용</td>
-<td><textarea cols=60 rows=20></textarea></td>
+<td><textarea name=content cols=60 rows=20></textarea></td>
 </tr>
 <tr>
 <td>이메일</td>
-<td><input type=text name=name></td>
+<td><input type=text name=email></td>
 </tr>
 <tr>
 <td>성별</td>

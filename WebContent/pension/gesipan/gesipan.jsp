@@ -189,9 +189,8 @@ background:darkgray;
 					<td><%=rs.getString("name")%></td>
 					<td><%=rs.getString("writeday")%></td>
 					<td><%=rs.getString("rnum")%></td>
-					<%
-							if (session.getAttribute("userid") != null) //로그인이 안되있을 경우 진입이 불가한 오류 해결 비교를 아예 못하기에 오류가 발생하기에 비교해줌 
-								if (session.getAttribute("userid").equals("admin")) {//-> 2중 if문의 이유 null이 아니고 admin일 경우 삭제 링크가 뜨게 만듬
+					<%if (session.getAttribute("userid") != null) //로그인이 안되있을 경우 진입이 불가한 오류 해결 비교를 아예 못하기에 오류가 발생하기에 비교해줌 
+					 if (session.getAttribute("userid").equals("admin")) {//-> 2중 if문의 이유 null이 아니고 admin일 경우 삭제 링크가 뜨게 만듬
 						%> <td><a href="delete.jsp?id=<%=rs.getString("id")%>">삭제</a></td>
 						<%
 							}

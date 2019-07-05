@@ -10,7 +10,7 @@ Connection conn=DriverManager.getConnection(aa,bb,cc);
 Statement stmt=conn.createStatement();
 String id=request.getParameter("id");
 
-String sql="select * from test_board";
+String sql="select * from test_board2";
 ResultSet rs=stmt.executeQuery(sql);
 
 

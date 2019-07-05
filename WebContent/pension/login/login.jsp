@@ -143,7 +143,7 @@
 /* 	//get 방식으로 변수값을 보낼 수가 있음 */
 }
 </style>
-<form method=post action=login_ok.jsp>
+<form method=post action=login_oksession.jsp>
 	<div id=Logmain>
 
 		<div id=logbox>
