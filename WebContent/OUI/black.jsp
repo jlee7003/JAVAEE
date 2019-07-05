@@ -60,7 +60,7 @@
     </script>
 </head>
 <body>
-    
+    <div id="mask"></div>
     <div class="window">
         <input type="button" href="#" class="close" value="aaaaaaaaaaa(.window .close)"/>
     </div>
