@@ -51,6 +51,7 @@ while(rs.next())
 %>
 <tr>
 <td><%=rs.getString("id") %></td>
+    <!-- sql명령어에서 id값을 가지고옴:rs.getString("id")->
 <td><%=rs.getString("name") %></td>
 <td> <a href="content.jsp?id=<%=rs.getString("id")%>"><%=rs.getString("title") %></a></td>
 <!-- content 링크로 갈경우 id의 값을 가져가야 하므로 ?id뒤에 sql콘솔창에서 나타난 id값(get.String("id")값을 가지고 온다. -->
