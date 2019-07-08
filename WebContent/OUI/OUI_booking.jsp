@@ -34,7 +34,7 @@ function active1()
     }
 
     $(document).ready(function(){
-        //검은 막 띄우기
+        //검은 막 띄우기git
         $('.openMask').click(function(e){
             e.preventDefault();
             wrapWindowByMask();
