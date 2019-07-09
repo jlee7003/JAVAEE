@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#jumbotron {
+	margin: auto;
+	text-align: center;
+	margin-bottom: 100px;
+	font-size: 1.75rem;
+	font-weight: normal;
+}
+/* ---------------------------bookbody----------------------------------------- */
+#jumbotron b {
+	font-weight: 900;
+}
+
+#top {
+	border-bottom: 1px solid black;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+#bottom {
+	margin-top: 0.625rem;
+	font-size: 0.875rem;
+	color: #ea5330;
+	text-decoration-line: underline;
+}
+
+a{
+text-decoration:none;	
+color: #ea5330;
+	
+}
+
+
+.book_body {
+	margin: auto;
+	width: auto;
+	height: auto;
+}
+
+.center {
+	margin: auto;
+	width: 710px;
+	height: 150px;
+	display: flex;
+}
+
+.center #left {
+	width: 355px;
+	height: 200px;
+	padding: 10px;
+	text-align: left;
+}
+
+.center #right {
+	padding: 10px;
+	margin-left: 80px;
+	width: 355px;
+	text-align: left;
+	height: 200px;
+}
+
+#book_button {
+	display: flex;
+	justify-content: center;
+}
+
+#book_button input[type=submit] {
+	text-align: center;
+	line-height: 1;
+	border-color: #b51742;
+	border-radius: 2rem;
+	border: none;
+	outline: none;
+	font-size: 1.25rem;
+	width: 220px;
+	height: 46px;
+	color: #fff;
+	background-color: #b51742;
+}
+
+#book_button input[type=submit]:hover
+{
+	background-color:#7f102e;
+}
+/* -------------------------------pop---------------------------------- */
+#pop {
+	position: absolute;
+	border: 1px solid white;
+	left: 300px;
+	top: 300px;
+	width:450px;
+	height:290px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	text-align:center;
+	background:white;
+	z-index:8000; 
+	visibility:hidden;
+    border-radius: .625rem;
+}
+#pop .x{
+	text-align:right;
+		color: #ea5330;
+		margin-right:20px;
+}dis
+
+input[type=button]{
+	
+	
+}
+/* -------------------------------------------------------------------- */
+#mask {  
+    position:absolute;  
+      z-index:7000;  
+      background-color:#000;  
+      display:none;  
+      left:0;
+      top:0;
+    }
+    .window{
+      display: none;
+      position:absolute;  
+      left:100px;
+      top:100px;
+      z-index:10000;
+    }
