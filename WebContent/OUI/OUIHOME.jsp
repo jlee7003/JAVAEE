@@ -19,6 +19,27 @@ function active1() {
 	
 	
 }
+$(function()   
+		{
+	    $("#IHL").hide();
+		$("#IHL1").hide();
+		$("#IHL2").hide();
+		$("#IHL3").hide();
+		$("#order1").hide();
+		$("#order2").hide();
+			$("#bottom1").click(function()
+			{
+	           $("#order1").toggle(); // slow, fast, 1/1000초
+	           $("#order2").toggle();
+			});
+			$("#opacity").click(function()
+					{
+				  $("#IHL").show();
+					$("#IHL1").show();
+					
+					});
+		});
+
 	function wrapWindowByMask() {
 		document.all.mask.style.visibility="visible";
 		document.all.pop.style.visibility="visible";
@@ -51,32 +72,11 @@ function active1() {
 		//검은 막을 눌렀을 때
 		$('#mask').click(function() {
 			$(this).hide();
-			$('.window').hide();
+			$('.windo').hide();
 		});
 	});
 	
-	function close_pop()
-	{
-		document.getElementById("pop").style.visibility = "hidden";
-		document.getElementById("mask").style.visibility = "hidden";
-	}
-	function index()
-	{
-		document.getElementById("pop").style.visibility = "hidden";
 
-	
-	}
-	function IHL()
-	{
-		document.getElementById("IHL").style.display = "block";
-		document.getElementById("IHL1").style.display = "block";
-
-	}
-	function ordername()
-	{
-		document.getElementById("order1").style.display = "block";
-		document.getElementById("order2").style.display = "block";
-	}
 	</script>
 </head>
 <body id=body>
@@ -106,13 +106,13 @@ function active1() {
 				<div id=right>
 					<div id=top><input id=ref type=text onFocus="javascript:this.value=''" onblur="javascript:this.value='Last name used for the order'" value="Last name used for the order"></div>
 					<div id=IHL1>Please enter a last name for bookings made on OUI.sncf or on your mobile.</div>
-					<div id=bottom onclick=ordername()>I don’t have the order name</div>
+					<div id=bottom1 >I don’t have the order name</div>
 					<div id=order2><input type=text value="Date of departure"></div>
 					<div id=IHL2>Please fill in a valid date of departure.</div>
 				</div>
 			</div>
 			<div id=book_button>
-				<input id=opacity type=button onclick=IHL() value="Consult my order">
+				<input id=opacity type=button value="Consult my order">
 <!-- 				submit을 사용하면 페이지에 전송이 되므로 바로 사라짐 -->
 					
 			</div>

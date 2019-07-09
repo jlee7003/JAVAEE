@@ -29,6 +29,12 @@ html, body {
    color: #ea5330;
    text-decoration-line: underline;
 }
+#bottom1 {
+   margin-top: 0.625rem;
+   font-size: 0.875rem;
+   color: #ea5330;
+   text-decoration-line: underline;
+}
 
 a{
 text-decoration:none;   
@@ -78,7 +84,7 @@ color: #ea5330;
 	   border-bottom: 1px solid black;
    font-size: 1rem;
    font-weight: 400;
-   display:none;
+ 
 	
 }
 #order2{
@@ -86,7 +92,7 @@ color: #ea5330;
 	   border-bottom: 1px solid black;
    font-size: 1rem;
    font-weight: 400;
-   display:none;
+  
 	
 }
 input[type=button] {
@@ -110,23 +116,23 @@ input[type=button] {
 #IHL{
 	color:red;
 	border-top:2px solid red;
-	display:none;
+	
 	
 }
 #IHL1{
 	color:red;
 	border-top:2px solid red;
-	display:none;
+
 }
 #IHL2{
 	color:red;
 	border-top:2px solid red;
-	display:none;
+	
 }
 #IHL3{
 	color:red;
 	border-top:2px solid red;
-	display:none;
+	
 }
 input[type=text]
 {

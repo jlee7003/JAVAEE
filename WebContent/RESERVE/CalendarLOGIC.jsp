@@ -26,8 +26,9 @@ color:orange;
 <%
   LocalDate today=LocalDate.of(2019,7,1);  //LocalDate.of(2019,9,1);//LocalDate.now(); 현재날짜
   int yoil=today.getDayOfWeek().getValue();// 요일의 값 1~7(일요일이 7),getValue->int 값으로 변환
-  if(yoil==7) //요일이 일요일이라면 7이 아니라 0으로 변경
+  if(yoil==7) //요일이 일요일이라면 7이 아니라 0으로 변경 월1 화2 수3 목4 금5 토6 일7
 	  yoil=0;
+  //709. 특정 달의 시작 요일을 알아야함 
  // out.print(yoil+"<br>");//그 일의 요일 표시
   boolean leap=today.isLeapYear();//윤년인지 아닌지(2/29)
  // out.print(leap+"<br>");
