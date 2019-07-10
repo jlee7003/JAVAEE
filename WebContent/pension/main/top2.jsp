@@ -270,7 +270,7 @@ height:200px;
         <li> 객실안내 </li>
         <li> 부대시설 </li>
         <li> <a href="../notice/noticelist.jsp">커뮤니티</a> </li>
-        <li> 예약하기 </li>
+        <li><a href="../RESERVE/reserve.jsp">예약하기</a> </li>
       </ul>
     </div>
  
