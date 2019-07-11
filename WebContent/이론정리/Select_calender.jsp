@@ -1,39 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@page import="java.time.LocalDate"%>
-<%@ include file="../main/top2.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
 </head>
-<style>
-#section{
-width:100%;
-height:550px;
-margin:auto;
-}
-
-table{
-margin-top:25px;
-border-radius:5px;
-}
-
-caption{
-font-size:20px;
-}
-</style>
 <script>
 	function move_cal() {//다른년도와 다른월의 달력을 보여주기
 		//년도, 월을 가지고 문서를 호출
-		var y=document.all.year.value;
-	    var m=document.all.month.value;
-     location="reserve.jsp?yy="+y+"&mm="+m;
+		var y=document.all.year.value; //document.all에 있는 아이디가 year인 value를 변수 y에 저장
+	    var m=document.all.month.value;//document.all에 있는 아이디가 month인 value를 변수 y에 저장
+     location="cal4.jsp?yy="+y+"&mm="+m; // 링크에 다가 ?변수=값 을 입력함으로써 변수 선언이 가능함
 	}
 </script>
 <body>
-<div id=section align=center>
 	<%
 		// cal4.jsp
 		// LocalDate.now(); // 현재시간 기준
@@ -63,16 +45,16 @@ font-size:20px;
 		//int b=6;
 		//out.print(a/b);
 	%>
-	<table width=80% height=500 border=1 cellspacing=0>
+	<table width=400 border=1 cellspacing=0>
 		<caption>
 			<%
 				if (m != 1) {
 			%>
-			<a href="reserve.jsp?yy=<%=y%>&mm=<%=m - 1%>"> 이전달 </a>
+			<a href="cal4.jsp?yy=<%=y%>&mm=<%=m - 1%>"> 이전달 </a>
 			<%
 				} else {
 			%>
-			<a href="reserve.jsp?yy=<%=y - 1%>&mm=<%=12%>"> 이전달 </a>
+			<a href="cal4.jsp?yy=<%=y - 1%>&mm=<%=12%>"> 이전달 </a>
 			<%
 				}
 			%>
@@ -117,16 +99,16 @@ font-size:20px;
 			<%
 				if (m != 12) {
 			%>
-			<a href="reserve.jsp?yy=<%=y%>&mm=<%=m + 1%>"> 다음달 </a>
+			<a href="cal4.jsp?yy=<%=y%>&mm=<%=m + 1%>"> 다음달 </a>
 			<%
 				} else {
 			%>
-			<a href="reserve.jsp?yy=<%=y + 1%>&mm=<%=1%>"> 다음달 </a>
+			<a href="cal4.jsp?yy=<%=y + 1%>&mm=<%=1%>"> 다음달 </a>
 			<%
 				}
 			%>
 		</caption>
-		<tr align=center height=50px>
+		<tr align=center>
 			<td>일</td>
 			<td>월</td>
 			<td>화</td>
@@ -153,10 +135,7 @@ font-size:20px;
 				} else // 날짜를 출력할 경우라면
 						{
 			%>
-			<td valign=top align=left><!-- 달력 날짜---------------------------- -->
-			<span> <%=day%></span>
-			<p align=center><a href="input.jsp?bang=ROOM1&y=<%=y%>&m=<%=m%>&d=<%=day%>"> ROOM1 </a> </p>
-			 </td> <!-- 날짜 나타나는곳 -->
+			<td><%=day%></td>
 			<%
 				day = day + 1;
 						}
@@ -169,7 +148,3 @@ font-size:20px;
 		%>
 
 	</table>
-	</div>
-	</body>
-</html> 
-	<%@ include file="../main/bottom.jsp"%>

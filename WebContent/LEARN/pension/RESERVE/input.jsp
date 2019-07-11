@@ -22,6 +22,8 @@
 	//DB에 저장된 날짜 형식은 -> yyyy-MM-dd(2019-07-10)
 	String date=y+"-"+m+"-"+d;
 	//out.print(date);
+	//아이디 예약자이름 전화번호
+	//예약방이름 입실 indate outdate writeday
 %>
 <!DOCTYPE html>
 <html>
@@ -35,6 +37,12 @@
 	
 </script>
 <div id=section>
+<form method=post action=input_ok.jsp> 
+<!-- 값을 보내기 위해 히든으로 숨겨서 form에 넣어줌 input 태그 안에 있어야 값을 넘겨줄수 있다. -->
+<input type=hidden name=bang value="<%=bang%>"> 
+<input type=hidden name=y value="<%=y%>">
+<input type=hidden name=m value="<%=m%>">
+<input type=hidden name=d value="<%=d%>">
  <table width=700 align=center>
  <tr>
  <td>예약방</td>
@@ -50,7 +58,7 @@
 </tr>
  <tr>
  <td>입실일</td>
-  <td></td>
+  <td><%=y%>-<%=m%>-<%=d%></td>
 </tr>
  <tr>
  <td>숙박일수</td>
@@ -63,7 +71,13 @@
   </select>
   </td>
 </tr>
+<tr>
+<td>
+<input type=submit value=예약> 
+</td>
+</tr>
  </table>
+ </form>
 </div>
 </html>
 <%@ include file="../main/bottom.jsp"%>

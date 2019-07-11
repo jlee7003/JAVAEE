@@ -1,25 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@page import="java.time.LocalDate" %>    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Insert title here</title>
-</head>
-<script>
-<script>
-function chageLangSelect(){
-    var langSelect = document.getElementById("id-lang");
-     
-    // select element에서 선택된 option의 value가 저장된다.
-    var selectValue = langSelect.options[langSelect.selectedIndex].value;
- 
-    // select element에서 선택된 option의 text가 저장된다.
-    var selectText = langSelect.options[langSelect.selectedIndex].text;
-}
-</script>
-<body>
+<%@ include file="../top.jsp" %> 
+<style>
+ #section {
+   width:1200px;
+   height:550px;
+   margin:auto;
+ }
+</style> 
+ <div id=section>
 <%  // cal4.jsp
                  // LocalDate.now(); // 현재시간 기준
    int y,m; // 년,월저장할 변수
@@ -34,21 +24,6 @@ function chageLangSelect(){
 	  y=Integer.parseInt(request.getParameter("yy"));
 	  m=Integer.parseInt(request.getParameter("mm"));
    }
-   
-   // 0월이 들어올때
-   if(m==0)  // 2019년 1월에서 클릭하면  2019, 0
-   {
-	   y=y-1;
-	   m=12;    // 2018,12
-   }
-   
-   // 13월이 들어올때
-   if(m==13)  // 2019년 12월에서 다음달 2019, 13
-   {
-	   y=y+1;
-	   m=1;      // 2020, 1
-   }
-   
    LocalDate today=LocalDate.of(y,m,1); // 괄호내에있는 년월일
    int yoil=today.getDayOfWeek().getValue(); // 1일의 요일
    if(yoil==7) 
@@ -63,43 +38,81 @@ function chageLangSelect(){
    //double a=100; // double과 int로 바꾸어서 출력을 확인해보세요
    //int b=6;
    //out.print(a/b);
- 
-   
+
 %>
- <table width=400 border=1 cellspacing=0>
+ <script>
+  function move_cal()
+  { // 다른년도와 다른월의 달력을 보여주기
+	var y=document.all.sel_y.value; // document.form.select이름.value; => 폼태그x=>id,class를 이용
+    var m=document.all.sel_m.value;
+	// 년도, 월을가지고 문서를 호출
+	location="reserve.jsp?yy="+y+"&mm="+m;
+	         // cal4.jsp?yy=2020&mm=8
+  }
+ </script>
+ <table width=1000 height=500 align=center border=1 cellspacing=0>
   <caption>
-  <select id="id-lang" name="lang" onchange="chageLangSelect(this)">
-    
-    <%
-    int aaa=0;
-    for(int a=1920;a<2100;a++)
-    {
+    <% 
+      if(m!=1)
+      {
     %>
-  <option value=<%=a%>><%=a%></option>
-  <%
-   }
-  %>
-   </select>
-        <select name=month onchange=changemonth()>
+     <a href="reserve.jsp?yy=<%=y%>&mm=<%=m-1%>"> 이전달 </a>
     <%
-    int sss=0;
-    for(int s=1;s<=12;s++)
-    {
+      }
+      else
+      {
     %>
-  <option value=<%=s%>><%=s%></option>
-  <%
-  sss=s;
-    }
-     %>
-     </select>
+     <a href="reserve.jsp?yy=<%=y-1%>&mm=<%=12%>"> 이전달 </a>
     <%
-    y=
-    m=sss;
+      }
     %>
-     <%=y%>년 <%=m%>월
-    
+      <select onchange=move_cal() id=sel_y>
+         <%
+          String sel1="";
+          for(int i=y+3;i>=y-3;i--) // 2019라면 2022~2016
+          {
+        	if(i==y)
+        		sel1="selected";
+        	else
+        		sel1="";
+         %>
+          <option value=<%=i%> <%=sel1%>> <%=i%> </option>
+         <%
+          }
+         %>
+         
+      </select>
+      <select onchange=move_cal() id=sel_m>
+         <%
+          String sel2="";
+          for(int i=1;i<=12;i++)
+          {
+        	if(i==m)
+        		sel2="selected";
+        	else
+        		sel2="";
+         %>
+          <option value=<%=i%> <%=sel2%>> <%=i%> </option>
+         <%
+          }
+         %>
+      </select>
+    <%
+      if(m!=12)
+      {
+    %>
+     <a href="reserve.jsp?yy=<%=y%>&mm=<%=m+1%>"> 다음달 </a> 
+    <%
+      }
+      else
+      {
+    %>
+     <a href="reserve.jsp?yy=<%=y+1%>&mm=<%=1%>"> 다음달 </a> 
+    <%
+      }
+    %>
   </caption>
-  <tr align=center>
+  <tr align=center height=50px>
     <td> 일 </td>
     <td> 월 </td>
     <td> 화 </td>
@@ -126,7 +139,10 @@ function chageLangSelect(){
        else  // 날짜를 출력할 경우라면
        {
     %>
-        <td> <%=day%> </td>
+        <td valign=top align=left> 
+          <span><%=day%></span> 
+           <p align=center> <a href="input.jsp?bang=chan&y=<%=y%>&m=<%=m%>&d=<%=day%>"> 차니1호 </a> </p> 
+        </td> <!-- 날짜 나타나는 td -->
     <%
           day=day+1; 
        }
@@ -140,8 +156,8 @@ function chageLangSelect(){
   
  </table>
 
-
-
+</div>
+<%@ include file="../bottom.jsp" %> 
 
 
 
