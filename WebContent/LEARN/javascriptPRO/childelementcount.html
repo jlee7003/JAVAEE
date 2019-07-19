@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <script>
+    function child_count()
+	{
+      alert(document.all.test.childElementCount);
+	}
+  </script>
+ </head>
+ <body>
+    <div id=test onclick=child_count()>
+      <div> 하하하 </div>
+	  <div> 하하하 </div>
+	  <div> 하하하 </div>
+	</div>
+ </body>
+</html>

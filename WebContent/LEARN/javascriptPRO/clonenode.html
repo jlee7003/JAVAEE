@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style>
+    #clonetest {
+       margin: 1%;
+       width:36px;
+       height: 36px;
+       background: #000;
+	} 
+  </style>
+  <script>
+     function imsi()
+	 {   
+		var test=document.getElementById("clonetest");
+        var t1=test.cloneNode(true);
+		body.appendChild(t1);
+		body.appendChild("<b>안녕</b>");
+	 }
+  </script>
+ </head>
+ <body><button onclick=imsi()>하하</button>
+    <div id=clonetest></div>
+ </body>
+</html>

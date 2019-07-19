@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <title>0627-setInterval_01.html</title>
+  <style>
+   #pkc{
+      position:relative;
+	  width:520px;
+	  height:30px;
+	  background:yellow;
+   }
+   #down {
+      position:absolute;
+      left:60px;
+	  top:5px;
+      color:yellow;
+	  z-index:10;
+   }
+   #over {
+     position:absolute;
+	 left:0px;
+	 top:0px;
+	 width:100px;
+	 height:30px;
+	 background:black;
+	 z-index:1;
+ 
+   }
+  </style>
+  <script>
+   var leftNum = 0;
+   function move_right()
+   {
+      leftNum++;
+      over.style.left=leftNum+"px" ;
+	  if(leftNum>=420)
+	  {
+	    clearInterval(ss);
+ 	    ss=setInterval(move_left,10);
+	  }
+   }
+   function move_left()
+   {
+      leftNum--;
+	  over.style.left=leftNum+"px";
+	  if(leftNum == 0)
+	  {
+	    clearInterval(ss);
+ 	    ss=setInterval(move_right,10);
+	  }
+   }
+
+   var ss=setInterval(move_right,10);
+   
+   
+  </script>
+ </head>
+ <body>
+  <div id=pkc>
+    <div id=down> 학교종이 땡땡땡 어서모이자 선생님이 우리를 기다리신다. </div>
+    <div id=over>
+    </div>
+  </div>
+ </body>
+</html> 

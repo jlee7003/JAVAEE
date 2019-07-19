@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style>
+    #main {
+      width:220px;
+	  height:30px;
+	  font-size:30px;
+	  overflow:hidden;
+	  position:relative;
+	  background:black;
+	  color:yellow;
+	}
+	#sub {
+      position:absolute;
+	  top:0px;
+	  width:220px;
+	  height:300px;
+	}
+  </style>
+  <script>
+    var h=0;
+ 
+    function move()
+	{   
+	   h=h-1;
+       document.all.sub.style.marginTop=h+"px";
+	   
+	   if(h<=-300)
+ 	   { 
+	     document.all.sub.style.marginTop="0px";
+         h=0;
+ 	   }
+
+	   setTimeout(move,30);
+	}
+  </script>
+ </head>
+ <body onload=move()> 
+  <div id=main>
+    <div id=sub>
+	 <div> &nbsp; </div>
+     <div> 짜장면 : 4,000원 </div>
+	 <div> 짬  뽕 : 6,000원 </div>
+     <div> 탕수육 : 9,000원 </div>
+	 <div> 라조기 : 8,000원 </div>
+	 <div> 팔보채 : 7,000원 </div>
+	 <div> 유린기 : 9,000원 </div>
+	 <div> 전가복 : 9,000원 </div>
+	 <div> 돈까스 : 7,000원 </div>
+	</div>
+  </div>
+	 
+ </body>
+</html>

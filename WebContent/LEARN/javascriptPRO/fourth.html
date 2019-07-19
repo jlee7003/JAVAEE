@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style> /* fourth.html */
+ 
+  </style>
+  <script>
+    var chk=0;
+    function change()
+	{
+      if(chk%2 == 0)
+  	  {
+		  //for(i=0;i<4;i++)
+		  //  document.all.pkc[i].src="img/"+(i+5)+".jpg";
+			// 5.jpg ~ 8.jpg 
+          document.all.pkc[0].src="img/5.jpg";
+		  document.all.pkc[1].src="img/6.jpg";
+		  document.all.pkc[2].src="img/7.jpg";
+		  document.all.pkc[3].src="img/8.jpg";
+	  }
+	  else
+	  {
+           //for(i=0;i<4;i++)
+		   // document.all.pkc[i].src="img/"+(i+1)+".jpg";
+			// 1.jpg ~ 4.jpg 
+          document.all.pkc[0].src="img/1.jpg";
+		  document.all.pkc[1].src="img/2.jpg";
+		  document.all.pkc[2].src="img/3.jpg";
+		  document.all.pkc[3].src="img/4.jpg"; 
+	  }
+      
+	  chk++;
+	}
+	setInterval(change,500);
+  </script>
+ </head>
+ <body>
+    <table>
+	 <tr>
+       <td> <img id=pkc src="img/1.jpg" width="200"> </td>
+	   <td> <img id=pkc src="img/2.jpg" width="200"> </td>
+	   <td> <img id=pkc src="img/3.jpg" width="200"> </td>
+	   <td> <img id=pkc src="img/4.jpg" width="200"> </td>
+	 </tr>
+	</table>
+ </body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style> /* fifth2.html */
+   body { margin:0 }
+   #aa1 {
+     width:1000px;
+	 height:400px;
+	 background:yellow;
+	 margin:auto;
+   }
+   #aa2 {
+     width:1000px;
+	 height:500px;
+	 background:#abcdef;
+	 margin:auto;
+   }
+   #aa3 {
+     width:1000px;
+	 height:300px;
+	 background:#123456;
+	 margin:auto;
+   }
+   #aa4 {
+     width:1000px;
+	 height:300px;
+	 background:#dddddd;
+	 margin:auto;
+   }
+   #aa5 {
+     width:1000px;
+	 height:400px;
+	 background:red;
+	 margin:auto;
+   }
+   #aa6 {
+     width:1000px;
+	 height:300px;
+	 background:green;
+	 margin:auto;
+   }
+   #fix {
+     position:fixed;
+	 left:1000px; 
+	 top:400px;
+	 width:70px;
+	 height:200px;
+	 background:blue;
+   }
+  </style>
+  <script>
+    function move()
+	{
+       var w=innerWidth; 
+	   document.all.fix.style.left=(w-70)+"px";
+ 
+	}
+	window.onresize=move;
+  </script>
+ </head>
+ <body onload=move()>
+    <div id=aa1></div>
+	<div id=aa2></div>
+	<div id=aa3></div>
+	<div id=aa4></div>
+	<div id=aa5></div>
+	<div id=aa6></div>
+
+	<div id=fix></div>
+
+     
+ </body>
+</html>

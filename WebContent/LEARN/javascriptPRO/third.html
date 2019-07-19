@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style> /* second.html */
+    #pkc {  /* 밖에 div */
+      width:250px;
+	  height:40px;
+	  border:1px solid purple; /* 크기와 외곽선 */
+	  display:flex;
+	  align-items:center; /* 비밀번호,O의 위치 상하정렬 */
+	}
+	#pwd { /* input type=password */
+      width:230px;
+	  height:35px;
+	  font-size:25px;
+	  float:left; /* #pkc 내에서 왼쪽으로 붙어라 */
+	  border:none; /* 입력양식의 외곽선을 없애라 */
+	}
+	#right {
+	  width:10px;
+	  height:35px; /* o 를 포함한 span태그의 크기 */
+      float:right; /* #pkc 내에서 오른쪽으로 붙어라 */
+	  font-size:20px;
+	  margin-top:10px; /* 상하정렬이 조금 약해서 떨어뜨린것 */
+	  cursor:default; /* 마우스가 올라왔을때 커서를 화살표모양*/
+	} 
+  </style>
+  <script>
+    var chk=0;
+    function change(pp) // document.all.right
+	{
+		if(chk%2==0) // 나머지0이면 ○ => ● , 1이면 ● => ○
+		{ 
+		  pp.innerText="●";
+          document.all.pwd.type="text";
+		}
+		else
+		{
+		  pp.innerText="○";
+		  document.all.pwd.type="password";
+		}
+		  
+		chk++;
+	}
+  </script>
+ </head>
+ <body>
+   <div id=pkc>
+    <input type=password id=pwd>
+	<span id=right onclick=change(this)> ○ </span>
+   </div>
+ </body>
+</html>

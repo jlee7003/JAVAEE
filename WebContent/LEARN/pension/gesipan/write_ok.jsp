@@ -26,7 +26,7 @@
 	
 	//out.print(request.getParameter("hobby")); //값이 하나 밖에 전달 되지 않음 그렇기에 다른 것을 씀
 	String[] hobby=request.getParameterValues("hobby");
-    String hob="";
+    String hob="";	
     //hobby는 문자열배열이고 그 값을 hob에 줬으므로 hob을 이용
     
     for(int i=0;i<hobby.length;i++)

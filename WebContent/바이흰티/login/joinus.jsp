@@ -91,6 +91,13 @@ height:560px;
 width:100px;
 }
 </style>
+<script>
+function emailsel(){
+	var smail=document.getElementById("emailsel");
+	var selemail=smail.options[smail.selectedIndex].text;
+	document.all.email2.value=selemail;
+}
+</script>
 <body><!-- ------------------------------------------------------ -->
 <div class=void>
 </div>
@@ -158,7 +165,7 @@ width:100px;
 <div class=j2>
 <div class=jj1>일반전화</div>
 <div class=jj2>
-<select>
+<select name=phone1>
 <option>02</option>
 <option>031</option>
 <option>032</option>
@@ -189,14 +196,14 @@ width:100px;
 <option>017</option>
 <option>018</option>
 <option>019</option>
-</select> - <input type=text size=4> - <input type=text size=4>
+</select> - <input type=text size=4 name=phone2> - <input type=text size=4 name=phone3>
 
 </div>
 </div>
 <div class=j2>
 <div class=jj1>휴대전화<b style="color:orange">*</b></div>
 <div class=jj2>
-<select id=010 style="width:55px;">
+<select id=010 style="width:55px;" name=hphone1>
 <option>010</option>
 <option>011</option>
 <option>016</option>
@@ -204,22 +211,22 @@ width:100px;
 <option>018</option>
 <option>019</option>
 </select> -
-<input type=text size=4> - <input type=text size=4></div>
+<input type=text size=4 name=hphone2> - <input type=text size=4 name=hphone3></div>
 </div>
 <div class=j2>
 <div class=jj1>이메일<b style="color:orange">*</b></div>
-<div class=jj2><input type=text size=15>@<input type=text size=15>
-<select>
-<option>-이메일 선택-</option>
-<option>naver.com</option>
-<option>daum.net</option>
-<option>nate.com</option>
-<option>hotmail.com</option>
-<option>yahoo.com</option>
-<option>empas.com</option>
-<option>korea.com</option>
-<option>dreamwiz.com</option>
-<option>gmail.com</option>
+<div class=jj2><input type=text size=15 name=email1>@<input type=text size=15 name=email2>
+<select id=emailsel name=emailselect onchange=emailsel()>
+<option >-이메일 선택-</option>
+<option value="naver.com">naver.com</option>
+<option value=daum.net>daum.net</option>
+<option value=nate.com>nate.com</option>
+<option value=hotmail.com>hotmail.com</option>
+<option value=yahoo.com>yahoo.com</option>
+<option value=empas.com>empas.com</option>
+<option value=korea.com>korea.com</option>
+<option value=dreamwiz.com>dreamwiz.com</option>
+<option value=gmail.com>gmail.com</option>
 <option>직접입력</option>
 </select>
 </div>

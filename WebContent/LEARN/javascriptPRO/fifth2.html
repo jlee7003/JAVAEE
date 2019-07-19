@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style> /* fifth2.html */
+   body { margin:0 }
+   #aa1 {
+     width:1000px;
+	 height:400px;
+	 background:yellow;
+	 margin:auto;
+   }
+   #aa2 {
+     width:1000px;
+	 height:500px;
+	 background:#abcdef;
+	 margin:auto;
+   }
+   #aa3 {
+     width:1000px;
+	 height:300px;
+	 background:#123456;
+	 margin:auto;
+   }
+   #aa4 {
+     width:1000px;
+	 height:300px;
+	 background:#dddddd;
+	 margin:auto;
+   }
+   #aa5 {
+     width:1000px;
+	 height:400px;
+	 background:red;
+	 margin:auto;
+   }
+   #aa6 {
+     width:1000px;
+	 height:300px;
+	 background:green;
+	 margin:auto;
+   }
+   #fix {
+     position:absolute;
+	 left:1000px; 
+	 top:400px;
+	 width:70px;
+	 height:200px;
+	 background:blue;
+   }
+  </style>
+  <script>
+    function move()
+	{
+       var w=innerWidth; // 브라우저의 가로크기
+	
+	   if(w>1000) // 본문의 가로 1000이므로 본문보다 클때
+	   {
+          w=w-1000;
+		  w=w/2;
+		  document.all.fix.style.left=(1000+w)+"px";
+	   }
+	}
+	var init=400;
+	var scr;
+	function scroll_start()
+	{
+         var h=document.documentElement.scrollTop;
+		 scr=400+h;
+		 setTimeout(scroll_move,1);
+	}
+	function scroll_move()
+	{
+		if(init!=scr)
+		{
+		 document.all.fix.style.top=init+"px";
+         setTimeout(scroll_move,1);
+		}
+		else
+		  init=scr;
+
+        if(scr>init)
+          init=init+1;
+		else 
+		  init=init-1;
+
+	}
+	window.onresize=move;
+	window.onscroll=scroll_start;
+  </script>
+ </head>
+ <body onload=move()>
+    <div id=aa1></div>
+	<div id=aa2></div>
+	<div id=aa3></div>
+	<div id=aa4></div>
+	<div id=aa5></div>
+	<div id=aa6></div>
+
+	<div id=fix></div>
+
+     
+ </body>
+</html>

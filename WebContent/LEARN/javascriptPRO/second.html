@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style> /* second.html */
+    #pkc {
+       width:800px;
+	   height:40px; /* 크기 */
+	   background:purple;
+	   color:white;
+	   display:flex;
+	   justify-content:flex-end;
+	   align-items:center; /* 텍스트 정렬 */
+	   cursor:pointer; /* 커서 모양 */
+	   margin:auto;
+	}
+  </style>
+  <script>
+    var h=40;
+    function hide()
+	{
+      h=h-1;
+	  document.all.pkc.style.height=h+"px";
+	  if(h>0)
+	    setTimeout(hide,10);
+	}
+ 
+  </script>
+ </head>
+ <body>
+   <div id=pkc> <span onclick=hide()> X </span> 
+    </div>
+ </body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+ 
+  <script>
+     function imsi()
+	 {   
+        var aaa=document.getElementById("aa").childNodes;
+		alert(aaa.length);
+		alert(aaa[1].nodeValue);
+	 }
+  </script>
+ </head>
+ <body>
+    <button onclick=imsi()> 클릭 </button>
+    <div id=aa>
+	  <span>하하하1</span>
+	  <span>하하하2</span>
+	  <span>하하하3</span>
+   </div>
+	
+ </body>
+</html>
