@@ -5,10 +5,10 @@
 
 -만드는 순서<p>
 
-1.create data base 데이타베이스명;<p>
-  show -> show databases;-데이터 베이스를 보여달라 혹은 table ex) show tables;<br>
-  drop -> 삭제(table)<br>
-  create-> 생성 (데이터베이스 혹은 테이블) <br>
+     1.create data base 데이타베이스명;<p>
+        show -> show databases;-데이터 베이스를 보여달라 혹은 table ex) show tables;<br>
+        drop -> 삭제(table)<br>
+        create-> 생성 (데이터베이스 혹은 테이블) <br>
 
 2.create table<p>
   create table 테이블명(항목 자료형,항목 자료형,항목 자료형...);<br>
