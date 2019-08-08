@@ -49,7 +49,7 @@ function check(form)
        form.userid.focus();
        return false;
 	 }
-	 else if(form.userid.length<=7)
+	 else if(form.userid.value.length<=7)
 		 {
 		 document.all.idid.innerHTML="<b style='color:#828282'>아이디를 8자 이상으로 만들어주세요</b>";
 	       form.userid.focus();
