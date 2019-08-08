@@ -57,7 +57,7 @@ function check(form)
 		 }
 		 else if(form.name.value=="")
 			  {
-			 document.all.namein.innerHTML="<b style='color:#828282>이름을 입력해주세요</b>";
+			 document.all.namein.innerHTML="<b style='color:#828282'>이름을 입력해주세요</b>";
 			     form.name.focus();
 			     return false;
 			  }
@@ -86,6 +86,7 @@ function check(form)
 }
 
 </script>
+
 <div id=section> 
 <form method=post action=member_ok.jsp onsubmit="return check(this)"> 
 <table align=center border=0 cellspacing=5 cellpadding=5>

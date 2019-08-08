@@ -48,7 +48,7 @@
     // conent.jsp로 이동
 %>
     <script>
-      alert("비밀번호가 틀립니다");
+          alert("비밀번호가 틀립니다");
       location="update.jsp?id="+<%=id%>;
     </script>
 <% 

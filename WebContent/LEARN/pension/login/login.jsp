@@ -154,7 +154,6 @@
 				<div id=login1>
 					회원아이디 <br> <input id=input type=text name=userid><br>
 					비밀번호 <br> <input id=input type=password name=pwd><br>
-					<%=request.getParameter("err")%>
 					<%
 						if(request.getParameter("err") != null) 
 						//null 값이 오기 때문에 equals를 사용하지 못함

@@ -52,6 +52,7 @@ font-size: 12px;
 margin:auto;
 width:1200px;
 height:60px;
+background-image: url( "../img/pension1.PNG");
 background:white;
 }
 #header #logo 
@@ -266,7 +267,7 @@ height:200px;
   <div id=logo> <img src=../img/logo.PNG> </div>
     <div id=menu>
       <ul>
-        <li> 프로방스펜션 </li>
+        <li> EUIHO펜션 </li>
         <li> 객실안내 </li>
         <li> 부대시설 </li>
         <li> <a href="../notice/noticelist.jsp">커뮤니티</a> </li>

@@ -46,7 +46,7 @@ Statement stmt=conn.createStatement(); //stmt 라는 변수에는 서버의 정�
 </script>
 <div id=image>  </div>
 <div id=section> 
-  <%=name %>님 회원가입 해주셔서 감사합니다.. <p>
+  <%=name %>님 회원가입 해주셔서 감사합니다. <p>
   자주 놀러와 주세요!!! <p>
   <input type=button onclick=move() value=메인으로>
 </div>

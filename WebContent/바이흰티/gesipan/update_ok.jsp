@@ -21,7 +21,6 @@
   String phone2=request.getParameter("phone2"); 
   String phone3=request.getParameter("phone3"); 
   String ju=request.getParameter("ju"); 
-  // checkbox는 값이 1개 이상
  
   String sql="select * from board2 where id="+id;
   ResultSet rs=stmt.executeQuery(sql);
