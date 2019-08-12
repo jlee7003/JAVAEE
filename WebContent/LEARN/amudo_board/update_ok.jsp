@@ -17,7 +17,7 @@
   String age=request.getParameter("age");
   String pwd=request.getParameter("pwd");
   String sung=request.getParameter("sung");
-  
+  String Page=request.getParameter("Page");
   String sql="select pwd from board where id="+id;
   ResultSet rs=stmt.executeQuery(sql);
   rs.next();
@@ -26,7 +26,7 @@
   {
    sql="update board set name='"+name+"', title='"+title+"', content='"+content+"', age="+age+", sung="+sung+" where id="+id;
   stmt.executeUpdate(sql);
-   response.sendRedirect("content.jsp?id="+id);
+   response.sendRedirect("content.jsp?id="+id+"&Page="+Page);
   }
   else
   {

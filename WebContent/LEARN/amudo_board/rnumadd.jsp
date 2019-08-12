@@ -9,12 +9,12 @@ Connection conn=DriverManager.getConnection(aa,bb,cc);// db와의 접속이 만�
 Statement stmt=conn.createStatement();
 
 String id=request.getParameter("id");
-
+String Page=request.getParameter("Page");
 String sql="update board set rnum=rnum+1 where id="+id;
 
 stmt.executeUpdate(sql);
 
-response.sendRedirect("content.jsp?id="+id);
+response.sendRedirect("content.jsp?id="+id+"&Page="+Page);
 
 stmt.close();
 conn.close();

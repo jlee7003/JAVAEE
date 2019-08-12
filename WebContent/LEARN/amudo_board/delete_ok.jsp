@@ -12,6 +12,7 @@
    // id,pwd값을 읽어오기
     String id=request.getParameter("id");
     String pwd=request.getParameter("pwd");
+    String Page=request.getParameter("Page");
    
    // DB에 있는 비밀번호를 읽어오기
     String sql="select * from board where id="+id;
@@ -24,7 +25,7 @@
 	   sql="delete from board where id="+id;
 	   stmt.executeUpdate(sql);
 	   // 삭제후에 list.jsp 이동
-	   response.sendRedirect("list.jsp");
+	   response.sendRedirect("list.jsp?Page="+Page);
    }
    else
    {

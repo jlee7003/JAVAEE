@@ -9,7 +9,7 @@ String cc="1234";
 Connection conn=DriverManager.getConnection(aa,bb,cc);
 Statement stmt=conn.createStatement();
 request.setCharacterEncoding("utf-8");
-
+String Page=request.getParameter("Page");
 String id=request.getParameter("id");
 String sql="select * from board where id="+id;
 ResultSet rs= stmt.executeQuery(sql);
@@ -40,6 +40,7 @@ document.leh.age.options[<%=rs.getString("age")%>].selected=true;
 </head>
 <body onload=check()>
 <form method=post action="update_ok.jsp" name=leh>
+<input type=hidden name=Page value=<%=Page%>>
 <input type=hidden value=<%=id%> name=id>
 <table>
 <tr>
@@ -72,7 +73,9 @@ document.leh.age.options[<%=rs.getString("age")%>].selected=true;
 <td><input type=submit value=전송>
    비밀번호 <input type=password name=pwd> <p>
       <input type=submit value=수정하기>
+<input type=hidden name=Page value=<%=Page%>>
 <input type=hidden name=id value="<%=id%>">
+
 <!-- 아이디 값을 전송해주기 위해 숨겨놓음 -->
 </td>
 </tr>

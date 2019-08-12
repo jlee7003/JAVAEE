@@ -9,7 +9,7 @@
 	Connection conn = DriverManager.getConnection(aa, bb, cc);
 	Statement stmt = conn.createStatement();
 	String id = request.getParameter("id");
-
+	String Page=request.getParameter("Page");
 	String sql = "select * from board where id=" + id;
 	ResultSet rs = stmt.executeQuery(sql);
 	rs.next();
@@ -88,8 +88,8 @@
 				<td><%=rs.getString("writeday")%></td>
 			</tr>
 			<tr>
-				<td><a href="list.jsp">목록</a></td>
-				<td><a href="update.jsp?id=<%=id%>">수정</a> <a
+				<td><a href="list.jsp?Page=<%=Page%>">목록</a></td>
+				<td><a href="update.jsp?id=<%=id%>&Page=<%=Page%>">수정</a> <a
 					href="javascript:del()">삭제</a> <a href="write.jsp">글쓰기</a></td>
 			</tr>
 		</table>
@@ -98,6 +98,7 @@
 
 	<div id=delete style="display: none">
 		<form method=post action=delete_ok.jsp >
+		<input type=hidden name=Page value=<%=Page%>>
 			<input type=hidden name=id value=<%=id%>> 비밀번호 <input type=password
 				name=pwd> <input type=submit value=삭제> <input
 				type=button onclick=hide() value=취소>
