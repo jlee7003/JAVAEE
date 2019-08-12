@@ -1,0 +1,23 @@
+id int auto_increment primary key
+
+1부터 자동증가 자료형
+
+첫번재 레코드 들어오면 id=1
+그이후 레코드는 자동으로 +1
+
+// 동일한 값이 존재하지 않는다.. 
+// 레코드간의 구분을 하는 목적으로 사용
+// 사람=주민번호 , 레코드=id
+
+list.jsp는 모든 레코드의 내용을 읽기
+select * from board;
+
+content.jsp는 하나의 레코드만 읽어오기
+select * from board where id=?
+
+웹에서 문서와 문서간의 값을 전달하는 방법
+1.post => 폼태그를 통해 작성
+2.get => 문서이름뒤에 값을 가져간다.
+   ex)  문서이름?id=값&속성=값
+
+

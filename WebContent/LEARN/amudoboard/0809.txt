@@ -1,0 +1,53 @@
+1. 한번에 10개의 레코드를 출력하기
+=> limit 인덱스,레코드갯수 =>  limit 0,10
+
+2. 페이지링크를 추가
+   현재page : 1~10   => 페이지링크 1~10
+              11~20  =>            11~20
+
+3. 페이지링크 좌우 
+   다음 , 이전 => 현재페이지 기준  1page  + , -
+   다음10페이지, 이전 10페이지 => 
+   처음, 끝 => 1page,  마지막페이지=> 총페이지를 구하기
+
+4. 자바스크립트에 select에서 value값 가져오기
+
+ 1) <select id=pp onchange=move_list()>
+      <option value=1> 1page </option>
+      <option value=2> 2page </option> 
+      <option value=3> 3page </option>
+      <option value=4> 4page </option>
+    </select>
+
+
+<script>
+ function move_list()
+ {
+    // 자바스크립트에서 select value가져오기
+    document.getElementById("pp").value;
+ }
+</script>
+
+ 2) <select onchange=move_list(this.value)>
+      <option value=1> 1page </option>
+      <option value=2> 2page </option> 
+      <option value=3> 3page </option>
+      <option value=4> 4page </option>
+    </select>
+
+
+<script>
+ function move_list(val)
+ {
+    // 매개변수로  select value가져오기
+    val;
+ }
+</script>
+
+
+
+
+
+
+
+

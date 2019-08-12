@@ -101,6 +101,12 @@
 		<input type=hidden name=Page value=<%=Page%>>
 			<input type=hidden name=id value=<%=id%>> 비밀번호 <input type=password
 				name=pwd> <input type=submit value=삭제> <input
+<%-- 				<%
+				if(Page ==" cnt ")
+				{
+				%>
+				<input type=hidden name=page value=<%=Page %>>
+				<input type=hidden name=page value=<%=page_cnt-1 %> --%>
 				type=button onclick=hide() value=취소>
 		</form>
 	</div>
