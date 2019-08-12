@@ -27,7 +27,7 @@
 
 	//검색하고자 하는 필드와 검색 단어 가져오기
 	String cla = request.getParameter("cla");
-	String s_word = request.getParameter("cla");
+	String s_word = request.getParameter("s_word");
 	String sql;
 
 	  if(cla==null)
