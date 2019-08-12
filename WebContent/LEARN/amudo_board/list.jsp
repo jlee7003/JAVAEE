@@ -24,9 +24,20 @@
 		start = (Page - 1) * 10;//사용자가 원하는 페이지에 해당하는 인덱스 값
 
 	}
-
-	String sql = "select * from board order by id desc limit " + start + ",10";//내림차순 desc
-	//sql="SELECT COUNT(*) FROM board";
+	
+//검색하고자 하는 필드와 검색 단어 가져오기
+String cla=request.getParameter("cla");
+String s_word=request.getParameter("cla");
+String sql;
+     if(cla.equals("0"))
+	sql = "select * from board where title like '%"+s_word+"%' order by id desc limit " + start + ",10";
+	 else if(cla.equals("1"))
+	 sql = "select * from board where content like '%"+s_word+"%' order by id desc limit " + start + ",10";
+	 else if(cla.equals("2"))
+	sql = "select * from board where name like '%"+s_word+"%' order by id desc limit " + start + ",10";
+	 else
+	 sql = "select * from board order by id desc limit " + start + ",10";//내림차순 desc	
+//sql="SELECT COUNT(*) FROM board";
 
 	ResultSet rs = stmt.executeQuery(sql);
 
@@ -39,12 +50,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
+	
 	function move_p() {//다른년도와 다른월의 달력을 보여주기
 		//년도, 월을 가지고 문서를 호출
 		var y = document.all.ppage.value;
 
 		location = "list.jsp?Page=" + y;
 	}
+	
+
 </script>
 <!-- 
 자바스크립트에 select에서 value 값 가져오기
@@ -83,6 +97,17 @@ document.getElementByid("pp").value
 			<h2>
 				계시판
 				<%=Page%></h2>
+				<!--  -->
+				<form method=post action=list.jsp>
+				<select name=cla><!-- 필드  -->
+				<option value=0>제목</option>
+				<option value=1>내용</option>
+				<option value=2>작성자</option>
+			</select>
+			<input type=text name=s_word size=8> <!-- 내가 찾고자 하는 값 -->
+			<input type=submit value=검색>
+			</form>
+			<!--  -->
 		</caption>
 		<tr>
 			<td>name</td>
@@ -100,6 +125,7 @@ document.getElementByid("pp").value
 			<td><a href="rnumadd.jsp?id=<%=rs.getInt("id")%>&Page=<%=Page%>"> <%=rs.getString("title")%>
 <%-- 			 <a href="rnumadd.jsp?id=<%=rs.getInt("id")%>%Page=<%=rs.getInt("id")%> --%>
 			</a></td>
+
 			<td><%=rs.getString("rnum")%></td>
 			<td><%=rs.getString("writeday")%></td>
 		</tr>
@@ -113,11 +139,11 @@ document.getElementByid("pp").value
 			<td colspan=4 align=center style="word-spacing: 10px"><a
 				href="list.jsp?page=1">맨첨</a> <%
  	if (Page > 10) {
- %> <a href="list.jsp?page=<%=Page - 10%>">이전페이지-10</a> <%
+ %> <a href="list.jsp?Page=<%=Page - 10%>">이전페이지-10</a> <%
  	}
  %> <%
  	if (Page != 1) {
- %> <a href="list.jsp?page=<%=Page - 1%>"> <%
+ %> <a href="list.jsp?Page=<%=Page - 1%>"> <%
  	
  %> 이전페이지 <%
  	}
@@ -135,6 +161,7 @@ document.getElementByid("pp").value
  	int total_record = rs.getInt("cnt");
  	//레코드수를 가지고 오기
  	int page_cnt = total_record / 10;
+ 	
  	if (total_record % 10 != 0)
  		page_cnt = page_cnt + 1; //전체 페이지의 수
 
@@ -145,6 +172,8 @@ document.getElementByid("pp").value
  	//페이지 링크에 필요한 시작값 생성
  	pstart = (int) Page / 10;
  	//10,20,30...은 원하는 값보다 1이 더 높다->
+//  	if(page_cnt<Page)
+//  	   Page=Page-1;
  	if (Page % 10 == 0) {
  		pstart = pstart - 1;
  	}
@@ -181,7 +210,7 @@ document.getElementByid("pp").value
  	}
  %> <%
  	
- %> <a href="list.jsp?Page=<%=total_record / 10 + 1%>">맨끝</a> <select
+ %> <a href="list.jsp?Page=<%=page_cnt%>">맨끝</a> <select
 				onchange=move_p() name=ppage>
 
 					<%
@@ -198,12 +227,15 @@ document.getElementByid("pp").value
 					<%
 						}
 					%>
-			</select></td>
+			</select>
+			<%=Page %>page
+			<%=page_cnt %>cnt</td>
 		</tr>
 	</table>
 </body>
 </html>
-<!-- page는 세션변수로 만들지 않는다 -> 메모리를 차지하기 때문에 -->
+<!-- //page는 세션변수로 만들지 않는다 -> 메모리를 차지하기 때문에 -->
+
 <%
 	stmt.close();
 	conn.close();
