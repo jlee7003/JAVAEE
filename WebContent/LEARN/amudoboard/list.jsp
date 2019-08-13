@@ -137,6 +137,7 @@
      sql="select count(id) as cnt from board where content like '%"+s_word+"%'";
      else
      sql="select count(id) as cnt from board where name like '%"+s_word+"%'";
+     out.print(sql);
      rs=stmt.executeQuery(sql); // rs객체가 새로 만들어진다.
      rs.next();
      int total_record=rs.getInt("cnt"); // 전체레코드수
