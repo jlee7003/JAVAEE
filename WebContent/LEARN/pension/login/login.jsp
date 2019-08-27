@@ -176,7 +176,7 @@
 							아니시라면 회원으로 가입 후 이용해 주십시오.
 					</div>
 					<div id=login2in2>
-						<button id=bb1>아이디 비밀번호 찾기</button>
+					<input type=button id=bb1 onclick=search() value="아이디/비밀번호 찾기">
 						<button id=bb2>
 							<a href="../member/member.jsp">회원가입</a>
 						</button>
@@ -186,7 +186,12 @@
 			<div id=logbox3>
 				<a href="../main/index.jsp">메인으로 가기</a>
 			</div>
-
+<script>
+function search()
+{//호출되면 search.jsp로 이동
+ location="search.jsp"; /* 브라우저의 주소 입력칸 */
+}
+</script>
 
 		</div>
 

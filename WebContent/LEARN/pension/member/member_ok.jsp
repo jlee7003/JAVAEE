@@ -11,6 +11,7 @@ Statement stmt=conn.createStatement(); //stmt 라는 변수에는 서버의 정�
 
  //입력 양식의 값 가져오기
  request.setCharacterEncoding("utf-8");
+
  String userid=request.getParameter("userid");
  String name=request.getParameter("name");
  String pwd=request.getParameter("pwd1");
@@ -18,11 +19,13 @@ Statement stmt=conn.createStatement(); //stmt 라는 변수에는 서버의 정�
  //입력 쿼리 만들기
  String sql="insert into member(userid,name,pwd,email)";
  sql=sql+" values('"+userid+"','"+name+"','"+pwd+"','"+email+"')";
+ 
+ 
+
  stmt.executeUpdate(sql);
  //쿼리 실행
  
-  stmt.close();
-  conn.close();
+
 %>
 <%@ include file="../main/top2.jsp" %>
 <style>
@@ -41,7 +44,7 @@ Statement stmt=conn.createStatement(); //stmt 라는 변수에는 서버의 정�
 <script>
  function move()
  {
-	 location="../index.jsp";
+	 location="../main/index.jsp";
  }
 </script>
 <div id=image>  </div>
@@ -50,4 +53,13 @@ Statement stmt=conn.createStatement(); //stmt 라는 변수에는 서버의 정�
   자주 놀러와 주세요!!! <p>
   <input type=button onclick=move() value=메인으로>
 </div>
+
+
+
+<%
+
+stmt.close();
+conn.close();
+%>
 <%@ include file="../main/bottom.jsp" %>
+

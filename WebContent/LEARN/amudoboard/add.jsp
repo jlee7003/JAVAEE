@@ -18,6 +18,7 @@
   // 사용자가 게시판에서 특정글을 읽었다는 것을 판단할수 있는 기준은
   // content.jsp를 봤다면 본걸로 인정을 한다..
   // content.jsp를 읽을때 조회수 필드의 값을 1씩 증가를 시킨다..
+  
    String sql="update board set rnum=rnum+1 where id="+id;
    stmt.executeUpdate(sql);
   

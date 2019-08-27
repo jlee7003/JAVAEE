@@ -178,7 +178,7 @@ font-size:20px;
 		
 		<%
 		nowday=y+"-"+m+"-"+day;
-		sql="select * from reserve where in_date <= '"+nowday+"' and out_date > '"+nowday+"'";
+		sql="select * from reserve where in_date <= '"+nowday+"' and out_date > '"+nowday+"' and bang='ROOM1'";
 		rs=stmt.executeQuery(sql);
 		
 		

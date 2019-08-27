@@ -144,7 +144,7 @@
   
      // 레코드수를 가지고 페이지 계산하기
      int page_cnt=total_record/10; 
-     if(total_record%10 != 0)
+     if(total_record%10 != 0) //10으로 나누었을때 나머지가 0이 아닐 경우에
     	 page_cnt=page_cnt+1;  // 전체페이지수
      /*
      page_cnt=page_cnt+1;
@@ -155,16 +155,18 @@
   // 아래에 페이지 링크에 필요한 시작값 생성
      pstart=(int)Page/10;
      // 10,20,30... 은 원하는 값보다 1이 높다 => -1한다..
-     if(Page%10 == 0) 
+     if(Page%10 == 0) //페이지 10일 경우 1~10까지 나와야 하는데 만약 이렇게 처리안해주면 11~20까지 나옴
     	 pstart=pstart-1;
-     pstart=Integer.parseInt(pstart+"1");
+     pstart=Integer.parseInt(pstart+"1"); //페이지 9일 경우일때는 0이 되버리므로 1씩 더해주어야 함
      pend=pstart+9; // 마지막 구역에서는 pstart부터 마지막페이지까지만 출력
      
      if(pend > page_cnt) // 출력될페이지값이 전체페이지값보다 크다면
         pend=page_cnt;  // 출력페이지의 끝값을 전체페이지값으로 변경
+                        // 레코드의 전체 페이지 갯수 보다 더욱 많이 나오는 것을 방지 하기 위해서
   %>
   <!-- 첫페이지는 => 1page -->
-  <a href="list.jsp?page=1&cla=<%=cla%>&s_word=<%=s_word%>"> 처음 </a>
+  <a href="list.jsp?page=1&cla=<%=cla%>&s_word=<%=s_word%>"> 처음 </a> 
+<!--   cla변수와 s_word변수 가지고 오기-->
   
   <!-- 페이지 출력되는 첫구역에서는 링크를 해제 -->
   <!-- 첫구역일때를 알수 있는 값 => pstart=1  -->
@@ -307,8 +309,10 @@
   stmt.close();
   conn.close();
 %>
-
-
+<%=total_record%>
+<%=Page %> page
+<%=page_cnt%> page_cnt
+<%=pstart%> pstart
 
 
 

@@ -1,0 +1,14 @@
+아이디   X
+비밀번호 O
+이름     X
+이메일   O
+
+정보수정 클릭시 이동문서
+pwd_check.jsp => 사용자 비번입력 후 클릭
+
+pwd_check_ok.jsp => 아이디와 비번이 맞느냐 체크
+
+if(비번이 맞다면)
+  정보수정하는 문서이동 => update.jsp =>update_ok.jsp
+else
+  pwd_check.jsp로 이동
