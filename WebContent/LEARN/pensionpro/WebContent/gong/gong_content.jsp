@@ -125,12 +125,28 @@
           <a href="javascript:dat_update('<%=n%>','<%=c%>',<%=d%>)"> <%=rs.getString("name")%> </a> 
         </td>
         <td> <%=rs.getString("content")%> </td>
-        <td width=100> <%=rs.getString("writeday")%> </td>
+        <td width=100>    <!-- gong_dat 테이블의 id -->
+          <a href="javascript:del(<%=d%>)"> <%=rs.getString("writeday")%> </a> 
+        </td>
        </tr>
        <%
        }
        %>
        <script>
+         var xml=new XMLHttpRequest();
+         function del(id)
+         {
+        	 xml.open("get","dat_delete.jsp?id="+id);
+        	 xml.send();
+         }
+         xml.onreadystatechange=function()
+         {
+        	 if(xml.readyState==4)
+        	 {
+        	     if(xml.responseText.trim()=="ok")
+        	    	 location.reload(); // F5 : 현재문서 새로고침
+        	 }
+         }
          function dat_update(n,c,d) // 이름,내용,id(gong_dat)
          {
         	 // 댓글입력폼을 수정폼으로 변경
