@@ -29,9 +29,19 @@ String writeday = sdf.format(today);
 //퇴실일 계산하기
 LocalDate in_date=LocalDate.of(y,m,d);//년월일을 in_date가 가지게 된다
 LocalDate out_date=in_date.plusDays(suk);//localdate+suk; in_date 부터 suk한 일뒤
-//쿼리 작성
-String sql="insert into reserve(name,phone,bang,in_date,out_date,writeday) values('"+name+"','"+phone+"','"+bang+"','"+in_date+"','"+out_date+"','"+writeday+"')";
+int sung=Integer.parseInt(request.getParameter("sung"));
+int child=Integer.parseInt(request.getParameter("child"));
+int inwon=sung+child;
+String spa=request.getParameter("spa");
+String charo=request.getParameter("charo");
+String bbq=request.getParameter("bbq");
 
+String suk_price=request.getParameter("suk_price");
+String chu_price=request.getParameter("chu_price");
+//쿼리 작성
+String sql="insert into reserve(name,phone,bang,in_date,out_date,writeday,inwon,spa,charo,bbq,suk_price,chu_price) values('"+name+"','"+phone+"','"+bang+"','"+in_date+"','"+out_date+"','"+writeday+"',"+inwon+","+spa+","+charo+","+bbq+","+suk_price+","+chu_price+")";
+//숫자 일 경우에는 ''따옴표가 있으면 안된다
+// out.print(sql);
 stmt.executeUpdate(sql);
 stmt.close();
 conn.close();

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+ <head> <!-- menu.html -->
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <style>
+    li {
+      list-style-type:none;
+	  display:inline-block;
+	  border:1px solid darkblue;
+	  margin-left:30px;
+	  padding:2px;
+	  color:darkblue
+	}
+  </style>
+  <script>
+    $(function()
+	{
+        $("#aa1").mouseover(function()
+		{
+            $("#aa1").css("color","white");
+			$("#aa1").css("background","darkblue");
+		});
+		$("#aa1").mouseout(function()
+		{
+            $("#aa1").css("color","darkblue");
+			$("#aa1").css("background","white");
+		});
+
+		$("#aa2").mouseover(function()
+		{
+            $("#aa2").css("color","white");
+			$("#aa2").css("background","darkblue");
+		});
+		$("#aa2").mouseout(function()
+		{
+            $("#aa2").css("color","darkblue");
+			$("#aa2").css("background","white");
+		});
+
+		$("#aa3").mouseover(function()
+		{
+            $("#aa3").css("color","white");
+			$("#aa3").css("background","darkblue");
+		});
+		$("#aa3").mouseout(function()
+		{
+            $("#aa3").css("color","darkblue");
+			$("#aa3").css("background","white");
+		});
+
+		$("#aa4").mouseover(function()
+		{
+            $("#aa4").css("color","white");
+			$("#aa4").css("background","darkblue");
+		});
+		$("#aa4").mouseout(function()
+		{
+            $("#aa4").css("color","darkblue");
+			$("#aa4").css("background","white");
+		});
+
+		$("#aa5").mouseover(function()
+		{
+            $("#aa5").css("color","white");
+			$("#aa5").css("background","darkblue");
+		});
+		$("#aa5").mouseout(function()
+		{
+            $("#aa5").css("color","darkblue");
+			$("#aa5").css("background","white");
+		});
+	});
+  </script>
+ </head>
+ <body>
+    <ul>
+	  <li id=aa1> 스포츠 </li>
+	  <li id=aa2> 식품류 </li>
+	  <li id=aa3> 생활용품 </li>
+	  <li id=aa4> 주방용품 </li>
+	  <li id=aa5> 여행용품 </li>
+	</ul>
+
+ </body>
+</html>

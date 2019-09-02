@@ -1,48 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-
-<%@ page import="java.sql.*"%>
-<%@ page import="java.util.Date"%>
-<%@ page import="java.time.LocalDate" %>
-<%@ page import="java.text.SimpleDateFormat"%>
-<%
-String aa="jdbc:mysql://localhost:3307/pension?useSSL=false";
-String bb="root";
-String cc="1234";    
-Connection conn=DriverManager.getConnection(aa,bb,cc);// db와의 접속이 만들어짐
-Statement stmt=conn.createStatement(); //stmt 라는 변수에는 서버의 정보 모두가 담겨있다.
-
-request.setCharacterEncoding("utf-8");
-String name=request.getParameter("name");
-String phone=request.getParameter("phone");
-String bang=request.getParameter("bang");
-int y=Integer.parseInt(request.getParameter("y"));
-int m=Integer.parseInt(request.getParameter("m"));
-int d=Integer.parseInt(request.getParameter("d"));
-int suk=Integer.parseInt(request.getParameter("suk"));
-
-Date today = new Date();
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-
-String writeday = sdf.format(today);
-//퇴실일 계산하기
-LocalDate in_date=LocalDate.of(y,m,d);//년월일을 in_date가 가지게 된다
-LocalDate out_date=in_date.plusDays(suk);//localdate+suk; in_date 부터 suk한 일뒤
-//쿼리 작성
-String sql="insert into reserve(name,phone,bang,in_date,out_date,writeday) values('"+name+"','"+phone+"','"+bang+"','"+in_date+"','"+out_date+"','"+writeday+"')";
-out.print(sql);
-
+<%@page import="java.sql.*" %>   
+<%@page import="java.util.Date" %> 
+<%@page import="java.text.SimpleDateFormat"%> 
+<%@page import="java.time.LocalDate" %>
+<% // content.jsp
+  String aa="jdbc:mysql://localhost:3307/pension?useSSL=false";
+  String bb="root";
+  String cc="1234";
+  Connection conn = DriverManager.getConnection(aa,bb,cc);
+  Statement stmt=conn.createStatement();
+  
+  //값읽어오기
+  request.setCharacterEncoding("utf-8");
+  String name=request.getParameter("name");
+  String phone=request.getParameter("phone");
+  String bang=request.getParameter("bang");
+  int y=Integer.parseInt(request.getParameter("y"));
+  int m=Integer.parseInt(request.getParameter("m"));
+  int d=Integer.parseInt(request.getParameter("d"));  
+  int suk=Integer.parseInt(request.getParameter("suk"));
+  int sung=Integer.parseInt(request.getParameter("sung"));
+  int child=Integer.parseInt(request.getParameter("child"));
+  int inwon=sung+child; // 총인원
+  String spa=request.getParameter("spa"); //스파 value=금액
+  String charo=request.getParameter("charo");// 숯불
+  String bbq=request.getParameter("bbq");// 바베큐 
+  String suk_price=request.getParameter("suk_price");
+  String chu_price=request.getParameter("chu_price");
+  
+  Date today=new Date();
+  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); 
+  String writeday= sdf.format(today); // 작성일
+  //퇴실일계산 
+  LocalDate in_date=LocalDate.of(y,m,d); // 2019 7 10
+  
+  LocalDate out_date=in_date.plusDays(suk); // in_date부터 suk한 일뒤
+ 
+  //쿼리 작성
+  String sql="insert into reserve(name,phone,bang,in_date,out_date,writeday";
+  sql=sql+",inwon,spa,charo,bbq,suk_price,chu_price) ";
+  sql=sql+" values('"+name+"','"+phone+"','"+bang+"','"+in_date;
+  sql=sql+"','"+out_date+"','"+writeday+"',"+inwon+",";
+  sql=sql+spa+","+charo+","+bbq+","+suk_price+","+chu_price+")";
+  //쿼리 실행
+  out.print(sql);
+   stmt.executeUpdate(sql);
+  
+  stmt.close();
+  conn.close();
+  //response.sendRedirect("reserve2.jsp");
 %>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
-</body>
-</html>
+
+
+
+
+
+
+
