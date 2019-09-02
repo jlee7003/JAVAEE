@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- mouseover.html -->
+<meta charset="UTF-8">
+<title>Document</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+</style>
+<script>
+	var name = "이의호"; //빨
+	var phone = "010-3333-4444";
+	var email = "jlee7003@NAVER.COM" //파
+
+	$(function() {
+		$(".now").mouseover(function() {
+			$(".pkc1").css("display", "inline");
+			$(".pkc2").css("display", "inline");
+			$(".pkc3").css("display", "inline");
+			$(".pkc1").html("<font color=red>"+name+"</font>");
+			$(".pkc2").html(phone);
+			$(".pkc3").html("<font color=red>"+name+"</font>");	
+			//alert($("table").html());
+			//소스 보기 좋음
+		});
+
+		$(".now").mouseout(function() {
+			$(".pkc1").css("display", "none");
+			$(".pkc2").css("display", "none");
+			$(".pkc3").css("display", "none");
+			//alert($("table").html());
+		});
+		
+		
+		window.onload=function()
+		{
+			// 무조건 배열의 형태 => 복수
+	       document.getElementsByClassName("name")[0].innerHTML="<font color=red>"+name+"</font>";
+	       document.getElementsByClassName("phone")[0].innerText=phone;
+		   document.getElementsByClassName("email")[0].innerHTML="<font color=red>"+email+"</font>";
+		}; 
+	});
+</script>
+</head>
+<body>
+<div class=now>오오</div>
+	<table width=400 name=pkcc>
+		<tr>
+			<td class=tdtd>이름</td>
+			<td class=tdtd>전화번호</td>
+			<td class=tdtd>이메일</td>
+		</tr>
+		<tr>
+			<td class=pkc1></td>
+			<td class=pkc2></td>
+			<td class=pkc3></td>
+		</tr>
+	</table>
+	 <hr>
+	 <table width=400>
+       <tr>
+         <td> 이름 </td>
+		 <td> 전화번호 </td>
+		 <td> 이메일 </td>
+	   </tr>
+	   <tr>
+         <td class=name> </td>
+		 <td class=phone> </td>
+		 <td class=email> </td>
+	   </tr>
+	 </table>
+
+
+
+</body>
+</html>
