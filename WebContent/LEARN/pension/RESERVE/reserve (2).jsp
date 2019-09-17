@@ -176,7 +176,7 @@
           else
           {
           %> 
-           <p align=center> <a href="javascript:input_move('<%=rs.getString("name")%>',<%=y%>,<%=m%>,<%=day%>)"> <%=rs.getString("name")%>(가능) </a> </p>
+           <p align=center> <a href="input.jsp?bang=chan&y=<%=y%>&m=<%=m%>&d=<%=day%>"> <%=rs.getString("name")%>(가능) </a> </p>
           <%
           }
          } // while문 끝
@@ -195,13 +195,7 @@
   %>
   
  </table>
-<script>
- function input_move(n,y,m,d)
- {
-	 n=encodeURIComponent(n);
-	 location="input.jsp?bang="+n+"&y="+y+"&m="+m+"&d="+d;
- }
-</script>
+
 </div>
 <%@ include file="../bottom.jsp" %> 
 

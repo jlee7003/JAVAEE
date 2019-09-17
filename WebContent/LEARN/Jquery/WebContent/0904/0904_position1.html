@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <style>
+	#pkc {
+	width:200px;
+   position:absolute;
+   left:200px;
+   top:200px;
+   width:100px;
+   height:100px;
+   background:yellow;
+	}
+  </style>
+  <script> //jquery에서 position(레이어)의 정보를 가져오기
+
+    $(function()  
+	{
+ 		$("#btn").click(function(){
+		var aa=$("#pkc").position();
+		alert(aa.left+" "+aa.top);//jquery position-> 문서를 읽은 후 레이어의 정보를 가져올때
+		
+		var bb=document.getElementById("pkc");
+// 		alert(bb.style.left+" "+bb.style.top);//자료를 못읽어옴
+		bb.style.top="100px";
+ 		})
+	});
+
+
+
+    
+
+
+
+  </script>
+ </head>
+ <body>
+<button id=btn>click</button>
+<div id=pkc></div>
+ </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+  <script>   // 0906/show_hide.html
+    $(function()
+	{
+        $("#btn1").click(function() // 글자 숨기기
+		{
+            $(".aa").hide();
+			//document.getElementsByClassName("aa")[0].style.display="none";
+		});
+
+		$("#btn2").click(function() // 글자 보이기
+		{
+            $(".aa").show();
+			//document.getElementsByClassName("aa")[0].style.display="block";
+		});
+
+		$("#btn3").click(function() // 그림 숨기기
+		{
+            $(".bb").hide();
+		});
+
+		$("#btn4").click(function() // 그림 보이기
+		{
+            $(".bb").show();
+		});
+        
+	});
+  </script>
+ </head>
+ <body>
+    <button id=btn1>글자숨기기</button>
+	<button id=btn2>글자보이기</button>
+	<button id=btn3>그림숨기기</button>
+	<button id=btn4>그림보이기</button> <p>
+    <hr>
+    <div style="font-size:50px" class=aa> 안녕!! </div> <p>
+	<hr>
+	<img src=a.jpg width=300 class=bb>
+ </body>
+</html>

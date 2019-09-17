@@ -23,6 +23,7 @@ margin:0px;
 { 
 margin:auto;
 width:1200px;
+
 height:50px;
 background:white;
 display:flex;

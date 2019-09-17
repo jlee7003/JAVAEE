@@ -1,23 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    <%@ page import="java.sql.*"%>
 <%@page import="java.time.LocalDate"%>
 <%@ include file="../main/top2.jsp"%>
 <%
 	//reserve.jsp에서 보낸 값을 저장하기
 	//plusday를 사용해야 input을 만들수 있음
-	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/pension?useSSL=false", "root","1234");
-	Statement stmt = conn.createStatement();
-	request.setCharacterEncoding("UTF-8");
-	
+
 	 String bang=request.getParameter("bang");
    String y=request.getParameter("y");
-   String m=request.getParameter("m");     //문자열 m을 가져옴
-   if(m.length()==1)                       //문자열 m의 길이 1일 경우 
-   {                                       //if의 내용문을 실행
-	   m="0"+m;                            // 1~9일 경우  => 0을 앞에 붙인다.. 
+   String m=request.getParameter("m");
+   if(m.length()==1)
+   {
+	   m="0"+m; // 1~9일 경우  => 0을 앞에 붙인다..
    }
-   String d=request.getParameter("d");     //문자열 d의 경우도 같다
+   String d=request.getParameter("d");
    if(d.length()==1)
    {
 	   d="0"+d;//1~9일 경우 0을 붙임
@@ -28,13 +24,6 @@
 	//out.print(date);
 	//아이디 예약자이름 전화번호
 	//예약방이름 입실 indate outdate writeday
-	
-	
-	//현재 사용자가 선택한 방의 정보를 읽어오기
-	//숙박금액, 기준인원, 최대인원
-	String sql="select * from bang where name='"+bang+"'";
-	ResultSet rs=stmt.executeQuery(sql);
-	 rs.next();
 %>
 <!DOCTYPE html>
 <html>
@@ -45,21 +34,15 @@
 <style>
 </style>
 <script>
-
-/*price = 가격 
- *min_in = 최소인원 
- *max_in = 최대인원
- */
-var first=<%=rs.getInt("price")%>; //방의 가격
+var first=150000;
 var second=0;
 window.onload=function()
 {
 // 	document.pkc.sung.selectedIndex=1;
-// 	document.getElementById("sung").selectedIndex=1;
-	document.pkc.sung.value=<%=rs.getInt("min_in")%>; //최소 인원
-	document.getElementById("tot").innerText=<%=rs.getInt("price")%>;
-	document.getElementById("chong").innerText=<%=rs.getInt("price")%>;
-	document.pkc.suk_price.value=<%=rs.getInt("price")%>; //숙박 가격
+	document.pkc.suk_price.value=150000;
+	document.getElementById("sung").selectedIndex=1;
+	document.getElementById("tot").innerText="150,000";
+	document.getElementById("chong").innerText="150,000";
 	
 // 	var aa=document.getElementById("sung").selectedIndex;
 }
@@ -67,22 +50,23 @@ window.onload=function()
 function cal()//숙박과 인원을 계산하여 합계금액에 전달
 {
 	var s=document.pkc.suk.value;//숙박일수
-	var s_price=s*<%=rs.getInt("price")%>; // 숙박일수 * 방의 가격
+	var s_price=s*150000;
 // 	alert(s_price);
 	
 
-	var n1=parseInt(document.pkc.sung.value); //성인 인원
-	var n2=eval(document.pkc.child.value);//아이 인원
-	var inwon=n1+n2; //총인원 =성인+아이
-	if(inwon > <%=rs.getInt("max_in")%>) //select로 설정했을때 최대값을 넘었을 경우 기준 인원으로 수정
+	var n1=parseInt(document.pkc.sung.value);
+	var n2=eval(document.pkc.child.value);//총인원
+	var inwon=n1+n2;
+	document.pkc.inwon.value=inwon;
+	if(inwon > 6)
 		{
 		alert("인원이 초과되었습니다");
-		document.pkc.sung.value=<%=rs.getInt("min_in")%>;
+		document.pkc.sung.selectedIndex=1;
 		document.pkc.child.selectedIndex=0;
-		inwon=<%=rs.getInt("min_in")%>;
+		inwon=2;
 		}
 // 	alert(inwon);	//숙박일수 금액 + 총인원 금액을 tot에 전달해야함
-var chuga=inwon-<%=rs.getInt("min_in")%>;//총인원-기준인원
+var chuga=inwon-2;//총인원-기준인원
 if(chuga> 0)
 	var in_price=chuga*10000;
 else
@@ -170,8 +154,6 @@ function chuga_cal()//추가금액 계산 함수
 <tr>
 <td>예약상세</td>
 <td>
-
-기준2 / 최대 6 <!-- bang 테이블에 있는 필드 값으로 변경해야함 -->
   <select name=suk onchange=cal()>
     <option value=1> 1박 </option>
     <option value=2> 2박 </option>

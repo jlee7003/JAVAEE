@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <script>  
+   function imsi(n)
+   {
+	   for(i=0;i<3;i++)//이전에 선택했던것 초기화
+	   document.all.aa[i].style.display="none";
+// 	  alert();
+	  
+	   //내가 선택한 값
+	   document.all.aa[n].style.display="block";
+   }
+   
+   $("#accord").accordion();
+   </script>
+   <style>
+   #aa 
+   { 
+   display:none; 
+    } 
+   </style>
+ </head>
+ <body>
+ <div id=accord>
+ <h3 onclick=imsi(0)>짜장면 </h3>
+  <div id=aa>
+ 춘장에다가 야채 볶볶 전문 섞어서 만듬<p>
+ 맛있다
+ </div>
+ 
+ <h3 onclick=imsi(1)>탕수육 </h3>
+  <div id=aa>
+ 춘장에다가 야채 볶볶 전문 섞어서 만듬1<p>
+  맛있다1
+ </div>
+ 
+ <h3 onclick=imsi(2)>짬뽕 </h3>
+  <div id=aa>
+ 춘장에다가 야채 볶볶 전문 섞어서 만듬2<p>
+  맛있다2
+ </div> 
+ </div>
+ </body>
+</html>

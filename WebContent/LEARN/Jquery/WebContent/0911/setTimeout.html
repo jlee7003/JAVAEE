@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+   <script>  // 0909/animate6.html
+  setTimeout(imsi,2000);//setTimeout은 딱 한번만 실행된다.setTimeout(함수명,시간)
+ 	 
+  function imsi()
+  {
+	  alert("함수호출");
+  }
+ 
+  function hide()
+  {
+	  document.getElementById("pkc").style.visibility="hidden";
+  }
+  
+  //10초후에 사라지는 창
+  //setTimeout 반복?? setTimeout이 들어있는 함수를 반복해서 호출하면 됨
+   </script>
+   <style>
+ #pkc{
+ position:absolute;
+ left:200px;
+ top:100px;
+ width:200px;
+ height:100px;
+ border:1px solid red;
+ }
+   </style>
+ </head>
+ <body>
+   <div id=pkc> 광고창</div>
+ </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <style>
+    li {
+      list-style-type:none;
+	  display:inline-block;
+	  border:1px solid darkblue;
+	  margin-left:30px;
+	  padding:2px;
+	  color:darkblue
+	}
+	.chg {
+      color:white;
+	  background:darkblue;
+	}
+  </style>
+  <script>
+
+    $(function()  
+	{
+ 		$("#btn").click(function(){
+ 			var n=$(".name").val();
+ 			var a=$(".age").val();
+ 			alert("이름: "+n+" , 나이 : "+a);
+ 		})
+	});
+
+
+
+    $(function()  
+	{
+ 		$("#btn2").click(function(){
+ 			var q=$(".num1").val();
+ 			q=parseInt(q);
+ 			var w=$(".num2").val();
+ 			w=parseInt(w);
+ 			$(".result").val(q+w);
+ 			//eval,number도 가능함
+ 		})
+	});
+
+
+
+  </script>
+ </head>
+ <body>
+<form name=pkc>
+이름: <input type=text name=name class=name> <p>
+나이: <input type=text name=age class=age> <p>
+<input type=button id=btn value=클릭>
+</form>	
+<hr>
+<form>
+숫자1: <input type=text class=num1 size=4> <p>
+숫자2: <input type=text class=num2 size=4> <p>
+<input type=button id=btn2 value=더하기>
+결과 : <input type=text class=result size=4>
+</form>
+ </body>
+</html>

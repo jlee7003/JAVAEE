@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+ 
+  <script>  // 0909/animate6.html
+    $(function()   
+	{    
+            setInterval(function() 
+			{
+			   $("#txt").animate(
+			   {
+                  left:"370px"
+			   },4000).animate(
+			   {
+			 	  left:"0px"
+			   },4000);
+			},10);
+  
+	});
+ 
+  </script>
+ </head>
+ <body>
+      <div id=pkc>
+	    <div id=up></div>
+		<div id=txt> 학교종이 땡땡땡 어서모이자 선생님이 우리를 기다리신다.</div>
+	  </div>
+ </body>
+  <style>
+    #pkc{
+      width:1000px;
+      height:30px;
+	}
+	#up {
+      position:relative; /*레이어의 개념 */
+	  left:300px;
+	  top:20px;
+	  width:150px;
+	  height:30px;
+	  background:blue;
+	  z-index:8;
+	} 
+	#txt {
+	  position:absolute; /*글자가 나오면 글자 뒤에 그림이 오는 것*/
+	  color:white;
+	  z-index:10; /*z-index는 무조건 포지션을 가져야함, 높은 숫자가 위로 올라오게 됨*/
+	  font-weight:900;
+	    width:800px;
+	  height:30px;
+	  
+	}
+  </style>
+</html>

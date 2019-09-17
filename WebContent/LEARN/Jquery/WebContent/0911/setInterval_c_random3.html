@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+   <script>  // 0909/animate6.html
+   
+  
+   
+   var arr = new Array();
+   
+   arr[0]="red";
+   arr[1]="blue";
+   arr[2]="green";
+   arr[3]="yellow";
+   arr[4]="black";
+   arr[5]="white";
+   arr[6]="pink";
+   arr[7]="purple";
+   arr[8]="brown";
+   arr[9]="gray";
+   var setset =0;
+function move()
+   {
+// 	window.open("","","width=100,height=100");  
+ var ran=parseInt(Math.random()*10);
+pkc.style.background=arr[ran];
+   }
+   //광고창에 마우스가 올라가면 stop 마우스가 내려가면 다시 실행
+   
+   function out()
+   { 
+	   clearInterval(setset); //괄호안에 setInterval의 객체변수
+   }
+   function gogo()
+   {
+	setset=setInterval(move,100); //함수내에 var 변수명 => 지역변수
+   }
+   </script>
+   <style>
+ #pkc{
+ position:absolute;
+ left:200px;
+ top:100px;
+ width:100px;
+ height:30px;
+ background:red;
+ border:1px solid red;
+ }
+   </style>
+ </head>
+ <body onload=gogo()>
+   <div id=pkc onmouseover=out() onmouseout=gogo()> 광고창</div>
+ </body>
+</html>

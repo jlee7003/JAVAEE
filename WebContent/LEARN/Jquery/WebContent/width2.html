@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <style>
+    #pkc {
+      width:200px;
+	  height:200px;
+	  padding:20px;
+	  border:10px solid red;
+	  background:yellow;
+	}
+  </style>
+  <script>  // width2.html
+    $(function()     
+	{                
+        $("#btn").click(function()
+		{
+			$("#pkc").outerWidth(300);
+ 
+            var w="width : "+ $("#pkc").width();
+			var h="height : "+ $("#pkc").height();
+			var wi="innerWidth : "+ $("#pkc").innerWidth();
+			var hi="innerHeight : "+ $("#pkc").innerHeight();
+			var wo="outerWidth : "+ $("#pkc").outerWidth();
+			var ho="outerHeight : "+ $("#pkc").outerHeight();
+            var tt=w+"<br>"+h+"<br>"+wi+"<br>"+hi+"<br>"+wo+"<br>"+ho;
+			$("#pkc").html(tt);
+
+		});
+    });
+  </script>
+ </head>
+ <body>   
+    <button id=btn>클릭</button>
+    <div id=pkc></div>
+
+ </body>
+</html>

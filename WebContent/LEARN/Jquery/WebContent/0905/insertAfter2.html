@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>  // 0904/insertAfter2.html
+      $(function()  
+	  {
+		  $("#btn1").click(function() // 소스보기
+		  {
+              alert($("body").html());
+		  });
+
+		  $("#btn2").click(function()
+		  {
+		     //$("<span> 뒤에 </span>").insertAfter($("#pkc"));
+			 $("#btn1").insertAfter($("#pkc"));
+			 // 추가대상=> 요소형태
+		  });
+
+		  $("#btn3").click(function()
+		  {
+			 $("<span> 앞에 </span>").insertBefore($("#pkc"));
+		  });   
+	  });
+   </script>
+ 
+ </head>
+ <body>
+     <button id=btn1> html소스보기 </button>
+     <button id=btn2> insertAfter실행 </button> 
+     <button id=btn3> insertBefore실행 </button> <p>
+     <span id=pkc>안녕</span>
+ </body>
+</html>

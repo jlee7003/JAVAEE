@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<style>
+#pkc, #pkc2 {
+	width: 100px;
+	height: 100px;
+	background: red;
+	position: absolute;
+	/*   //포지션이 있어야 동작을함 */
+	left: 0px;
+	top:40px;
+}
+</style>
+<script>
+	$(function()//$(선택자).animate({내용},시간); => 시간동안 내용 실행
+	{
+
+		$("#btn1").click(function() // 글자 숨기기
+		{
+			$("#pkc").animate(
+					{
+						width:"300px",//변경시킬 내용을 추가(최종목적지)
+					    height:"300px"
+					},2000);
+		});
+
+		$("#btn2").click(function() // 글자 숨기기
+				{
+					$("#pkc").animate(
+							{
+								width:"50px",//변경시킬 내용을 추가(최종목적지)
+							    height:"50px"
+							},2000);
+				});
+		
+		$("#btn3").click(function() // 글자 숨기기
+				{
+					$("#pkc").animate(
+							{
+								left:"400px"//변경시킬 내용을 추가(최종목적지)
+							},2000);
+				});
+		
+		$("#btn4").click(function() // 글자 숨기기
+				{
+					$("#pkc").animate(
+							{
+						top:"400px"
+							},2000);
+				});
+	});
+</script>
+</head>
+<body>
+	<div id=pkc></div>
+	<p>
+
+		<button id=btn1>크게하기</button>
+		<button id=btn2>작게하기</button>
+		<button id=btn3>왼쪽이동</button>
+		<button id=btn4>아래이동</button>
+</body>
+</html>

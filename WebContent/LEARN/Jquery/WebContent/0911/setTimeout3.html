@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+   <script>  // 0909/animate6.html
+   var tt=200;
+   function move() //재귀호출 - 함수를 함수안에서 다시 부르는것
+   {
+	   tt++;
+	   document.getElementById("pkc").style.left=tt+"px";
+	   setTimeout(move,100); //무한반복
+   }
+
+   </script>
+   <style>
+ #pkc{
+ position:absolute;
+ left:200px;
+ top:100px;
+ width:200px;
+ height:100px;
+ border:1px solid red;
+ }
+   </style>
+ </head>
+ <body>
+ <button onclick=move()>클릭</button>
+   <div id=pkc> 광고창</div>
+ </body>
+</html>

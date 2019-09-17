@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>  // 0904/eq.html
+      $(function()  
+	  {     
+		 $(".menu li").click(function()
+		  {
+			  //var n=$(this).index();
+			  //$(".menu li").eq(n).css("color","blue");
+              $(this).css("color","blue");
+			  // 작업대상이 자기자신
+		  });
+
+		  $(".alcohol li").click(function()
+		  {
+               var n=$(this).index();
+			   $(".made li").eq(n).css("background","yellow");
+		  });
+	  });
+   </script>
+
+ </head>
+ <body>
+     <ul class=alcohol>
+       <li> 소주 </li>
+	   <li> 포도주 </li>
+	   <li> 막걸리 </li>
+	   <li> 맥주 </li>
+	   <li> 보드카 </li>
+	   <li> 위스키 </li>
+	   <li> 데낄라 </li>
+	 </ul>
+	 <ul class=made>
+       <li> 참이슬,처음처럼,한라산 </li>
+	   <li> 까르네쇼비뇽,몰라 </li>
+	   <li> 장수, 천안, 광주 </li>
+	   <li> 카스, 하이트, 테라 </li>
+	   <li> 앱솔르트, 그레이브스 </li>
+	   <li> 로얄살루떼, 패스포트, 나폴레온, 캡틴큐 </li>
+	   <li> 호세쿠XX </li>
+	 </ul>
+     <hr>
+     <ul class=menu>
+       <li> 햄버거 </li>
+	   <li> 피자 </li>
+	   <li> 초밥 </li>
+	   <li> 짜장면 </li>
+	   <li> 파전 </li>
+	   <li> 불고기 </li>
+	   <li> 라면 </li>
+	 </ul>
+	 
+ </body>
+</html>

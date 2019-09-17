@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <style>
+    #pkc {
+      width:200px;
+	  height:200px;
+	  padding:20px;
+	  border:10px solid red;
+	  background:yellow;
+	}
+  </style>
+  <script>  // width4.html
+    $(function()     
+	{   
+		var w=200;
+		var h=200;
+		var p=10;
+		var o=10;
+        $("#btn1").click(function() // 가로,세로변경
+		{  // setInterval(함수,시간);
+		   // setInterval(function() { 내용 } , 시간); -> jquery 대다수 사용
+		   ss=setInterval(width_change,10);
+		});
+
+		function width_change()
+	    {
+			  w++;
+			  h++;
+              if(w<300)
+			  {
+                 $("#pkc").width(w);
+				 $("#pkc").height(h);
+			  }
+			  else
+			    clearInterval(ss);
+	    }
+
+
+		$("#btn2").click(function() // padding변경
+		{
+		   var ss=setInterval(function()
+		   {
+              p=p-1; // p--;
+			  if(p>0)
+			    $("#pkc").css("padding",p);
+			  else
+			    clearInterval(ss);
+		   },50);
+
+		});
+		$("#btn3").click(function() // 외곽선변경
+		{
+		   var ss=setInterval(function()
+		   {
+              o=o-1; // o--;
+			  if(o>=0)
+			    $("#pkc").css("border-width",o);
+			  else
+			    clearInterval(ss);
+		   },50);
+
+		});
+    });
+  </script>
+ </head>
+ <body>   
+    <button id=btn1>widt,height변경</button>
+	<button id=btn2>padding변경</button>
+	<button id=btn3>외곽선변경</button>
+    <div id=pkc>aa</div>
+
+ </body>
+</html>

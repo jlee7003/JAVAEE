@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+  <script>   // 0906/toggle.html
+
+    $(function()
+	{
+        $("#btn1").click(function()  
+		{
+            $(".aa").toggle(); // slow,fast, 시간(1/1000초)
+ 		});
+
+		$("#btn2").click(function()  
+		{
+            $(".bb").toggle();
+		});
+
+       
+	});
+  </script>
+ </head>
+ <body>
+    <button id=btn1>글자</button>
+	<button id=btn2>그림</button> <p>
+    <hr>
+    <div style="font-size:50px" class=aa> 안녕!! </div> <p>
+	<hr>
+	<img src=a.jpg width=300 class=bb>
+ </body>
+</html>

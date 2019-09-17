@@ -44,12 +44,12 @@
   sql=sql+"','"+out_date+"','"+writeday+"',"+inwon+",";
   sql=sql+spa+","+charo+","+bbq+","+suk_price+","+chu_price+")";
   //쿼리 실행
-  out.print(sql);
+//   out.print(sql);
    stmt.executeUpdate(sql);
   
   stmt.close();
   conn.close();
-  //response.sendRedirect("reserve2.jsp");
+  response.sendRedirect("reserve.jsp");
 %>
 
 

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+  <script>   // 0906/slide.html
+    $(function()
+	{
+        $("#btn1").click(function() // 글자 숨기기
+		{
+            $(".aa").slideUp(); // slow, fase, 시간(1/1000초)
+		});
+
+		$("#btn2").click(function() // 글자 보이기
+		{
+            $(".aa").slideDown();
+		});
+
+		$("#btn3").click(function() // 그림 숨기기
+		{
+            $(".bb").slideUp(3000);
+		});
+
+		$("#btn4").click(function() // 그림 보이기
+		{
+            $(".bb").slideDown(3000);
+		});
+        
+	});
+  </script>
+ </head>
+ <body>
+    <button id=btn1>글자slideUp</button>
+	<button id=btn2>글자slideDown</button>
+	<button id=btn3>그림slideUp</button>
+	<button id=btn4>그림slideDown</button> <p>
+    <hr>
+    <div style="font-size:50px" class=aa> 안녕!! </div> <p>
+	<hr>
+	<img src=a.jpg width=300 class=bb>
+ </body>
+</html>

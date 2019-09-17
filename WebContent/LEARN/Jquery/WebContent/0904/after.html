@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>  // 0904/after.html
+      $(function()
+	  {
+          $("#btn").click(function()
+		  {
+               alert($("body").html());
+		  });
+	  });
+   </script>
+   <style>  /* css에서 특정요소 앞뒤에 내용첨가 */
+     #aa::after {
+      content:" 최고!!";
+	 }
+	 #aa::before {
+      content:"천하무적 ";
+	 }
+   </style>
+ </head>
+ <body>
+      <button id=btn>클릭</button>
+
+      <span id=aa>홍길동</span> <p>
+ </body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<style>
+.aa {
+	list-style-type: none;
+	display: inline-block;
+	border: 1px solid darkblue;
+	margin-left: 30px;
+	padding: 2px;
+	color: darkblue
+}
+
+.chg {
+	color: white;
+	background: darkblue;
+}
+
+.aa1 {
+	list-style: none;
+	display: none;
+}
+
+.menu {
+	width: 100px;
+}
+</style>
+<script>
+	$(function() // addclass_menu.html
+	{
+		$(".aa").mouseover(function() {
+			$(this).addClass("chg"); // 이전 css();
+		});
+		$(".aa").mouseout(function() {
+			$(this).removeClass("chg");
+		});//this??=>모든 클래스??
+
+	});
+
+	$(function() { //.menu 위에 마우스가 올라오면 매뉴 보이기
+		$(".aa").mouseover(function() {
+			$(".aa1").css("display", "block");
+		});
+
+		$(".aa").mouseout(function() {
+			$(".aa1").css("display", "none");
+		});
+
+	});
+</script>
+</head>
+<body>
+
+
+	<ul class=aa>
+		음식들
+		<li class=aa1>스포츠</li>
+		<li class=aa1>식품류</li>
+		<li class=aa1>생활용품</li>
+		<li class=aa1>주방용품</li>
+		<li class=aa1>여행용품</li>
+	</ul>
+
+	<ul class=aa>
+		중국음식
+		<li class=aa1>짜장면</li>
+		<li class=aa1>우동</li>
+		<li class=aa1>짬뽕</li>
+		<li class=aa1>탕수육</li>
+	</ul>
+
+</body>
+</html>

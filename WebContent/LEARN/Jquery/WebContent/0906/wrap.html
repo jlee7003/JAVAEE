@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+  <script>   // 0906/wrap.html
+    $(function()
+	{
+		$("#sss").click(function()
+		{
+			alert($("body").html());
+		});
+
+        $("#btn").click(function()
+		{
+             $("b").wrap("<s>");
+		});
+
+        $("#btn2").click(function()
+		{
+             $(".aa").unwrap();
+		});
+
+        $("#btn3").click(function()
+		{
+             $("div").wrapInner("<s>");
+		});
+        
+	});
+  </script>
+ </head>
+ <body>
+   <button id=sss> 소스보기 </button>
+   <button id=btn> wrap </button>
+   <button id=btn2> unwrap </button>
+   <button id=btn3> wrapInner </button> <p>
+      <b> 안녕하세요 </b> <p>
+	  <b> 감사합니다 </b> <p>
+	  <b> 고맙습니다 </b> <p>
+	  <s> <b class=aa>  홍길동 </b> </s> <p>
+	  <div> 배트맨 </div>
+ </body>
+</html>

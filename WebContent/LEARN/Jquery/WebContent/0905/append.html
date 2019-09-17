@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>  // 0904/append.html
+      $(function() // append,prepend는 선택자 내부 앞 , 뒤로 추가
+	  {
+		  $("#btn1").click(function() // 소스보기
+		  {
+              alert($("body").html());
+		  });
+
+		  $("#btn2").click(function()
+		  {
+              $("#pkc").append(" 반가워!!");
+			  $("#pkc").prepend(" 하이!! ");
+		  });
+
+	  });
+   </script>
+ 
+ </head>
+ <body>
+     <button id=btn1> html소스보기 </button>
+     <button id=btn2> append실행 </button>
+	 <div id=pkc> 안녕!! </div>
+ </body>
+</html>

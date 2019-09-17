@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <script src="http://code.jquery.com/jquery-latest.js"></script>
+     <style>
+     div {
+       display:inline-block;
+	   margin-left:30px;
+       width:100px;
+	   height:30px;
+ 
+	 }
+  </style>
+    <script>  // 0904/insertAfter_move2.html
+      $(function()  
+	  {               // setInterval(함수,시간) : 함수=>function() { }
+	       var ss=setInterval(function() 
+		   {
+		      $(".aa").eq(0).insertAfter($(".aa").eq(4));		   
+		   } ,3000);
+	  });
+   </script>
+
+ </head>
+ <body>
+	 <div class=aa> <img src=1.jpg width=100> </div>
+	 <div class=aa> <img src=2.jpg width=100>  </div>
+	 <div class=aa> <img src=3.jpg width=100> </div>
+	 <div class=aa> <img src=4.jpg width=100> </div>
+	 <div class=aa> <img src=5.jpg width=100> </div>
+ </body>
+</html>

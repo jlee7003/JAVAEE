@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+  <script>   // 0906/fade.html
+    $(function()
+	{
+        $("#btn1").click(function() // 글자 숨기기
+		{
+            $(".aa").fadeOut(3000); // slow,fast,시간(1/1000초)
+		});
+
+		$("#btn2").click(function() // 글자 보이기
+		{
+            $(".aa").fadeIn(3000);
+		});
+
+		$("#btn3").click(function() // 그림 숨기기
+		{
+            $(".bb").fadeOut(3000); 
+		});
+
+		$("#btn4").click(function() // 그림 보이기
+		{
+            $(".bb").fadeIn(3000);
+		});
+        
+	});
+  </script>
+ </head>
+ <body>
+    <button id=btn1>글자fadeOut</button>
+	<button id=btn2>글자fadeIn</button>
+	<button id=btn3>그림fadeOut</button>
+	<button id=btn4>그림fadeIn</button> <p>
+    <hr>
+    <div style="font-size:50px" class=aa> 안녕!! </div> <p>
+	<hr>
+	<img src=a.jpg width=300 class=bb>
+ </body>
+</html>
