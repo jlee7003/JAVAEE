@@ -1,32 +1,33 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-   <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> 
- <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">  	
-  <script> // 0916/auto.html
- $(function(){
-	$(".aa, .bb, span, a").button();
-	$("span").eq(1).button({
-		icon:"ui-icon-heart",
-		iconPosition:"end" //beginning, top, bottom
-	});
- });
-  //https://api.jqueryui.com/theming/icons/
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script> //  0917/checkbox.html
+     $(function()
+	 {
+         $(".male").checkboxradio();
+		 $(".female").checkboxradio();
+		 $(".food").checkboxradio(
+				 {
+					 icon:false //짜장면의 아이콘이 사라짐
+				 });
+	 });
   </script>
-  <style>
-  </style>
- </head>
- <body>
-     <input class=aa type=button value=확인> <p>
-     <button class=bb> 확인 </button> <p> <!-- 그림,테이블 모든 요소가 들어갈수 있다. -->
-     <span>클릭</span> <p> 
-          <a href="http://www.naver.com"> 네이버 </a> 
-          <hr>
-           <input class=aa type=button value=확인> <p>
-     <button class=bb> 확인 </button> <p> <!-- 그림,테이블 모든 요소가 들어갈수 있다. -->
-     <span>클릭</span> <p> 
-          <a href="http://www.naver.com"> 네이버 </a> 
- </body>
+
+</head>
+<body>
+	<label for=male> 남자 </label>
+	<input type=radio id=male class=male>
+	<label for=female> 여자 </label>
+	<input type=radio id=female class=female>
+	<hr>
+	<label for=food> 짜장면 </label>
+	<input type=checkbox id=food class=food>
+</body>
 </html>
