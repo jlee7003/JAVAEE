@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script>
+	//  0917/checkbox.html
+function view_sub() //form이름
+{
+		var chk=document.pkc.menu.selectedIndex; //selectedIndex 대신에 value 써도 됌
+		//돼지고기
+		if(chk==0)
+			{
+			document.pkc.sub.length=0;
+			}
+		
+		else if(chk==1){	
+		document.pkc.sub.length=4;
+		document.pkc.sub.options[0].value="0";
+		document.pkc.sub.options[1].value="1";
+		document.pkc.sub.options[2].value="2";
+		document.pkc.sub.options[3].value="3";
+		document.pkc.sub.options[0].text="삼겹살";
+		document.pkc.sub.options[1].text="안심";
+		document.pkc.sub.options[2].text="항정살";
+		document.pkc.sub.options[3].text="앞다리살";
+		}
+		else if(chk==2)
+		{
+		//소고기
+		document.pkc.sub.length=5;
+		document.pkc.sub.options[0].value="0";
+		document.pkc.sub.options[1].value="1";
+		document.pkc.sub.options[2].value="2";
+		document.pkc.sub.options[3].value="3";
+		document.pkc.sub.options[4].value="4";
+		document.pkc.sub.options[0].text="등심";
+		document.pkc.sub.options[1].text="안심";
+		document.pkc.sub.options[2].text="제비추리";
+		document.pkc.sub.options[3].text="갈비살";
+		document.pkc.sub.options[4].text="홍두께살";
+		}
+		//닭고기
+		else{
+		document.pkc.sub.length=3;
+		document.pkc.sub.options[0].value="0";
+		document.pkc.sub.options[1].value="1";
+		document.pkc.sub.options[2].value="2";
+		document.pkc.sub.options[0].text="닭다리";
+		document.pkc.sub.options[1].text="가슴살";
+		document.pkc.sub.options[2].text="안심";
+		}
+}
+	</script>
+</head>
+<body id=aa>
+	<form name=pkc>
+		<select name=menu onchange=view_sub()>
+			<option value=0>대분류</option>
+			<option value=1>돼지고기</option>
+			<option value=2>소고기</option>
+			<option value=3>닭고기</option>
+		</select>
+
+		<hr>
+		<select name=sub>
+		</select>
+	</form>
+
+
+
+
+</body>
+</html>
