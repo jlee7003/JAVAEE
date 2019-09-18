@@ -3,7 +3,8 @@
  <head>
   <meta charset="UTF-8">
   <script src="http://code.jquery.com/jquery-latest.js"></script> 
- <!--  -->
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+ 
   <script>  // 0909/animate6.html
     $(function()   
 	{    
@@ -14,18 +15,17 @@
       //기본틀 -relative
       //보이는 영역 -relative /보이는 영역이나 실제내용 둘중 하나는 엡솔루트로 해준다.
       //실제내용-absolute
-    	$("#pkc").animate({
-    		
-    		left:"300px",
-    		top:"300px"
-    	},3000);
+  	
+      $("#pkc").animate({
+    	 backgroundColor:"blue" 
+      },3000);
 	});
    </script>
    <style>
    #pkc{
-   left:30px;
-   top:10px;
-   position:absolute;
+width:300px;
+height:300px;
+background:yellow;
    }
    </style>
  </head>
