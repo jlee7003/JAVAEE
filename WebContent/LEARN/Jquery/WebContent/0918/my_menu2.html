@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script>
+   function check(ppp)
+   {
+	 
+	  var sub=document.getElementById("sub");
+      var n=parseInt(ppp.value);
+	  if(n!=0)
+	  {   
+         switch(n)
+		  {
+            case 1:
+			  sub.length=4;
+              sub.options[0].text="비빔밥";
+              sub.options[1].text="불고기";
+			  sub.options[2].text="김치찌개";
+			  sub.options[3].text="너비아니";
+			break;
+           
+			case 2:
+			  sub.length=5;
+              sub.options[0].text="짜장면";
+              sub.options[1].text="탕수육";
+			  sub.options[2].text="우동";
+			  sub.options[3].text="짬뽕";
+			  sub.options[4].text="라조기";
+			break;
+
+			case 3:
+			  sub.length=3;
+              sub.options[0].text="오코나미야끼";
+              sub.options[1].text="메밀소바";
+			  sub.options[2].text="타코야끼";
+			break;
+		  }
+	  }
+   }
+  </script> 
+ </head>
+ <body>
+   <select onchange=check(this)>
+     <option value=0> 선 택 </option>
+     <option value=1> 한국음식 </option>
+	 <option value=2> 중국음식 </option>
+	 <option value=3> 일본음식 </option>
+   </select>
+   <select id=sub>
+ 
+   </select>
+ </body>
+</html>
