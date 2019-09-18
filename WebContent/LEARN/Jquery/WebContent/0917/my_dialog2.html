@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script>
+	//  0917/checkbox.html
+  $(function() {
+  	$("#pkc").dialog(
+  			{
+  				autoOpen:false, //자동으로 보이기를 해제함
+  				show: {effect:"bounce",duration:2000}, //{effect:"값",duration:시간}
+  			// slide, blind, explode, fade, fold, clip, bounce
+  				 hide: {effect:"blind",duration:1000}, //닫을떄의 효과
+  				 draggable:false, //드래그가 안되는 효과
+  				 width:200,
+  				 height:200,
+  				 modal:false, // 밖의 것을 클릭 불가하게 만듬 , 우선순위를 주는것이 가능함
+  				 resizable:false,
+  				 title:"연습",
+  				 closeOnEscape:false,
+  				 buttons:[{ //button[{}] 대괄호가 버튼영역
+  					text:"ok" ,
+  					icon:"ui-icon-heart",
+  					click:function()
+  					{
+  						$("#pkc").dialog("close");
+  					}
+  				 },
+  				{ //button[{}] 대괄호가 버튼영역
+   					text:"네이버" ,
+   					icon:"ui-icon-heart",
+   					click:function()
+   					{
+						location="http://www.naver.com";
+   					}
+   				 }]
+  			});
+  	
+  			$("#btn").click(function(){
+  				$("#pkc").dialog("open")
+  			})
+  			$("#btn2").click(function(){
+  				$("#pkc").dialog("close")
+  			})
+  });
+</script>
+</head>
+<body>
+<button id=btn>클릭</button>
+<button id=btn2>클릭123</button>
+	<div id=pkc>안녕하세요!!</div>
+</body>
+</html>
