@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script>
+	//  0917/checkbox.html
+var price=["5,000원","6,000원","8,000원","15,000원"];
+	function view(n)
+	{
+		var ppp=document.getElementById("pkc");
+		ppp.innerText=price[n];
+		ppp.style.visibility="visible";
+		ppp.style.left=(event.clientX+20)+"px";
+		ppp.style.top=event.clientY+"px";
+	}
+	function hide()
+	{
+		var ppp=document.getElementById("pkc");
+		ppp.style.visibility="hidden";
+	}
+	document.onclick=imsi;
+</script>
+<style>
+li {
+list-style-type:none;
+width:100px;
+height:30px;
+border:1px solid red;
+margin-top:10px;
+}
+#pkc{
+position:absolute;
+left:0xp;
+top:0px;
+visibility:hidden; 
+}
+
+</style>
+</head>
+<body>
+<div id=pkc></div>
+<ul>
+<li onmouseover=view(0) onmouseout=hide()>짜장면</li>
+<li onmouseover=view(1) onmouseout=hide()>우동</li>
+<li onmouseover=view(2) onmouseout=hide()>짬뽕</li>
+<li onmouseover=view(3) onmouseout=hide()>탕수육</li>
+
+</ul>
+</body>
+</html>
