@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script>
+	//  0917/checkbox.html
+  $(function() {
+	$("#aa").draggable(
+			{
+				cursor:"pointer"
+			});
+	$("#bb").draggable({
+		containment:"parent", //부모태그 영역 밖으로 못나가게 하는 명령어
+		cursorAt:{top:0}, //이동시 마우스 포인트의 위치
+		opacity:0.1,
+		delay:2000
+	});
+  });
+</script>
+<style>
+div{
+width:400px;
+height:400px;
+border:1px solid gold;
+}
+</style>
+</head>
+<body>
+<div>
+<span id=aa>안녕!</span>
+<span id=bb>안녕qw
+</span>
+</div>
+</body>
+</html>
