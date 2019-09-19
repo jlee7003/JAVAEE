@@ -10,9 +10,9 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <style>
 #aa {
-	wclassth: 300px;
+	width: 300px;
 	height: 300px;
-	overflow: hclassden;
+	overflow: hidden;
 }
 
 img {margin-top:10px;}
