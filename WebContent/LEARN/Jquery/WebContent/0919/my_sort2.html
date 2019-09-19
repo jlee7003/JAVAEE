@@ -9,16 +9,7 @@
  
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
- 
-  <script>
-    $(function() // 0919/select.html
-	{
-        $("#aa,#bb").sortable({
-        	connectWith:".cc"
-        }); //드래그해서 순서를 임의로 정할 수 있음
-	}); 
-  </script>
-   <style>
+  <style>
   li{
   width:100px;
   height:30px;
@@ -27,30 +18,24 @@
   margin-top:5px;
   list-style-type:none;
   }
-  ul{
-  float:left;
-  width:120px;
-  }
   </style>
+  <script>
+    $(function() // 0919/select.html
+	{
+        $("#aa").sortable(); //드래그해서 순서를 임의로 정할 수 있음
+	}); 
+  </script>
+  
 
  </head>
  <body>
-<ul id=aa class=cc>
+<ul id=aa>
 <li>짜장면</li>
 <li>우 동</li>
 <li>짬 뽕</li>
 <li>탕수육</li>
 <li>라조기</li>
 <li>전가복</li>
-</ul>
-
-<ul id=bb class=cc>
-<li>피 자</li>
-<li>라 면</li>
-<li>갈비찜</li>
-<li>부대찌개</li>
-<li>알밥</li>
-<li>알 탕</li>
 </ul>
  </body>
 </html>
