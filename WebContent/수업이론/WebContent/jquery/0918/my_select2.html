@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script>
+	//  0917/checkbox.html
+function add_option1() //form이름
+{
+	document.pkc.menu.length=2; //length는 옵션태그의 갯수
+	document.pkc.menu.options[0].text="갈비찜";
+	document.pkc.menu.options[1].text="고갈비찜";
+	document.pkc.menu.options[0].value="0";
+	document.pkc.menu.options[1].value="1";
+}
+function add_option2() //form이름
+{
+	document.getElementById("menu").length=5;
+	document.getElementById("menu").options[0].text="갈비찜1";
+	document.getElementById("menu").options[1].text="갈비찜2";
+	document.getElementById("menu").options[2].text="갈비찜3";
+	document.getElementById("menu").options[3].text="갈비찜4";
+	document.getElementById("menu").options[4].text="갈비찜5";
+}
+function view()
+{
+	alert(aa.innerHTML);
+}
+	</script>
+<style>
+div{
+width:400px;
+height:400px;
+border:1px solid gold;
+}
+</style>
+</head>
+<body id=aa>
+<button onclick=view()>소스</button>
+<button onclick=add_option1()>option 추가</button>
+<button onclick=add_option2()>option 추가</button>
+<form name=pkc>
+<select name=menu>
+</select>
+</form>
+   <hr>
+
+	<select id=menu>
+	</select>
+
+
+</body>
+</html>
