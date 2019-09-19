@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- CDN 연결방법 -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- 파일을 서버로 다운받은후 사용하는 방법 -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<style>
+#aa .ui-selecting {/* 마우스로 클릭중 */
+	background: lightblue;
+}
+
+#aa .ui-selected {/* 마우스로 선택완료 */
+	background: blue;
+	color: white;
+} /*선택 매뉴 그룹에서 selecting,selected를 정의  */
+
+li {
+	list-style-type: none;
+	width: 130px;
+	height: 40px;
+	border: 1px solid red;
+	margin-top:4px;
+	border-radius:4px;
+ 	display:flex; 
+ 	justify-content:center; 
+	align-items:center; 
+}
+</style>
+<script>
+	$(function() // 0919/select.html
+	{
+		$("#aa").selectable();
+	});
+</script>
+
+
+</head>
+<body>
+	<ul id=aa>
+		<li>짜장면</li>
+		<li>우동</li>
+		<li>짬뽕</li>
+		<li>탕수육</li>
+		<li>라조기</li>
+		<li>전가복</li>
+	</ul>
+</body>
+</html>
