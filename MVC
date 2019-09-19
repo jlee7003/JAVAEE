@@ -12,4 +12,7 @@ MVC패턴은 디자인패턴 중 하나 디자인 패턴이란 프로그램이�
  Model, View, COntroller의 약자 하나의 애플리케이션,
  프로젝트를 구성 할때에 그 구성 요소를 세가지의 역할로 구분한 패턴입니다.
  
+ ![ModelViewControllerDiagram](https://user-images.githubusercontent.com/50094911/65219421-808ad100-daf3-11e9-9617-bca8d96c6e85.png)
+
+ 
  
