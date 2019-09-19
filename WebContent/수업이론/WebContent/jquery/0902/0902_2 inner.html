@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- mouseover.html -->
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<style>
+</style>
+<script>
+	$(function() { //.menu 위에 마우스가 올라오면 매뉴 보이기
+	
+		$("#pkc").html("<b> 안녕!!</b>");
+		$(".ppp").text("<b> 안녕!!</b>");
+	});
+	window.onload=function()
+	{
+		document.getElementById("pkc2").innerHTML="<b> 안녕!!</b>";
+		document.getElementsByClassName("ppp2")[0].innerText="<b> 안녕!!</b>";
+		//getElements와 getElement의 차이점??? 
+	   /*  
+		기본적으로 class와 아이디에는 차이가 있다 
+		아이디는 한페이지에 하나의 정의로  딱 하나의 태그만 사용할 수 있다,
+		즉 중복이 불가능하다는 의미
+	   
+		그와 다르게 클래스는 한페이지에 반복적으로 사용되는 스타일을 정의 할수 있음 -> 좀더 편리한거 같다
+	  
+		-div와 span의 차이점
+		div: display:block 과 같은 성질을 가짐
+		span: display:inline 과 같은 성질을 가짐
+		*/
+		
+		
+	};
+	
+
+
+	
+</script>
+</head>
+<body>
+<div id=pkc></div><p>
+<div class=ppp></div>
+<hr>
+<div id=pkc2></div><p>
+<div class=ppp2></div>
+
+	       
+
+</body>
+</html>
