@@ -5,10 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
+</head>//서블릿?
 <body>
   <%
      HttpServletRequest httprequest=(HttpServletRequest)pageContext.getRequest();
+  															//현재 페이지에서 request 하는 것과 같은것
   %>
   <%= request==httprequest %>
   
