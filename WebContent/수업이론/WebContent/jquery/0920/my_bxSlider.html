@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- CDN 연결방법 -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- 플러그인 필요 없움 -->
+<script
+	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script>
+	$(function() // 0919/select.html
+	{
+		$(".slider").bxSlider({
+			auto:true,
+// 			speed:5000,
+			pager:false,
+			mode:"vertical"
+			
+		});
+	});
+</script>
+
+</head>
+<body>
+	<div class="slider">
+		<img src=1.jpg width=900 height=400> <img src=2.jpg width=900
+			height=400> <img src=3.jpg width=900 height=400> <img
+			src=4.jpg width=900 height=400> <img src=5.jpg width=900
+			height=400> <img src=6.jpg width=900 height=400> <img
+			src=7.jpg width=900 height=400>
+	</div>
+</body>
+</html>
