@@ -1,0 +1,249 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+	width: 1210px;
+}
+
+nav {
+	width: 300px;
+	height: 900px;
+	float: left;
+	position: fixed;
+}
+
+nav li {
+	list-style-type: none;
+	font-size: 13px;
+}
+
+nav>ul>li { /* 메뉴 목록 */
+	height: 25px;
+}
+
+nav .menu { /* 하위 ul 메뉴 */
+	padding-left: 15px;
+	display: none;
+}
+
+nav .menu li { /* 하위메뉴 */
+	height: 20px;
+}
+
+#logo {
+	font-size: 28px;
+	padding-left: 40px;
+	padding-top: 40px;
+	margin-bottom: 60px;
+}
+
+#right {
+	float: left;
+	width: 100%;
+	margin: 0px;
+	height: 900px;
+	margin-left: 300px;
+}
+
+section {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	/*             display: block; */
+}
+
+.index_section {
+	background-image: url("../main/img/main.jpg");
+	background-attachment: fixed;
+}
+
+footer {
+	width: 100%;
+	height: 350px;
+	margin-top: 50px;
+}
+
+#left_import {
+	width: 300px;
+	height: 100%;
+	background: blue;
+}
+
+.left_top {
+	height: 20%;
+	background: green;
+}
+
+#l_menuwrap {
+	padding: 0px 55px;
+	height: 100%;
+}
+
+.login_section { /*login*/
+	height: 900px;
+	display: flex;
+	width:1000px;
+	justify-content: center;
+}
+
+.login_section #userid {
+	width: 250px;
+	height: 30px;
+	border: 1px solid #cccccc;
+	border-bottom: none;
+	display: flex;
+	align-items: center;
+	color: #cccccc;
+}
+#log{
+/* 	padding-bottom:100px; */
+margin-top:120px;
+margin-bottom:120px;
+	display:block;
+	justify-content:center;
+	display:flex;
+}
+
+
+.login_section #outer {
+	width: 400px;
+	height: 80px;
+	/* 	border: 1px solid black; */
+}
+
+.login_section #outer_left { /* 아이디, 패스워드 입력칸 */
+	float: left;
+}
+
+.login_section #outer_right { /* 로그인 버튼을 포함 */
+	float: left;
+	margin-left: 10px;
+}
+
+.login_section #pwd {
+	width: 250px;
+	height: 30px;
+	color: #cccccc;
+	display: flex;
+	align-items: center;
+	border: 1px solid #cccccc;
+	align-items: center;
+}
+
+#lock {
+	width: 14px;
+	height: 14px;
+}
+
+.login_section #third {
+	font-size: 12px;
+	width: 400px;
+	height: 30px;
+}
+
+.login_section #fourth {
+	font-size: 12px;
+	width: 400px;
+	height: 30px;
+}
+
+.login_section #fifth {  /* 네이버,페이스북,카카오*/
+	width:400px;
+	margin-top:20px;
+	padding-bottom:40px;
+}
+.login_section #sixth {
+	width:360px;
+	margin-top:50px;
+}
+.login_section #sixth_left {
+	float:left;
+	font-size:12px;
+}
+
+.login_section #sizth_right {
+	float: right;
+}
+
+.login_section #sizth_right button {
+	background: black;
+	color: white;
+	border:none;
+	height:22px;
+}
+
+.login_section #seventh {
+	margin-top:25px;
+}
+.login_section #seventh div:nth-child(1)
+{
+	text-align:center;
+	font-size:14px;
+	font-weight:900px;
+}
+.login_section #uid, #pw {
+		border: none;
+	width: 150px;
+	height: 20px;
+	margin-left: 22px;
+}
+
+.login_section #pw {
+	/* 		border: none;	 */
+	width: 150px;
+	height: 20px;
+	margin-left: 7px;
+}
+
+.login_section #login {
+	width: 100px;
+	height: 70px;
+	background: black;
+	border: 1px solid black;
+	color: white;
+	font-weight: 900;
+}
+
+#naver {
+	width: 114px;
+	height: 40px;
+	background: #00C63B;
+	border-radius: 5px;
+	margin-left: 5px;
+	font-size: 11px;
+	float: left;
+	display: flex;
+	align-items: center;
+	color: white;
+	justify-content: center;
+}
+
+#facebook {
+	width: 114px;
+	height: 40px;
+	background: #536FAC;
+	border-radius: 5px;
+	font-size: 11px;
+	margin-left: 5px;
+	float: left;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#kakao {
+	width: 114px;
+	height: 40px;
+	font-size: 11px;
+	background: #FDEB1D;
+	margin-left: 5px;
+	display: flex;
+	 align-items : center; 
+	 justify-content : center;
+	border-radius: 5px;
+	float: left;
+	align-items: center;
+	justify-content: center;
+}
