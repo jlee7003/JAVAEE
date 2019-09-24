@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+<script>
+	// 0909/animate6.html
+	$(function() {
+		$("#accord").accordion({
+			active : true, //기능을 안준것과 똑같음 false,true
+			animate : "swing", // 에니메이션 여부  false,true,숫자를 적었을 경우 시간,linear(속도 일정),swing
+			heightStyle : "auto",//fill,content,auto
+			// 		  		event:"mouseover",
+			icons : {header : "ui-icon-plus",
+				activeHeader : "ui-icon-caret-1-n"
+			}
+// 			activate : function()//동작후에 실행할 내용
+// 			{
+// 				alert("내용을 보여준후 실행,완료가 된후에 실행됨");
+// 			}
+		});
+	});
+</script>
+
+</head>
+<body>
+	<div id=accord>
+		<h3>짜장면</h3>
+		<div>
+			춘장에다가 야채 볶볶 전문 섞어서 만듬
+			<p>맛있다
+		</div>
+
+		<h3>탕수육</h3>
+		<div>
+			춘장에다가 야채 볶볶 전문 섞어서 만듬1
+			<p>맛있다1
+		</div>
+
+		<h3>짬뽕</h3>
+		<div>
+			춘장에다가 야채 볶볶 전문 섞어서 만듬2
+			<p>맛있다2
+		</div>
+	</div>
+</body>
+</html>
