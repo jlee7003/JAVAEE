@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--  -->
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+  <style>
+  #pkc, #pkc2{
+    width:100px;
+  height:100px;
+  background:red;
+  position:absolute; 
+/*   //포지션이 있어야 동작을함 */
+  left:0px;
+  }
+  </style>
+    <script>
+    $(function()//$(선택자).animate({내용},시간); => 시간동안 내용 실행
+	{
+    	alert();
+		$("#pkc").animate(
+		{
+			width:"300px",//변경시킬 내용을 추가(최종목적지)
+		    height:"300px"
+		},2000);
+		
+		$("#pkc2").animate(
+		{
+			left:"400px"//변경시킬 내용을 추가(최종목적지)
+		},2000);
+
+	});
+  </script>
+ </head>
+ <body>
+ <div id=pkc></div> <p>
+ <div id=pkc2></div>
+ </body>
+</html>

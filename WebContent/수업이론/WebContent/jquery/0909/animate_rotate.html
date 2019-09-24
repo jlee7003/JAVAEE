@@ -1,0 +1,35 @@
+<!doctype html>
+<!--  -->
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+  <script src="jquery-animate-css-rotate-scale.js"></script>
+  <script>  // 0909/animate_rotate.html // 회전
+    $(function()   
+	{    
+        $("#btn").click(function()
+		{
+			$("#pkc").animate(
+			{
+              rotate:"90deg",
+			  scale:"2"
+			},1000);
+		});
+	});
+ 
+  </script>
+ </head>
+ <body>
+      <button id=btn>회전</button> <p>
+      <div id=pkc></div>
+ </body>
+  <style>
+    #pkc{
+      width:100px;
+	  height:10px;
+	  background:blue;
+	  position:relative;
+	}
+  </style>
+</html>

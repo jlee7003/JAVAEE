@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--  -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="jquery-animate-css-rotate-scale.js"></script>
+<script>
+	$(function() {
+		$("#btn").click(function() 
+		{
+			$("#pkc").animate(
+			{
+				rotate : "360deg"
+			}, 1000);
+
+		});
+	});
+</script>
+</head>
+<body>
+	<button id=btn>돌리기</button>
+	<div id=pkc></div>
+</body>
+<style>
+#pkc {
+	width: 100px;
+	height: 10px;
+	background: blue;
+	position: relative;
+}
+</style>
+</html>

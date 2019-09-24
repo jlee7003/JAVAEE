@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script>
+	// 0909/animate6.html
+	//$(선택자).animate({타겟},시간,function(){});
+	$(function() {
+		$("#pkc").click(function() {
+			
+			$(".img").animate({
+				marginLeft : "-300px"
+			}, 2000,"linear",function() {
+				$(".img img").eq(0).insertAfter($(".img img").eq(6));
+				$(".img").css("marginLeft","0px");
+
+			});
+			
+		});
+	});
+</script>
+<style>
+body {
+	margin: 0px;
+}
+
+.img {
+	width: 2200px;
+	height: 104px;
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+1
+	<div class=img>
+		<!-- 그냥 집어 넣게 될경우 가로 길이를 초과하면 아래로 들어감 -->
+		<img src=1.jpg width=300 height=100> <img src=2.jpg width=300
+			height=100> <img src=3.jpg width=300 height=100> <img
+			src=4.jpg width=300 height=100> <img src=5.jpg width=300
+			height=100> <img src=6.jpg width=300 height=100> <img
+			src=7.jpg width=300 height=100>
+	</div>
+	<button id=pkc>클릭</button>
+</body>
+</html>
