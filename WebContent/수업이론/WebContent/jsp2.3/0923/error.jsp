@@ -13,8 +13,8 @@
    
    %>
    <!-- toUpperCase 대문자로 변환 -->
-<%-- name 파라미터 값 : <%=request.getParameter("name").toUpperCase() %> --%>
-name 파라미터값 : <%=request.getParameter("name")%>
+name 파라미터 값 : <%=request.getParameter("name").toUpperCase() %>
+<%-- name 파라미터값 : <%=request.getParameter("name")%> --%>
 <%
 }
    catch(Exception e)
