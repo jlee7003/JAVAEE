@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <style>
+    li {
+      list-style-type:none;
+	  display:inline-block;
+	  border:1px solid darkblue;
+	  margin-left:30px;
+	  padding:2px;
+	  color:darkblue
+	}
+	.chg {
+      color:white;
+	  background:darkblue;
+	}
+  </style>
+  <script>
+
+    $(function()  
+	{
+    	  
+        $(".aa").click(function()
+		{
+        	$(this).hasClass("chg"); //hasclass->특정 클래스가 적용되어있는지 확인하는 메소드
+        	alert($(this).hasClass("chg")); 
+        });
+        
+	});
+
+//쉽다 쉬워
+		
+
+
+  </script>
+ </head>
+ <body>
+    <ul>
+	  <li class=aa> 스포츠 </li>
+	  <li class=aa> 식품류 </li>
+	  <li class=aa> 생활용품 </li>
+	  <li class=aa> 주방용품 </li>
+	  <li class=aa> 여행용품 </li>
+	</ul>
+
+ </body>
+</html>
