@@ -16,7 +16,7 @@
 <!--     login.jsp 내용 추가 -->
 <div id=login_main>
 <div id=first></div><!-- 로그인 글자 -->
-LOGIN
+<span id=log>LOGIN</span>
 <div id=second></div><!-- 로그인 아이디 찾기 비밀번호 찾기 -->
 <div id=outer>
 <div id=outer_left>
@@ -48,8 +48,21 @@ LOGIN
 <div id=facebook>페이스북</div>
 <div id=kakao>카카오</div>
 </div>
-<div id=sixth></div><!-- 비회원 주문조회 -->
-<div id=seventh></div><!-- 비회원 주문조회 -->
+<div id=sixth><!-- 비회원 주문조회 -->
+<div id=sixth_left>회원가입을 하시면 다양하고 특별한 <br> 혜택이 준비되어 있습니다.</div>
+<div id=sizth_right><button>회원가입</button> </div>
+
+</div>
+<hr>
+<div id=seventh><!-- 비회원 주문조회 -->
+<div>비회원 주문조회</div>
+<div>비회원의 경우, 주문시의 주문번호로 주문조회가 가능합니다.</div>
+<div> 주문자명 <input type=text name=name class=aa id=a1></div>
+<div> 주문번호 <input type=text name=bun1 class=bb id=a2>  -  <input type=text name=bun2 class=bb >
+</div>
+<div>비회원 주문비밀번호 <input type=password name=pwd id=a3 class=aa></div>
+<div><button class=cc>조회</button></div>
+</div>
 </div>
     </section>
     <jsp:include page="../footer.jsp" flush="false" />
