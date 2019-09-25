@@ -44,22 +44,22 @@
 	   chk1=request.getParameter("chk1");
    
    String chk2;
-   if(request.getParameter("chk1")==null)
+   if(request.getParameter("chk2")==null)
 	   chk2="0";
    else
-	   chk2=request.getParameter("chk1");
+	   chk2=request.getParameter("chk2");
    
    String chk3;
-   if(request.getParameter("chk1")==null)
+   if(request.getParameter("chk3")==null)
 	   chk3="0";
    else
-	   chk3=request.getParameter("chk1");
+	   chk3=request.getParameter("chk3");
    
    String chk4;
-   if(request.getParameter("chk1")==null)
+   if(request.getParameter("chk4")==null)
 	   chk4="0";
    else
-	   chk4=request.getParameter("chk1");
+	   chk4=request.getParameter("chk4");
    
   String sql="insert into member(gubun, userid, pwd, pwd_qu, pwd_an, name, zip, juso1, juso2, phone, hphone, email, sung, birth, chk1,		  chk2, chk3, chk4, writeday) value(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now())";
 PreparedStatement pstmt=conn.prepareStatement(sql);
