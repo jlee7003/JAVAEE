@@ -34,7 +34,11 @@
 - application 영역은 하나의 웹 어플리케이션 당 1개의 applicaition 객체가 생성된다.
 - 즉, 같은 웹 어플리케이션에 요청되는 페이지들은 같은 객체를 공유한다.
 
-
+--------------------------------------------------
+<!-- setAttribute("변수명","값") : 객체의 변수를 만들기
+ getAttribute("변수명") :  변수의 값을 가지고 오기
+ removeAttributeNames("변수명") : 해당 변수를 삭제
+ getAttributeNames() : 변수의 이름을 가져오기 -->
 
 출처: https://hyeonstorage.tistory.com/88 [개발이 하고 싶어요] -->
 </body>
