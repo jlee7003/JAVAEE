@@ -22,6 +22,24 @@
 	 });
    });
    
+   
+   $(function()
+		   {
+			 $(".main").mouseover(function()
+			 {	
+				$(this).animate(
+				{
+					color:"#bbbbbb"		
+				},500);
+			 });   
+			 $(".main").mouseout(function()
+			 {
+				 $(this).animate(
+				 {
+					color:"black"		
+			 	 },500);
+			 });
+		   });
  </script>
 <nav>
 	<!-- <div id=l_menuwrap> -->
@@ -35,7 +53,7 @@
 		<li class=main onclick=view(0,this,200)>SUITS
 			<ul class=menu>
 				<li></li>
-				<li>싱글 슈트</li>
+				<li >싱글 슈트</li>
 				<li>스트라이프 슈트</li>
 				<li>비즈니스 슈트</li>
 				<li>더블 슈트</li>
@@ -114,8 +132,8 @@
 			</ul>
 		</li>
 		<li>&nbsp;</li>
-		<li>BEST</li>
-		<li>NEW</li>
+		<li class=main>BEST</li>
+		<li class=main>NEW</li>
 	</ul>
 	<ul>
 		<li><a href="../login/login.jsp">LOGIN</a></li>

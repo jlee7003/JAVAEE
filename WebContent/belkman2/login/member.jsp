@@ -29,6 +29,7 @@
     }).open();
   }
   
+
 </script>
 <!-- daum 도로명주소검색 API 끝 -->
 
@@ -38,7 +39,7 @@
   <div id=right>
     <section class=member_section> 
     <div id=in_div align=center class=space> 회원가입    </div> <!-- 제목줄 -->
-    <form name=pkc method=post action=member_ok.jsp>
+    <form name=pkc method=post action=member_ok1.jsp onsubmit="return sub_check()">
     <table width=800 border=0> <!-- 회원 구분이 있는 첫테이블 -->
     <tr>
     <td  class=td1>회원구분</td>
