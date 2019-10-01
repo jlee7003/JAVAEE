@@ -1,3 +1,5 @@
+var true_sub=0;
+
 function view(n,pp,hei)
 {
 	for(i=0;i<7;i++)
@@ -20,6 +22,7 @@ function check_userid(pp)
 		 {
 		 pp.style.color="green"; //글자색 초록색으로
 	 document.getElementById("pkc2").innerHTML="";
+	 true_sub++;
 		 }
 	 else
 		 {
@@ -36,6 +39,7 @@ function check_len(pp)
 		 {
 		 pp.style.color="green"; //글자색 초록색으로
 		 document.getElementById("pkc3").innerHTML="";
+		 true_sub++;
 		 }
 	 else
 		 {
@@ -52,7 +56,8 @@ function check_equal(pp)
 	 {
 		 pp.style.color="green"; //글자색 초록색으로
 		 document.getElementById("pkc4").innerHTML="";
-		 } 
+		 true_sub++;	 
+	 } 
 	else{
 		document.getElementById("pkc4").innerHTML="<b>비밀번호가 일치하지 않습니다.</b>";
 		document.getElementById("pkc4").style.color="red";
@@ -99,4 +104,23 @@ function main_check()
 	document.getElementById("chk_main").checked=true;
 	else
 	document.getElementById("chk_main").checked=false;
+	
+
+		
+}
+function sub_check()
+{
+	  var memchk=document.getElementsByClassName("chk");
+	  if(!(true_sub==3))
+		  {
+		  alert("필수 항목을 확인해주세요");
+		  return false;
+		  }
+	  else if(memchk[1].checked==false && memchk[2].checked==false)
+		  {
+		  alert("필수 항목을 확인해주세요");
+	  return false;
+		  }
+	  else
+		  return true;
 }
