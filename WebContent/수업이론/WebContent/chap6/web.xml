@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	
+	<!-- application객체는 하나의 WAS(웹서버)에 하나만 생성된다.. -->
+	<!-- application객체에 변수를 만들기 => 서버가 존재하는 한 접근 -->
+	<context-param>
+	  <description> 만드는 변수의 설명 </description>
+	  <param-name>logEnabled</param-name>  <!-- 변수명 -->
+	  <param-value>true</param-value> <!-- 값 -->
+	</context-param>
+	
+	<context-param>
+	  <description> 디버깅 레벨 </description>
+	  <param-name>debugLevel</param-name>  <!-- 변수명 -->
+	  <param-value>5</param-value> <!-- 값 -->
+	</context-param>
+	
+	<context-param>
+	  <description> 도메인주소 </description>
+	  <param-name>juso</param-name>  <!-- 변수명 -->
+	  <param-value>http://www.channy.co.kr</param-value> <!-- 값 -->
+	</context-param>
+	
+	<error-page>
+	   <error-code> 404 </error-code>
+	   <location> /chap6/error_404.jsp </location>
+	</error-page>
+	
+	<error-page>
+	   <error-code> 500 </error-code>
+	   <location> /chap6/error_500.jsp </location>
+	</error-page>
+	
+</web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
