@@ -12,21 +12,22 @@ switch(pp)
 {
 	case "01":
 	//suit
-	document.pkc.jung.options.length=7;
-document.pkc.jung.options[0].value="01";
-document.pkc.jung.options[1].value="02";
-document.pkc.jung.options[2].value="03";
-document.pkc.jung.options[3].value="04";
-document.pkc.jung.options[4].value="05";
-document.pkc.jung.options[5].value="06";
-document.pkc.jung.options[6].value="07";
-document.pkc.jung.options[0].text="슬랙스";
-document.pkc.jung.options[1].text="면바지";
-document.pkc.jung.options[2].text="청바지";
-document.pkc.jung.options[3].text="반바지";
-document.pkc.jung.options[4].text="조거팬츠";
-document.pkc.jung.options[5].text="Etc.";
-break;
+   document.pkc.jung.options.length=7;
+	   document.pkc.jung.options[0].value="01";
+	   document.pkc.jung.options[1].value="02";
+	   document.pkc.jung.options[2].value="03";
+	   document.pkc.jung.options[3].value="04";
+	   document.pkc.jung.options[4].value="05";
+	   document.pkc.jung.options[5].value="06";
+	   document.pkc.jung.options[6].value="07";
+	   document.pkc.jung.options[0].text="싱글수트";
+	   document.pkc.jung.options[1].text="스트라이프수트";
+	   document.pkc.jung.options[2].text="비즈니스니트";
+	   document.pkc.jung.options[3].text="더블수트";
+	   document.pkc.jung.options[4].text="체크수트";
+	   document.pkc.jung.options[5].text="드레스슈즈";
+	   document.pkc.jung.options[6].text="수트악세사리";
+	   break;
 	
 	case "02":
 	//top

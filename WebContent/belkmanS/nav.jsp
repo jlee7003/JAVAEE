@@ -50,7 +50,7 @@
 	<!-- </div> -->
 	  <div id=logo><a href="../main/index.jsp"> A N T H O N Y </a><div>
 	<ul>
-		<li class=main onclick=view(0,this,200)>SUITS
+		<li class=main onclick=view(0,this,200)><a href="../product/pro_list.jsp?pcode=p01">SUITS </a>
 			<ul class=menu>
 				<li></li>
 				<li >싱글 슈트</li>
@@ -62,7 +62,7 @@
 				<li></li>
 			</ul>
 		</li>
-		<li class=main onclick=view(1,this,130)>TOP
+		<li class=main onclick=view(1,this,130)><a href="../product/pro_list.jsp?pcode=p02">TOP </a>
 			<ul class=menu>
 				<li></li>
 				<li>긴팔 티셔츠</li>
@@ -72,7 +72,7 @@
 			</ul>
 		</li>
 
-		<li class=main onclick=view(2,this,150)>SHIRTS
+		<li class=main onclick=view(2,this,150)><a href="../product/pro_list.jsp?pcode=p03">SHIRTS</a>
 			<ul class=menu>
 				<li></li>
 				<li>스타라이프 셔츠</li>
@@ -82,7 +82,7 @@
 				<li>Etc.</li>
 			</ul>
 		</li>
-		<li class=main onclick=view(3,this,170)>PANTS
+		<li class=main onclick=view(3,this,170)><a href="../product/pro_list.jsp?pcode=p04">PANTS</a>
 			<ul class=menu>
 				<li></li>
 				<li>슬랙스</li>
@@ -93,7 +93,7 @@
 				<li>Etc.</li>
 			</ul>
 		</li>
-		<li class=main onclick=view(4,this,150)>OUTER
+		<li class=main onclick=view(4,this,150)><a href="../product/pro_list.jsp?pcode=p05">OUTER</a>
 			<ul class=menu>
 				<li></li>
 				<li>코트</li>
@@ -103,7 +103,7 @@
 				<li>점퍼</li>
 			</ul>
 		</li>
-		<li class=main onclick=view(5,this,150)>SHOES
+		<li class=main onclick=view(5,this,150)><a href="../product/pro_list.jsp?pcode=p06">SHOES</a>
 			<ul class=menu>
 				<li></li>
 				<li>드레스 슈즈</li>
@@ -113,7 +113,7 @@
 				<li>Etc.</li>
 			</ul>
 		</li>
-		<li class=main onclick=view(6,this,300)>ACCESSORY
+		<li class=main onclick=view(6,this,300)><a href="../product/pro_list.jsp?pcode=p07">ACCESSORY</a>
 			<ul class=menu>
 				<li></li>
 				<li>타이/행거치프</li>
