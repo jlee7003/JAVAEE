@@ -12,8 +12,6 @@
    }
  </style>
  <footer>
-   			<%= session.getAttribute("name") %>
-   			<%= session.getAttribute("userid") %>
  <ul>
   <li style="float:left"> PRIVACY POLICY </li>
      <li style="float:left"> TERMS OF USE </li>

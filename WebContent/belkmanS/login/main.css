@@ -1,0 +1,598 @@
+@charset "UTF-8";
+
+body {
+	width:1210px;	
+	margin:0px; 
+}
+a {              /* 전체문서에 영향 */
+	text-decoration:none;
+	color:black;	
+}                /* 스타일을 다르게 하려면 해당문서에 추가 */
+a:hover {
+	text-decoration:underline; /* 밑줄 */
+	color:green;
+}
+nav {
+    width:300px;
+    height:900px;
+    float:left;
+    position:fixed; /* #right가 왼쪽으로 붙는다 */
+   }
+nav #logo {
+	font-size:26px; /* 로고 글자크기 */
+	margin-left:40px; /* 로고 왼쪽부터 공간 */
+	margin-top:40px;  /* 로고 상단부터 공간 */
+}
+nav #start_menu{
+	margin-top:60px;
+}
+nav li {
+	list-style-type:none;	
+	font-size:13px;
+}
+nav > ul > li { /* 메뉴목록 */
+    height:25px;
+}
+nav .menu {    /* 하위메뉴 ul */
+    margin-top:15px;
+	padding-left:15px;
+	display:none;
+}
+nav .menu li {  /* 하위메뉴 li */
+	height:20px;
+}
+#right {  /* 오른쪽 변화되는 부분을 차지*/
+    float:left;
+    width:910px;
+    margin-left:300px; /* 왼쪽부터 300px 오른쪽으로 */
+   }
+section {
+    width:900px;
+}
+.index_section {  /* index.jsp에서만 배경그림이 존재 */
+    background-image:url("../main/img/main.jpg");
+    background-attachment:fixed;
+    height:900px;
+   }
+.login_section {       /* login.jsp */
+    width:400px;
+	height:900px;
+	margin:auto;   /* 로그인 전체 창 좌우정렬 */
+	margin-top:100px;  /* 로그인 전체 창 위에서 띄우기 */
+}
+.login_section #first {  /* 로그인 글자가 들어가 있는곳 */
+    text-align:center;	
+    width:360px;
+    height:150px;
+ 
+}
+.login_section #userid {
+	width:250px;
+	height:30px;
+	border:1px solid #cccccc;
+	display:flex;
+	align-items:center;
+	font-size:12px;
+	color:#cccccc;
+	padding-left:8px;
+}
+.login_section #pwd {
+	width:250px;
+	height:30px;
+	border:1px solid #cccccc;
+	display:flex;
+	align-items:center;
+	font-size:12px;
+	color:#cccccc;
+	margin-top:5px;
+	padding-left:8px;
+}
+.login_section #uid {
+	width:150px;
+	height:20px;
+	margin-left:20px;
+    border:none;  
+}
+.login_section #pw {
+	width:150px;
+	height:20px;
+	margin-left:8px;
+    border:none;
+}	
+.login_section #outer {  / * 바깥선 */ 
+	width:400px;
+	height:80px;
+}
+.login_section #outer_left {   /* 아이디,패스워드 입력칸 */
+	float:left;
+}
+.login_section #outer_right {  /* login버튼을 포함 */
+	margin-left:10px;
+	float:left;
+}
+.login_section #login {  /* 로그인버튼모양 만들기 */
+	width:100px;
+	height:70px;
+	background:black;
+	border:1px solid black;
+	color:white;
+	font-weight:900;  /* 100~900 */
+}
+.login_section #third {
+	font-size:12px;
+	width:400px;
+	height:30px;
+} 
+.login_section #fourth {
+	font-size:12px;
+	width:400px;
+	height:30px;
+}
+.login_section #fifth {  /* 네이버,페이스북,카카오*/
+	width:400px;
+	margin-top:20px;
+}
+.login_section #fifth span { /* 공통부분 */
+	display:inline-block;
+	width:105px;
+	height:25px;
+	border:none;
+	border-radius:6px;
+	color:white;
+	font-size:12px;
+	padding-left:13px;  /* 글자를 중앙에 위치 */
+	padding-top:15px;
+}
+.login_section #fifth span:nth-child(1) {  /* 다른부분 */
+	background:#00c63b;
+}
+.login_section #fifth  span:nth-child(2) {
+	background:#536fac;
+}
+.login_section #fifth span:nth-child(3) {
+	background:#fdeb1d;
+}
+.login_section #sixth {
+	width:360px;
+	height:60px;
+	margin-top:30px;
+	padding-top:20px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+}
+.login_section #sixth #sixth_left {  /* 글자가 들어있는 div */
+	float:left;
+	font-size:12px;
+}
+.login_section #sixth #sixth_right { /* 버튼이 들어있는 div */
+	float:right;
+}
+.login_section #sixth #sixth_right button { /* 버튼 */
+	background:black;
+	color:white;
+	border:none;
+	width:100px;
+	height:25px;
+}
+.login_section #seventh {
+	margin-top:25px;
+	width:360px;
+}
+.login_section #seventh div {
+	font-size:12px;
+	height:30px;
+}
+.login_section #seventh div:nth-child(1) {
+	text-align:center;
+	font-size:14px;
+	font-weight:900;
+}
+.login_section #seventh div:nth-child(6) { /* 조회버튼 */
+	text-align:right;
+	margin-top:20px;
+}
+.login_section #seventh .aa {  /* 큰 텍스트박스 */
+	width:180px;
+	height:18px;
+	border:1px solid #dddddd;
+}
+.login_section #seventh .bb {  /* 작은 텍스트 박스 */
+	width:84.5px;
+	height:18px;
+	border:1px solid #dddddd;
+}
+.login_section #seventh .cc {
+	width:70px;
+	height:25px;
+	background:white;
+	border:1px solid #cccccc;
+	border-radius:3px;
+}
+.login_section #seventh #a1 {
+	margin-left:74px;
+}
+.login_section #seventh #a2 {
+	margin-left:74px;
+}
+.login_section #seventh #a3 {
+	margin-left:10px;
+}
+.member_section {
+	width:900px;
+	margin-top:100px;	
+}
+.member_section td {
+	height:33px;
+	border:1px solid #cccccc;
+	font-size:12px;
+}
+.member_section .td1 {
+	width:150px;
+	padding-left:10px;
+	background:#fbfafa;
+}
+.member_section .in1 {    /* 입력박스 */
+	border:1px solid #cccccc;
+	width:280px;
+	height:20px;
+}
+.member_section .in2 {    /* 입력박스 */
+	border:1px solid #cccccc;
+	width:100px;
+	height:20px;
+}
+.member_section .in3 {    /* 입력박스 */
+	border:1px solid #cccccc;
+	width:200px;
+	height:20px;
+}
+.member_section select {
+	height:24px;
+	border:1px solid #cccccc;
+}
+.member_section #in_div {
+	width:800px;
+	height:25px;
+	margin-top:50px;
+	margin-bottom:10px;
+}
+.member_section #tb_left {
+	float:left;
+	font-weight:900;
+}
+.member_section #tb_right {
+	float:right;
+	font-size:12px;
+}
+.member_section .zip {
+	border:1px solid #cccccc;
+	background:white;
+    height:24px;
+    margin-left:5px;
+}
+.member_section .birth1{
+	width:70px;
+	height:20px;
+	border:1px solid #cccccc;
+}
+.member_section .birth2{
+	width:35px;
+	height:20px;
+	border:1px solid #cccccc;
+}
+.member_section textarea {
+	margin-left:20px;     /* textarea를 왼쪽으로 부터 20px 이동 */
+	padding-left:10px;  /* textarea 내의 글자의 왼쪽 여백 */
+	padding-top:20px;   /* textarea 내의 글자의 상단 여백 */
+}
+.member_section .top {
+	font-weight:900;
+	margin-top:50px;
+	margin-bottom:20px;
+} 
+
+.id_search_section {
+	width:900px;
+	margin-top:100px;	
+	margin:auto;   
+	margin-top:100px;   
+}
+.id_search_section #first {
+	width:800px;
+	margin-top:50px;
+	text-align:center;
+}
+.id_search_section #search_main {
+	width:800px;
+	height:300px;
+	border:1px solid #cccccc;
+    margin-top:100px;
+}
+.id_search_section #search_main #sub {
+    width:300px;
+    height:40px;
+    font-size:12px;
+}
+.id_search_section #search_main #sub:first-child {
+	margin-top:30px;
+	font-size:18px;
+	font-weight:900;
+}
+.id_search_section #search_main #sub #aa {
+	float:left;
+	margin-top:4px;
+}
+.id_search_section #search_main #sub #bb {
+	float:right;
+}
+.id_search_section #search_main #sub .inp {
+	width:160px;
+	height:18px;
+	border:1px solid #cccccc;
+}
+.id_search_section #search_main #sub .inp2 {
+	width:100px;
+	height:40px;
+	background:#0a0a0a;
+	border:none;
+	color:white;
+	border-radius:4px;
+	font-size:16px;
+}
+
+.id_search_ok_section {
+	width:900px;
+	margin-top:100px;	
+	margin:auto;   
+	margin-top:100px;   
+}
+.id_search_ok_section #first {
+	width:800px;
+	margin-top:50px;
+	text-align:center;
+}
+.id_search_ok_section #search_main {
+	width:800px;
+	height:450px;
+	border:1px solid #cccccc;
+    margin-top:100px;
+}
+.id_search_ok_section #search_main #sub {
+    width:420px;
+    height:40px;
+}
+.id_search_ok_section #search_main #sub:nth-child(1) {
+    font-size:18px;
+    font-weight:900;
+    margin-top:30px;
+}
+.id_search_ok_section #search_main #sub:nth-child(2) {
+    font-size:18px;
+    color:blue;
+    font-weight:900;
+}
+.id_search_ok_section #search_main #sub:nth-child(3) {
+    height:180px;
+    font-size:12px;
+    border:1px solid #cccccc;
+}
+.id_search_ok_section #search_main #sub:nth-child(4) {
+    height:50px;
+    font-size:12px;
+    margin-top:30px;
+}
+.id_search_ok_section #search_main .btn1 {
+	width:100px;
+	height:40px;
+	background:#0a0a0a;
+	border:none;
+	color:white;
+	border-radius:4px;
+	font-size:16px;
+} 
+.id_search_ok_section #search_main .btn2 {
+	width:140px;
+	height:40px;
+	background:#888888;
+	border:none;
+	color:white;
+	border-radius:4px;
+	font-size:16px;
+} 
+.id_search_ok_section #search_main #sub_first {
+	text-align:left;	
+    padding-left:10px;
+    padding-top:10px;
+	height:50px;
+	background:#eeeeee;
+	border-bottom:1px solid #cccccc;
+}
+.id_search_ok_section #search_main #sub_second {
+	text-align:left;	
+    padding-top:10px;
+    padding-left:10px;
+}
+ .id_search_ok_section #search_main #sub_second .aaa{
+    width:80px;
+ }
+ .id_search_ok_section #search_main #sub_second .bbb{
+    width:320px;
+ 
+ }
+ 
+ .pwd_search_section {
+	width:900px;
+	margin-top:100px;	
+	margin:auto;   
+	margin-top:100px;   
+}
+.pwd_search_section #first {
+	width:800px;
+	margin-top:50px;
+	text-align:center;
+}
+.pwd_search_section #search_main {
+	width:800px;
+	height:350px;
+	border:1px solid #cccccc;
+    margin-top:100px;
+}
+.pwd_search_section #search_main #sub {
+    width:300px;
+    height:40px;
+    font-size:12px;
+}
+.pwd_search_section #search_main #sub:first-child {
+	margin-top:30px;
+	font-size:18px;
+	font-weight:900;
+}
+.pwd_search_section #search_main #sub #aa {
+	float:left;
+	margin-top:4px;
+}
+.pwd_search_section #search_main #sub #bb {
+	float:right;
+}
+.pwd_search_section #search_main #sub .inp {
+	width:160px;
+	height:18px;
+	border:1px solid #cccccc;
+}
+.pwd_search_section #search_main #sub .inp2 {
+	width:100px;
+	height:40px;
+	background:#0a0a0a;
+	border:none;
+	color:white;
+	border-radius:4px;
+	font-size:16px;
+}
+
+.pwd_search_ok_section {
+	width:900px;
+	margin-top:100px;	
+	margin:auto;   
+	margin-top:100px;   
+}
+.pwd_search_ok_section #first {
+	width:800px;
+	margin-top:50px;
+	text-align:center;
+}
+.pwd_search_ok_section #search_main {
+	width:800px;
+	height:450px;
+	border:1px solid #cccccc;
+    margin-top:100px;
+}
+.pwd_search_ok_section #search_main #sub {
+    width:420px;
+    height:40px;
+}
+.pwd_search_ok_section #search_main #sub:nth-child(1) {
+    font-size:18px;
+    font-weight:900;
+    margin-top:30px;
+}
+.pwd_search_ok_section #search_main #sub:nth-child(2) {
+    font-size:18px;
+    color:blue;
+    font-weight:900;
+}
+.pwd_search_ok_section #search_main #sub:nth-child(3) {
+    height:180px;
+    font-size:12px;
+    border:1px solid #cccccc;
+}
+.pwd_search_ok_section #search_main #sub:nth-child(4) {
+    height:50px;
+    font-size:12px;
+    margin-top:30px;
+}
+.pwd_search_ok_section #search_main .btn1 {
+	width:100px;
+	height:40px;
+	background:#0a0a0a;
+	border:none;
+	color:white;
+	border-radius:4px;
+	font-size:16px;
+} 
+.pwd_search_ok_section #search_main .btn2 {
+	width:140px;
+	height:40px;
+	background:#888888;
+	border:none;
+	color:white;
+	border-radius:4px;
+	font-size:16px;
+} 
+.pwd_search_ok_section #search_main #sub_first {
+	text-align:left;	
+    padding-left:10px;
+    padding-top:10px;
+	height:50px;
+	background:#eeeeee;
+	border-bottom:1px solid #cccccc;
+}
+.pwd_search_ok_section #search_main #sub_second {
+	text-align:left;	
+    padding-top:10px;
+    padding-left:10px;
+}
+ .pwd_search_ok_section #search_main #sub_second .aaa{
+    width:80px;
+ }
+ .pwd_search_ok_section #search_main #sub_second .bbb{
+    width:320px;
+ 
+ }
+ .list_section td {
+   font-size:12px;
+ }
+.content_section {
+	width:910px;
+	height:1000px;
+}
+.content_section .first {
+	width:910px;	
+	height:550px;
+	border:1px solid red;
+}
+.content_section .first #left {
+	float:left;
+	width:500px;
+	border:1px solid black;
+}
+.content_section .first #right {
+	float:right;
+	width:400px;
+	font-size:12px;
+	border:1px solid blue;
+	margin-left:0px;
+}
+.content_section .second {
+	clear:both;
+} 
+ 
+ 
+ 
+footer {
+    width:900px;
+    height:350px;
+    margin-top:50px;
+ 
+}
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

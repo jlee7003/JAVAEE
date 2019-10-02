@@ -22,7 +22,7 @@ MultipartRequest multi=new MultipartRequest(request, path, max, "utf-8", new Def
 //request 되는 값 가져오기
 // 상품코드
 String pcode=multi.getParameter("pcode");
-//현재 product table에서 가장 높은 아이디 값을 가져오고 1 증가후 4자리로 환산.
+//현재 product t		able에서 가장 높은 아이디 값을 가져오고 1 증가후 4자리로 환산.
 
 String sql="select max(id) as num from product";
 // product라는 table에서 id의 가장 높은값 호출하기
