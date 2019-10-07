@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../etc/main.css?verver2">
+<link rel="stylesheet" href="../etc/main.css?ver7775">
 <script src="../etc/main.js?after222"></script>
 </head>
 <style>

@@ -10,7 +10,7 @@
     String pid=request.getParameter("pid");
     String userid=session.getAttribute("userid").toString();
     
-    String sql="insert into cart(pid,userid) values("+pid+",'"+userid+"')";
+    String sql="insert into wish(pid,userid) values("+pid+",'"+userid+"')";
     
     stmt.executeUpdate(sql);
     out.print("ok");

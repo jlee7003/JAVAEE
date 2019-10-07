@@ -25,8 +25,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../etc/main.css?af3r3233">
-<script src="../etc/main.js?after84466rr"></script>
+<script src="../etc/main.js?aftfsfr"></script>
+<style>
+#space{
+padding-top:50px;
+}
+</style>
 <script>
+function comma(price)
+{
+	price=price+"";//comma 메소드는 받는 변수가 문자여야함
+	price=price.replace(/\B(?=(\d{3})+(?!\d))/g,",");//정규식
+	return price;
+}
+
 	function alway()
 	{
 		
@@ -67,6 +79,14 @@
 			min:1,
 			max:100
 			});
+		   // spinner의 값이 바뀔때 발생하는 이벤트
+		   $("#su").on("spinstop",function()
+				   {
+// 				       alert(document.getEslementById("su").value);
+			  var spin= document.getElementById("su").value;
+			  var price="<%=rs.getInt("price")%>";
+			  document.getElementById("price").innerText=comma(spin*price);
+				   });
 	});
 
 	
@@ -78,40 +98,48 @@
 	<jsp:include page="../nav.jsp" flush="false" />
 
 	<div id=right>
+			<div id=space></div>
 		<section class=content_section>
+		<form method=post action=pro_order.jsp>
+			<input type=hidden name=pcode value=<%=rs.getString("pcode")%>>
 			<!--     pro_content.jsp 시작 -->
 			<div class=first>
-				<div id=left>
+				<div id=left align=center>
 					<img src="img/<%=rs.getString("pmain")%>">
 				</div>
+				<!-- ------------------------------------------------------ -->
+		
 				<div id=right>
 					<div id=right1><%=rs.getString("pname")%></div>
 					<div id=right2><%=rs.getInt("price")%></div>
 					<div id=right3><%=rs.getInt("point")%></div>
 					<div id=right4>
-						사이즈 <select name=size id=psize>
+					
+						사이즈 <select name=psize id=psize>
 							<option value=0>선 택</option>
 							<option value=1>S(90)</option>
 							<option value=2>M(100)</option>
 							<option value=3>L(110)</option>
 						</select>
 					</div>
-					<div id=right5>
+					<div id=right5 >
 						최소주문수량 1개 이상 <br> 위 옵션선택 박스를 선택하시면 아래에 상품이 추가됩니다.
 					</div>
 					<div id=right6>
 						<!-- jquery 플러그인 -->
 						<input type=text name=su value=1 id=su style="width:30px">
+						<span id=price><%=rs.getString("price")%></span>원
 					</div>
 					<!-- 구매수량 선택 -->
-					<div id=right7>
+			       <div id=right7>
 						<button id=buynow>BUY NOW</button>
-						<button id=cart onclick=move_cart(<%=id%>)> ADD TO CART</button>
+						<input type=button id=cart onclick=move_cart(<%=id%>) value="ADD TO CART">
 						<!-- 카트 테이블에 저장하기 -->
-						<button id=wish onclick=move_wish(<%=id%>)>ADD TO WISH</button>
+						<input type=button id=wish onclick=move_wish(<%=id%>) value="ADD TO WISH">
 					</div>
-					<div id=right8>네이버</div>
+					<div id=right8 align=center>네이버</div>
 				</div>
+			    <!-- ------------------------------------------------------ -->
 			</div>
 			<div class=second>
 				<img src="img/<%=rs.getString("pdt_img")%>" width=800>
@@ -163,6 +191,7 @@
 			<div class=sixth></div>
 			<div class=seventh></div>
 			<!-- pro_content.jsp 끝 -->
+			</form>
 		</section>
 		<div>
 			<jsp:include page="../footer.jsp" flush="false" />
@@ -174,16 +203,16 @@
 <div id=cart_layer>
 <p align=center> 장바구니에 상품을 담았습니다.</p>
 <p align=center> 
-<button id=cart_move onclick=page_cart()>장바구니로 이동</button>
-<button id=move_not onclick=not_cart()>쇼핑 계속 하기</button>
+<button id=cart_move onclick=page_cart(<%=id%>)>장바구니로 이동</button>
+<button id=move_not onclick=not_cart(<%=id%>)>쇼핑 계속 하기</button>
 </p>
 </div>
 
 <div id=wish_layer>
 <p align=center> 관심 상품에 상품을 담았습니다.</p>
 <p align=center> 
-<button id=cart_move onclick=page_wish()>관심상품으로 이동</button>
-<button id=move_not onclick=not_wish()>쇼핑 계속 하기</button>
+<button id=cart_move onclick=page_wish(<%=id%>)>관심상품으로 이동</button>
+<button id=move_not onclick=not_wish(<%=id%>)>쇼핑 계속 하기</button>
 </p>
 </div>
 
